@@ -3,7 +3,12 @@ export const AppClass = function (inputData) {
 	_AppClass = inputData;
 };
 
-let appContainer, appInstance;
+let _AppContainer;
+export const AppContainer = function (inputData) {
+	_AppContainer = inputData;
+};
+
+let appInstance;
 
 const OSWPackageValidateOptionsObject = function (inputData) {
 	if (typeof inputData !== 'object' || inputData === null) {
@@ -17,14 +22,9 @@ export const instanceCreate = function () {
 	if (instanceExists()) {
 		instanceDestroy();
 	}
-
-	if (typeof document !== 'undefined') {
-		appContainer = document.createElement('div');
-		document.body.appendChild(appContainer);
-	}
 	
 	appInstance = new _AppClass({
-		target: appContainer,
+		target: _AppContainer,
 		props: {},
 	});
 };
@@ -40,7 +40,4 @@ export const instanceDestroy = function () {
 	if (typeof document === 'undefined') {
 		return;
 	}
-
-	appContainer.remove();
-	appContainer = undefined;
 };
