@@ -60,6 +60,26 @@ describe('OSWStorageOptionsAccess', function () {
 			return browser.pressButton(OSWStorageOptionsButtonRemoteStorage);;
 		});
 	
+		it('hides OSWStorageOptionsDescription', function() {
+			browser.assert.elements(OSWStorageOptionsDescription, 0);
+		});
+		
+		it('hides OSWStorageOptionsAnchor', function() {
+			browser.assert.elements(OSWStorageOptionsAnchor, 0);
+		});
+		
+		it('hides OSWStorageOptionsButtonRemoteStorage', function() {
+			browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 0);
+		});
+		
+		it('hides OSWStorageOptionsButtonDropbox', function() {
+			browser.assert.elements(OSWStorageOptionsButtonDropbox, 0);
+		});
+		
+		it('hides OSWStorageOptionsButtonGoogleDrive', function() {
+			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
+		});
+	
 		it('shows OSWStorageOptionRemoteStorage', function() {
 			browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
 		});

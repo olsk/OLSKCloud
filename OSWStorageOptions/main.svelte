@@ -29,13 +29,15 @@ const mod = {
 
 <h1 class="OSWStorageOptionsHeading">{ OLSKLocalized('OSWStorageOptionsHeadingText') }</h1>
 
-<p class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</p>
+{#if !mod.ValueOptionRemoteStorage()}
+	<p class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</p>
 
-<p><a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a></p>
+	<p><a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a></p>
 
-<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
-<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>
-<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
+	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
+	<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>
+	<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
+{/if}
 
 {#if mod.ValueOptionRemoteStorage()}
 	<OSWStorageOptionRemoteStorage />
