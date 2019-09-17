@@ -1,8 +1,9 @@
 <script>
+export let OSWStorageOptionsDropboxIsDisabled = false;
+
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWOptionRemoteStorage from '../OSWOptionRemoteStorage/main.svelte'
-
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
@@ -46,7 +47,11 @@ const mod = {
 	</p>
 
 	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
-	<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>
+
+	{#if !OSWStorageOptionsDropboxIsDisabled}
+		<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>		
+	{/if}
+
 	<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
 {/if}
 

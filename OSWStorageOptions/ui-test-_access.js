@@ -87,4 +87,16 @@ describe('OSWStorageOptionsAccess', function () {
 	
 	});
 
+	context('OSWStorageOptionsDropboxIsDisabled', function testOSWStorageOptionsDropboxIsDisabled () {
+
+		before(function () {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsDropboxIsDisabled=true`);
+		});
+	
+		it('hides OSWStorageOptionsButtonDropbox', function() {
+			browser.assert.elements(OSWStorageOptionsButtonDropbox, 0);
+		});
+	
+	});
+
 });
