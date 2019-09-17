@@ -69,3 +69,29 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 	});
 
 });
+
+describe('RemoteStorageError', function testRemoteStorageError() {
+
+	let item;
+
+	before(function () {
+		mainModule.ValueInstance({
+			ContainerDispatch (inputData) {
+				item = inputData
+			},
+		});
+	});
+
+	it('calls ContainerDispatch', function() {
+		mainModule.RemoteStorageError({
+			name: 'alfa',
+			message: 'bravo',
+		});
+
+		deepEqual(item, {
+			name: 'alfa',
+			message: 'bravo',
+		});
+	});
+
+});

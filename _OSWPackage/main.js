@@ -59,6 +59,12 @@ const mod = {
 				ContainerDelegate: mod,
 			},
 		}));
+
+		if (!mod.ValueRemoteStorage()) {
+			return
+		};
+
+		mod.ValueRemoteStorage().on('error', mod.RemoteStorageError);
 	},
 
 	CommandInstanceDestroy () {
@@ -70,6 +76,12 @@ const mod = {
 
 	StorageOptionsDispatchSelect(inputData) {
 		mod.ValueRemoteStorage().connect(inputData.detail)
+	},
+
+	// REMOTE STORAGE
+
+	RemoteStorageError(inputData) {
+		mod.ValueInstance().ContainerDispatch(inputData);
 	},
 
 };
