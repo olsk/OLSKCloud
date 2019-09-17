@@ -19,6 +19,10 @@ const mod = {
 	<div class="OSWContainerRemoteStorageError">{ OSWContainerRemoteStorageError }</div>
 {/if}
 
+{#if OSWContainerRemoteStorageError.match('Unauthorized')}
+	<button class="OSWContainerReconnectButton">{ OSWContainerRemoteStorageError }</button>
+{/if}
+
 {#if !OSWContainerRemoteStorageDidConnect}
 	<OSWStorageOptions on:StorageOptionsDispatchSelect={ ContainerDelegate.StorageOptionsDispatchSelect } OSWContainerRemoteStorageError={ mod.OSWContainerRemoteStorageError } />
 {/if}
