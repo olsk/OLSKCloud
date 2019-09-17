@@ -2,15 +2,18 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="/<%= OLSKSharedPageControllerSlug %>/__compiled/OSWStorageWidget.css">
-	<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/OSWStorageWidget.js"></script>
+	<link rel="stylesheet" type="text/css" href="/<%= OLSKSharedPageControllerSlug %>/__compiled/OLSKStorageWidget.css">
+	<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/OLSKStorageWidget.js"></script>
+	<script src="/<%= OLSKSharedPageControllerSlug %>/ui-behaviour.js"></script>
 </head>
 <body>
 
 <h1>Package</h1>
 
+<div id="target"></div>
+
 <script type="text/javascript">
-LCHPackageBehaviour.lifecyclePageWillLoad();
+OSWPackageBehaviour.lifecyclePageWillLoad();
 </script>
 
 </body>

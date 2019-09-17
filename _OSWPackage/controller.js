@@ -9,3 +9,9 @@ exports.OLSKControllerRoutes = function() {
 			OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 		}];
 };
+
+exports.OLSKControllerSharedStaticAssetFolders = function() {
+	return [
+		'__compiled',
+	];
+};
