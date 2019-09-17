@@ -1,26 +1,26 @@
 <script>
 import Module from './main.svelte';
 
-let TestStorageOptionsDispatchSelect;
-let TestStorageOptionsDispatchSelectValue;
+let TestOSWContainerDelegateSelect;
+let TestOSWContainerDelegateSelectValue;
 const mod = {
 
-	TestStorageOptionsDispatchSelect(inputData) {
-		TestStorageOptionsDispatchSelect.innerHTML = parseInt(TestStorageOptionsDispatchSelect.innerHTML) + 1;
+	TestOSWContainerDelegateSelect(inputData) {
+		TestOSWContainerDelegateSelect.innerHTML = parseInt(TestOSWContainerDelegateSelect.innerHTML) + 1;
 
-		TestStorageOptionsDispatchSelectValue = inputData.detail;
+		TestOSWContainerDelegateSelectValue = inputData.detail;
 	},
 	
 };
 </script>
 
 <Module
-	on:StorageOptionsDispatchSelect={ mod.TestStorageOptionsDispatchSelect }
+	on:OSWContainerDelegateSelect={ mod.TestOSWContainerDelegateSelect }
 	{...Object.fromEntries((new window.URLSearchParams(window.location.search)).entries())}
 />
 
 <p>
-	<strong>TestStorageOptionsDispatchSelect</strong>
-	<span id="TestStorageOptionsDispatchSelect" bind:this={ TestStorageOptionsDispatchSelect }>0</span>
-	<span id="TestStorageOptionsDispatchSelectValue">{ TestStorageOptionsDispatchSelectValue }</span>
+	<strong>TestOSWContainerDelegateSelect</strong>
+	<span id="TestOSWContainerDelegateSelect" bind:this={ TestOSWContainerDelegateSelect }>0</span>
+	<span id="TestOSWContainerDelegateSelectValue">{ TestOSWContainerDelegateSelectValue }</span>
 </p>

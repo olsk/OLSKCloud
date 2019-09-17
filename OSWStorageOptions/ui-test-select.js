@@ -15,19 +15,19 @@ describe('OSWStorageOptionsSelect', function () {
 		});
 		
 		before(function () {
-			browser.assert.text('#TestStorageOptionsDispatchSelect', '0')
-			browser.assert.text('#TestStorageOptionsDispatchSelectValue', 'undefined')
+			browser.assert.text('#TestOSWContainerDelegateSelect', '0')
+			browser.assert.text('#TestOSWContainerDelegateSelectValue', 'undefined')
 
 			browser.fill(OSWStorageOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
 			browser.click(OSWStorageOptionRemoteStorageConnectButton)
 		});
 		
-		it('sends StorageOptionsDispatchSelect', function () {
-			browser.assert.text('#TestStorageOptionsDispatchSelect', '1')
+		it('sends OSWContainerDelegateSelect', function () {
+			browser.assert.text('#TestOSWContainerDelegateSelect', '1')
 		});
 		
 		it('includes address', function () {
-			browser.assert.text('#TestStorageOptionsDispatchSelectValue', 'alfa@bravo.charlie')
+			browser.assert.text('#TestOSWContainerDelegateSelectValue', 'alfa@bravo.charlie')
 		});
 	
 	});

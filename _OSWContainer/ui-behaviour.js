@@ -1,12 +1,12 @@
 const ContainerDelegate = {
 
-	TestStorageOptionsDispatchSelect(inputData) {
+	TestOSWContainerDelegateSelect(inputData) {
 		window.TestContainerDispatchOptionsSelect.innerHTML = parseInt(window.TestContainerDispatchOptionsSelect.innerHTML) + 1;
 
 		window.TestContainerDispatchOptionsSelectValue.innerHTML = inputData.detail;
 	},
 
-	TestStorageOptionsDispatchRenew(inputData) {
+	TestOSWContainerDelegateRenew(inputData) {
 		window.TestContainerDispatchOptionsRenew.innerHTML = parseInt(window.TestContainerDispatchOptionsRenew.innerHTML) + 1;
 	},
 

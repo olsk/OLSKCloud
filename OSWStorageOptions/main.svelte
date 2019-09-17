@@ -12,7 +12,7 @@ const mod = {
 	// MESSAGE
 
 	StorageOptionRemoteStorageDispatchSubmit(inputData) {
-		dispatch('StorageOptionsDispatchSelect', inputData.detail)
+		dispatch('OSWContainerDelegateSelect', inputData.detail)
 	},
 
 	// VALUE

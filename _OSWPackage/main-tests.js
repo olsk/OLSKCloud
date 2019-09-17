@@ -49,7 +49,7 @@ describe('ValueInstance', function testValueInstance() {
 
 });
 
-describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSelect() {
+describe('OSWContainerDelegateSelect', function testOSWContainerDelegateSelect() {
 
 	let item;
 
@@ -62,7 +62,7 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 	});
 
 	it('calls ValueRemoteStorage.connect', function() {
-		mainModule.StorageOptionsDispatchSelect({
+		mainModule.OSWContainerDelegateSelect({
 			detail: 'alfa',
 		})
 		deepEqual(item, 'alfa');
@@ -70,7 +70,7 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 
 });
 
-describe('StorageOptionsDispatchRenew', function testStorageOptionsDispatchRenew() {
+describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
 	let item;
 
@@ -83,7 +83,7 @@ describe('StorageOptionsDispatchRenew', function testStorageOptionsDispatchRenew
 	});
 
 	it('calls ValueRemoteStorage.reconnect', function() {
-		mainModule.StorageOptionsDispatchRenew()
+		mainModule.OSWContainerDelegateRenew()
 		deepEqual(item, 'alfa');
 	});
 

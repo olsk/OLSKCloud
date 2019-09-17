@@ -75,11 +75,11 @@ const mod = {
 
 	// CONTAINER DELEGATE
 
-	StorageOptionsDispatchSelect(inputData) {
+	OSWContainerDelegateSelect(inputData) {
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 
-	StorageOptionsDispatchRenew() {
+	OSWContainerDelegateRenew() {
 		mod.ValueRemoteStorage().reconnect()
 	},
 
