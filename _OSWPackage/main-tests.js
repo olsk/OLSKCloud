@@ -89,6 +89,25 @@ describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
 });
 
+describe('OSWSyncStatusDelegateDisconnect', function testOSWSyncStatusDelegateDisconnect() {
+
+	let item = false;
+
+	before(function () {
+		mainModule.ValueRemoteStorage({
+			disconnect () {
+				item = true
+			},
+		});
+	});
+
+	it('calls ValueRemoteStorage.disconnect', function() {
+		mainModule.OSWSyncStatusDelegateDisconnect()
+		deepEqual(item, true);
+	});
+
+});
+
 describe('RemoteStorageError', function testRemoteStorageError() {
 
 	let item = {

@@ -29,7 +29,7 @@ const mod = {
 {/if}
 
 {#if OSWContainerRemoteStorageConnected}
-	<OSWSyncStatus />
+	<OSWSyncStatus on:OSWSyncStatusDelegateDisconnect={ ContainerDelegate.OSWSyncStatusDelegateDisconnect } />
 {/if}
 
 </div>

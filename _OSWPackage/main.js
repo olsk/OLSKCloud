@@ -84,6 +84,10 @@ const mod = {
 		mod.ValueRemoteStorage().reconnect()
 	},
 
+	OSWSyncStatusDelegateDisconnect() {
+		mod.ValueRemoteStorage().disconnect()
+	},
+
 	// REMOTE STORAGE
 
 	RemoteStorageError(event) {
