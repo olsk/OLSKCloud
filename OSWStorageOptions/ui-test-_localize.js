@@ -18,6 +18,14 @@ describe(`OSWStorageOptionsLocalize-${ languageCode }`, function () {
 		browser.assert.text(OSWStorageOptionsHeading, uLocalized('OSWStorageOptionsHeadingText'))
 	});
 
+	it('localizes OSWStorageOptionsDescription', function () {
+		browser.assert.text(OSWStorageOptionsDescription, uLocalized('OSWStorageOptionsDescriptionText'))
+	});
+
+	it('localizes OSWStorageOptionsAnchor', function () {
+		browser.assert.text(OSWStorageOptionsAnchor, uLocalized('OSWStorageOptionsAnchorText'))
+	});
+
 });
 
 });

@@ -6,6 +6,10 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 <h1 class="OSWStorageOptionsHeading">{ OLSKLocalized('OSWStorageOptionsHeadingText') }</h1>
 
+<p class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</p>
+
+<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
+
 </div>
 
 <style src="./ui-style.css"></style>
