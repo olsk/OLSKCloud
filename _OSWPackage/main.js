@@ -66,6 +66,7 @@ const mod = {
 
 		mod.ValueRemoteStorage().on('error', mod.RemoteStorageError);
 		mod.ValueRemoteStorage().on('connected', mod.RemoteStorageDidConnect);
+		mod.ValueRemoteStorage().on('disconnected', mod.RemoteStorageDidDisconnect);
 	},
 
 	CommandInstanceDestroy () {
@@ -91,7 +92,11 @@ const mod = {
 
 	RemoteStorageDidConnect() {
 		mod.ValueInstance().OSWContainerRemoteStorageDidConnect = true;
-	}
+	},
+
+	RemoteStorageDidDisconnect() {
+		mod.ValueInstance().OSWContainerRemoteStorageDidDisconnect = true;
+	},
 
 };
 

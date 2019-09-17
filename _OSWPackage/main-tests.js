@@ -127,3 +127,21 @@ describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 	});
 
 });
+
+describe('RemoteStorageDidDisconnect', function testRemoteStorageDidDisconnect() {
+
+	let item = {
+		OSWContainerRemoteStorageDidDisconnect: false,
+	};
+
+	before(function () {
+		mainModule.ValueInstance(item);
+	});
+
+	it('sets OSWContainerRemoteStorageDidDisconnect', function() {
+		mainModule.RemoteStorageDidDisconnect();
+
+		deepEqual(item.OSWContainerRemoteStorageDidDisconnect, true);
+	});
+
+});
