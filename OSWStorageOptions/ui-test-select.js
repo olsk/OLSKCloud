@@ -18,8 +18,8 @@ describe('OSWStorageOptionsSelect', function () {
 			browser.assert.text('#TestOSWContainerDelegateSelect', '0')
 			browser.assert.text('#TestOSWContainerDelegateSelectValue', 'undefined')
 
-			browser.fill(OSWStorageOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
-			browser.click(OSWStorageOptionRemoteStorageConnectButton)
+			browser.fill(OSWOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
+			browser.click(OSWOptionRemoteStorageConnectButton)
 		});
 		
 		it('sends OSWContainerDelegateSelect', function () {

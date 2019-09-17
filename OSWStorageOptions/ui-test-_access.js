@@ -51,8 +51,8 @@ describe('OSWStorageOptionsAccess', function () {
 		browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 1);
 	});
 	
-	it('hides OSWStorageOptionRemoteStorage', function() {
-		browser.assert.elements(OSWStorageOptionRemoteStorage, 0);
+	it('hides OSWOptionRemoteStorage', function() {
+		browser.assert.elements(OSWOptionRemoteStorage, 0);
 	});
 
 	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
@@ -81,8 +81,8 @@ describe('OSWStorageOptionsAccess', function () {
 			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
 		});
 	
-		it('shows OSWStorageOptionRemoteStorage', function() {
-			browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
+		it('shows OSWOptionRemoteStorage', function() {
+			browser.assert.elements(OSWOptionRemoteStorage, 1);
 		});
 	
 	});

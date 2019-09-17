@@ -30,8 +30,8 @@ describe('OSWContainerOptions', function testOSWContainerOptions () {
 			browser.assert.text('#TestContainerDispatchOptionsSelect', '0')
 			browser.assert.text('#TestContainerDispatchOptionsSelectValue', 'undefined')
 
-			browser.fill(OSWStorageOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
-			browser.click(OSWStorageOptionRemoteStorageConnectButton)
+			browser.fill(OSWOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
+			browser.click(OSWOptionRemoteStorageConnectButton)
 		});
 		
 		it('sends ContainerDispatchOptionsSelect', function () {
