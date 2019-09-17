@@ -55,13 +55,21 @@ const mod = {
 		
 		mod.ValueInstance(new mod._ValueClass({
 			target: mod._ValueContainer,
-			props: {},
+			props: {
+				ContainerDelegate: mod,
+			},
 		}));
 	},
 
 	CommandInstanceDestroy () {
 		mod.ValueInstance().$destroy();
 		mod.ValueInstance(null)
+	},
+
+	// CONTAINER DELEGATE
+
+	StorageOptionsDispatchSelect(inputData) {
+		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 
 };

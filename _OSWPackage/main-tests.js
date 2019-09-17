@@ -48,3 +48,24 @@ describe('ValueInstance', function testValueInstance() {
 	});
 
 });
+
+describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSelect() {
+
+	let item;
+
+	before(function () {
+		mainModule.ValueRemoteStorage({
+			connect (inputData) {
+				item = inputData
+			},
+		});
+	});
+
+	it('calls ValueRemoteStorage.connect', function() {
+		mainModule.StorageOptionsDispatchSelect({
+			detail: 'alfa',
+		})
+		deepEqual(item, 'alfa');
+	});
+
+});
