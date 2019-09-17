@@ -131,17 +131,21 @@ describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 describe('RemoteStorageDidDisconnect', function testRemoteStorageDidDisconnect() {
 
 	let item = {
-		OSWContainerRemoteStorageDidDisconnect: false,
+		OSWContainerRemoteStorageDidConnect: true,
+		OSWContainerRemoteStorageError: 'alfa',
 	};
 
 	before(function () {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainerRemoteStorageDidDisconnect', function() {
+	it('sets OSWContainer state', function() {
 		mainModule.RemoteStorageDidDisconnect();
 
-		deepEqual(item.OSWContainerRemoteStorageDidDisconnect, true);
+		deepEqual(item, {
+			OSWContainerRemoteStorageDidConnect: false,
+			OSWContainerRemoteStorageError: '',
+		});
 	});
 
 });

@@ -95,7 +95,8 @@ const mod = {
 	},
 
 	RemoteStorageDidDisconnect() {
-		mod.ValueInstance().OSWContainerRemoteStorageDidDisconnect = true;
+		mod.ValueInstance().OSWContainerRemoteStorageError = '';
+		mod.ValueInstance().OSWContainerRemoteStorageDidConnect = false;
 	},
 
 };
