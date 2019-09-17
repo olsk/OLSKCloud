@@ -8,7 +8,7 @@ describe('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorag
 		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=alfa`);
 	});
 
-	it('shows message', function () {
+	it('shows OSWContainerRemoteStorageError', function () {
 		browser.assert.text(OSWContainerRemoteStorageError, 'alfa')
 	});
 
@@ -38,7 +38,7 @@ describe('OSWContainerOptions', function testOSWContainerOptions () {
 			browser.assert.text('#TestContainerDispatchOptionsSelect', '1')
 		});
 		
-		it('includes address', function () {
+		it('sends address', function () {
 			browser.assert.text('#TestContainerDispatchOptionsSelectValue', 'alfa@bravo.charlie')
 		});
 	
