@@ -17,7 +17,7 @@ describe('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorag
 describe('OSWContainerOptions', function testOSWContainerOptions () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerDropboxIsEnabled=true&OSWContainerGoogleDriveIsEnabled=true`);
 	});
 
 	context('SelectStorageOptionRemoteStorage', function () {

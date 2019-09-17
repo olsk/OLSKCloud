@@ -1,4 +1,7 @@
 <script>
+export let OSWContainerDropboxIsEnabled = false;
+export let OSWContainerGoogleDriveIsEnabled = false;
+
 export let ContainerDelegate;
 
 export let OSWContainerRemoteStorageError = '';
@@ -25,7 +28,14 @@ const mod = {
 {/if}
 
 {#if !OSWContainerRemoteStorageConnected}
-	<OSWStorageOptions on:OSWContainerDelegateSelect={ ContainerDelegate.OSWContainerDelegateSelect } OSWContainerRemoteStorageError={ mod.OSWContainerRemoteStorageError } />
+	<OSWStorageOptions 
+	
+	OSWStorageOptionsDropboxIsDisabled={ !OSWContainerDropboxIsEnabled }
+	OSWStorageOptionsGoogleDriveIsDisabled={ !OSWContainerGoogleDriveIsEnabled }
+
+	on:OSWContainerDelegateSelect={ ContainerDelegate.OSWContainerDelegateSelect }
+	
+	/>
 {/if}
 
 {#if OSWContainerRemoteStorageConnected}
