@@ -32,6 +32,10 @@ describe('OSWContainerAccess', function () {
 	it('shows OSWStorageOptions', function() {
 		browser.assert.elements(OSWStorageOptions, 1);
 	});
+	
+	it('hides OSWSyncStatus', function() {
+		browser.assert.elements(OSWSyncStatus, 0);
+	});
 
 	context('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorageError () {
 
@@ -70,6 +74,10 @@ describe('OSWContainerAccess', function () {
 		
 		it('hides OSWStorageOptions', function() {
 			browser.assert.elements(OSWStorageOptions, 0);
+		});
+		
+		it('shows OSWSyncStatus', function() {
+			browser.assert.elements(OSWSyncStatus, 1);
 		});
 	
 	});

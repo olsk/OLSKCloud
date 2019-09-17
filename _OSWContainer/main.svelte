@@ -7,6 +7,7 @@ export let OSWContainerRemoteStorageConnected = false;
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
+import OSWSyncStatus from '../OSWSyncStatus/main.svelte'
 
 const mod = {
 };
@@ -25,6 +26,10 @@ const mod = {
 
 {#if !OSWContainerRemoteStorageConnected}
 	<OSWStorageOptions on:OSWContainerDelegateSelect={ ContainerDelegate.OSWContainerDelegateSelect } OSWContainerRemoteStorageError={ mod.OSWContainerRemoteStorageError } />
+{/if}
+
+{#if OSWContainerRemoteStorageConnected}
+	<OSWSyncStatus />
 {/if}
 
 </div>
