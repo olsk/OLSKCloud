@@ -72,19 +72,19 @@ describe('OSWContainerDelegateSelect', function testOSWContainerDelegateSelect()
 
 describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
-	let item;
+	let item = false;
 
 	before(function () {
 		mainModule.ValueRemoteStorage({
 			reconnect () {
-				item = 'alfa'
+				item = true
 			},
 		});
 	});
 
 	it('calls ValueRemoteStorage.reconnect', function() {
 		mainModule.OSWContainerDelegateRenew()
-		deepEqual(item, 'alfa');
+		deepEqual(item, true);
 	});
 
 });
@@ -99,13 +99,15 @@ describe('RemoteStorageError', function testRemoteStorageError() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainerRemoteStorageError', function() {
+	it('sets OSWContainer state', function() {
 		mainModule.RemoteStorageError({
 			name: 'alfa',
 			message: 'bravo',
 		});
 
-		deepEqual(item.OSWContainerRemoteStorageError, 'alfa: bravo');
+		deepEqual(item, {
+			OSWContainerRemoteStorageError: 'alfa: bravo',
+		});
 	});
 
 });
@@ -120,10 +122,12 @@ describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainerRemoteStorageDidConnect', function() {
+	it('sets OSWContainer state', function() {
 		mainModule.RemoteStorageDidConnect();
 
-		deepEqual(item.OSWContainerRemoteStorageDidConnect, true);
+		deepEqual(item, {
+			OSWContainerRemoteStorageDidConnect: true,
+		});
 	});
 
 });
