@@ -26,6 +26,18 @@ describe(`OSWStorageOptionsLocalize-${ languageCode }`, function () {
 		browser.assert.text(OSWStorageOptionsAnchor, uLocalized('OSWStorageOptionsAnchorText'))
 	});
 
+	it('localizes OSWStorageOptionsButtonRemoteStorage', function () {
+		browser.assert.text(OSWStorageOptionsButtonRemoteStorage, uLocalized('OSWStorageOptionsButtonRemoteStorageText'))
+	});
+
+	it('localizes OSWStorageOptionsButtonDropbox', function () {
+		browser.assert.text(OSWStorageOptionsButtonDropbox, uLocalized('OSWStorageOptionsButtonDropboxText'))
+	});
+
+	it('localizes OSWStorageOptionsButtonGoogleDrive', function () {
+		browser.assert.text(OSWStorageOptionsButtonGoogleDrive, uLocalized('OSWStorageOptionsButtonGoogleDriveText'))
+	});
+
 });
 
 });

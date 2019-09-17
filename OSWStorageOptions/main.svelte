@@ -10,9 +10,9 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 <a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
 
-<button class="OSWStorageOptionsButtonRemoteStorage"></button>
-<button class="OSWStorageOptionsButtonDropbox"></button>
-<button class="OSWStorageOptionsButtonGoogleDrive"></button>
+<button class="OSWStorageOptionsButtonRemoteStorage">{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
+<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>
+<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
 
 </div>
 
