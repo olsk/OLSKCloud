@@ -55,12 +55,8 @@ describe('OSWStorageOptionsAccess', function () {
 		browser.assert.elements(OSWOptionRemoteStorage, 0);
 	});
 
-	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
-
-		before(function () {
-			return browser.pressButton(OSWStorageOptionsButtonRemoteStorage);;
-		});
-	
+	const uHideOptions = function () {
+		
 		it('hides OSWStorageOptionsDescription', function() {
 			browser.assert.elements(OSWStorageOptionsDescription, 0);
 		});
@@ -80,11 +76,21 @@ describe('OSWStorageOptionsAccess', function () {
 		it('hides OSWStorageOptionsButtonGoogleDrive', function() {
 			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
 		});
-	
+		
 		it('shows OSWOptionRemoteStorage', function() {
 			browser.assert.elements(OSWOptionRemoteStorage, 1);
 		});
+
+	};
+
+	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
+
+		before(function () {
+			return browser.pressButton(OSWStorageOptionsButtonRemoteStorage);;
+		});
 	
+		uHideOptions()
+
 	});
 
 	context('OSWStorageOptionsDropboxIsDisabled', function testOSWStorageOptionsDropboxIsDisabled () {
@@ -110,5 +116,15 @@ describe('OSWStorageOptionsAccess', function () {
 		});
 	
 	});
+
+	context('OSWStorageOptionsBothDisabled', function testOSWStorageOptionsBothDisabled () {
+
+		before(function () {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsDropboxIsDisabled=true&OSWStorageOptionsGoogleDriveIsDisabled=true`);
+		});
+	
+		uHideOptions()
+	
+	})
 
 });

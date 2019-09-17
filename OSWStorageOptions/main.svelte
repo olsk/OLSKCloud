@@ -19,19 +19,19 @@ const mod = {
 
 	// VALUE
 
-	_ValueOptionRemoteStorage: false,
-	ValueOptionRemoteStorage(inputData) {
+	_ValueOptionRemoteStorageOnly: OSWStorageOptionsDropboxIsDisabled && OSWStorageOptionsGoogleDriveIsDisabled,
+	ValueOptionRemoteStorageOnly(inputData) {
 		if (typeof inputData === 'undefined') {
-			return mod._ValueOptionRemoteStorage;
+			return mod._ValueOptionRemoteStorageOnly;
 		};
 
-		mod._ValueOptionRemoteStorage = inputData;
+		mod._ValueOptionRemoteStorageOnly = inputData;
 	},
 
 	// INTERFACE
 
 	InterfaceRemoteStorageButtonDidClick () {
-		mod.ValueOptionRemoteStorage(true);
+		mod.ValueOptionRemoteStorageOnly(true);
 	},
 
 };
@@ -41,7 +41,7 @@ const mod = {
 
 <h1 class="OSWStorageOptionsHeading">{ OLSKLocalized('OSWStorageOptionsHeadingText') }</h1>
 
-{#if !mod.ValueOptionRemoteStorage()}
+{#if !mod.ValueOptionRemoteStorageOnly()}
 	<p>
 		<span class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</span>
 		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
@@ -58,7 +58,7 @@ const mod = {
 	{/if}
 {/if}
 
-{#if mod.ValueOptionRemoteStorage()}
+{#if mod.ValueOptionRemoteStorageOnly()}
 	<OSWOptionRemoteStorage on:StorageOptionRemoteStorageDispatchSubmit={ mod.StorageOptionRemoteStorageDispatchSubmit } />
 {/if}
 
