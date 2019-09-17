@@ -5,8 +5,6 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 Object.entries({
 	OSWStorageOptionRemoteStorage: '.OSWStorageOptionRemoteStorage',
 
-	OSWStorageOptionRemoteStorageHeading: '.OSWStorageOptionRemoteStorageHeading',
-
 	OSWStorageOptionRemoteStorageAddressField: '.OSWStorageOptionRemoteStorageAddressField',
 	OSWStorageOptionRemoteStorageConnectButton: '.OSWStorageOptionRemoteStorageConnectButton',
 
@@ -23,10 +21,6 @@ describe('OSWStorageOptionRemoteStorageAccess', function () {
 	
 	it('shows OSWStorageOptionRemoteStorage', function() {
 		browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
-	});
-	
-	it('shows OSWStorageOptionRemoteStorageHeading', function() {
-		browser.assert.elements(OSWStorageOptionRemoteStorageHeading, 1);
 	});
 	
 	it('shows OSWStorageOptionRemoteStorageAddressField', function() {

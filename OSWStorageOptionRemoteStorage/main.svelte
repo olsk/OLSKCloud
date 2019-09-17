@@ -4,8 +4,6 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 <div class="OSWStorageOptionRemoteStorage">
 
-<h1 class="OSWStorageOptionRemoteStorageHeading">{ OLSKLocalized('OSWStorageOptionRemoteStorageHeadingText') }</h1>
-
 <form>
 	<input class="OSWStorageOptionRemoteStorageAddressField" type="email" autofocus placeholder="example@example.com" />
 

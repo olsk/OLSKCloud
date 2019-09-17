@@ -55,12 +55,14 @@ describe('OSWStorageOptionsAccess', function () {
 	});
 
 	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
+
+		before(function () {
+			return browser.pressButton(OSWStorageOptionsButtonRemoteStorage);;
+		});
 	
-		it('show OSWStorageOptionRemoteStorage', async function() {
-			await browser.pressButton(OSWStorageOptionsButtonRemoteStorage);
-			
+		it('shows OSWStorageOptionRemoteStorage', function() {
 			browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
-		});		
+		});
 	
 	});
 

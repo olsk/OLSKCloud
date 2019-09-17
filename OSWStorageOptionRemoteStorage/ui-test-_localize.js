@@ -14,10 +14,6 @@ describe(`OSWStorageOptionRemoteStorageLocalize-${ languageCode }`, function () 
 		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
 	});
 
-	it('localizes OSWStorageOptionRemoteStorageHeading', function () {
-		browser.assert.text(OSWStorageOptionRemoteStorageHeading, uLocalized('OSWStorageOptionRemoteStorageHeadingText'))
-	});
-
 	it('localizes OSWStorageOptionRemoteStorageConnectButton', function () {
 		browser.assert.input(OSWStorageOptionRemoteStorageConnectButton, uLocalized('OSWStorageOptionRemoteStorageConnectButtonText'))
 	});
