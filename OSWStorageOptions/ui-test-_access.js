@@ -99,4 +99,16 @@ describe('OSWStorageOptionsAccess', function () {
 	
 	});
 
+	context('OSWStorageOptionsGoogleDriveIsDisabled', function testOSWStorageOptionsGoogleDriveIsDisabled () {
+
+		before(function () {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsGoogleDriveIsDisabled=true`);
+		});
+	
+		it('hides OSWStorageOptionsButtonGoogleDrive', function() {
+			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
+		});
+	
+	});
+
 });

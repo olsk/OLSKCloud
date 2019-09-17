@@ -1,5 +1,6 @@
 <script>
 export let OSWStorageOptionsDropboxIsDisabled = false;
+export let OSWStorageOptionsGoogleDriveIsDisabled = false;
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
@@ -52,7 +53,9 @@ const mod = {
 		<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>		
 	{/if}
 
-	<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
+	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
+		<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>		
+	{/if}
 {/if}
 
 {#if mod.ValueOptionRemoteStorage()}
