@@ -112,10 +112,10 @@ describe('RemoteStorageError', function testRemoteStorageError() {
 
 });
 
-describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
+describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 
 	let item = {
-		OSWContainerRemoteStorageDidConnect: false,
+		OSWContainerRemoteStorageConnected: false,
 	};
 
 	before(function () {
@@ -123,19 +123,19 @@ describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 	});
 
 	it('sets OSWContainer state', function() {
-		mainModule.RemoteStorageDidConnect();
+		mainModule.RemoteStorageConnected();
 
 		deepEqual(item, {
-			OSWContainerRemoteStorageDidConnect: true,
+			OSWContainerRemoteStorageConnected: true,
 		});
 	});
 
 });
 
-describe('RemoteStorageDidDisconnect', function testRemoteStorageDidDisconnect() {
+describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 
 	let item = {
-		OSWContainerRemoteStorageDidConnect: true,
+		OSWContainerRemoteStorageConnected: true,
 		OSWContainerRemoteStorageError: 'alfa',
 	};
 
@@ -144,10 +144,10 @@ describe('RemoteStorageDidDisconnect', function testRemoteStorageDidDisconnect()
 	});
 
 	it('sets OSWContainer state', function() {
-		mainModule.RemoteStorageDidDisconnect();
+		mainModule.RemoteStorageDisconnected();
 
 		deepEqual(item, {
-			OSWContainerRemoteStorageDidConnect: false,
+			OSWContainerRemoteStorageConnected: false,
 			OSWContainerRemoteStorageError: '',
 		});
 	});

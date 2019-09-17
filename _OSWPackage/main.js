@@ -65,8 +65,8 @@ const mod = {
 		};
 
 		mod.ValueRemoteStorage().on('error', mod.RemoteStorageError);
-		mod.ValueRemoteStorage().on('connected', mod.RemoteStorageDidConnect);
-		mod.ValueRemoteStorage().on('disconnected', mod.RemoteStorageDidDisconnect);
+		mod.ValueRemoteStorage().on('connected', mod.RemoteStorageConnected);
+		mod.ValueRemoteStorage().on('disconnected', mod.RemoteStorageDisconnected);
 	},
 
 	CommandInstanceDestroy () {
@@ -90,13 +90,13 @@ const mod = {
 		mod.ValueInstance().OSWContainerRemoteStorageError = `${ event.name }: ${ event.message}`
 	},
 
-	RemoteStorageDidConnect() {
-		mod.ValueInstance().OSWContainerRemoteStorageDidConnect = true;
+	RemoteStorageConnected() {
+		mod.ValueInstance().OSWContainerRemoteStorageConnected = true;
 	},
 
-	RemoteStorageDidDisconnect() {
+	RemoteStorageDisconnected() {
 		mod.ValueInstance().OSWContainerRemoteStorageError = '';
-		mod.ValueInstance().OSWContainerRemoteStorageDidConnect = false;
+		mod.ValueInstance().OSWContainerRemoteStorageConnected = false;
 	},
 
 };

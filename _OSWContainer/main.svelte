@@ -2,7 +2,7 @@
 export let ContainerDelegate;
 
 export let OSWContainerRemoteStorageError = '';
-export let OSWContainerRemoteStorageDidConnect = false;
+export let OSWContainerRemoteStorageConnected = false;
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
@@ -23,7 +23,7 @@ const mod = {
 	<button class="OSWContainerRenewButton" on:click={ ContainerDelegate.OSWContainerDelegateRenew }>{ OLSKLocalized('OSWContainerRenewButtonText') }</button>
 {/if}
 
-{#if !OSWContainerRemoteStorageDidConnect}
+{#if !OSWContainerRemoteStorageConnected}
 	<OSWStorageOptions on:OSWContainerDelegateSelect={ ContainerDelegate.OSWContainerDelegateSelect } OSWContainerRemoteStorageError={ mod.OSWContainerRemoteStorageError } />
 {/if}
 

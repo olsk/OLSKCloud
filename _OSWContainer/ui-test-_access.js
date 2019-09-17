@@ -62,10 +62,10 @@ describe('OSWContainerAccess', function () {
 
 	});
 
-	context('OSWContainerRemoteStorageDidConnect', function testOSWContainerRemoteStorageDidConnect () {
+	context('OSWContainerRemoteStorageConnected', function testOSWContainerRemoteStorageConnected () {
 
 		before(function () {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageDidConnect=true`);
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageConnected=true`);
 		});
 		
 		it('hides OSWStorageOptions', function() {
