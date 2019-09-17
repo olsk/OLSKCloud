@@ -1,22 +1,22 @@
 <script>
 import Module from './main.svelte';
 
-let TestOSWSyncStatusDelegateSelect;
+let TestOSWSyncStatusDelegateDisconnect;
 const mod = {
 
-	TestOSWSyncStatusDelegateSelect(inputData) {
-		TestOSWSyncStatusDelegateSelect.innerHTML = parseInt(TestOSWSyncStatusDelegateSelect.innerHTML) + 1;
+	TestOSWSyncStatusDelegateDisconnect(inputData) {
+		TestOSWSyncStatusDelegateDisconnect.innerHTML = parseInt(TestOSWSyncStatusDelegateDisconnect.innerHTML) + 1;
 	},
 	
 };
 </script>
 
 <Module
-	on:OSWSyncStatusDelegateSelect={ mod.TestOSWSyncStatusDelegateSelect }
+	on:OSWSyncStatusDelegateDisconnect={ mod.TestOSWSyncStatusDelegateDisconnect }
 	{...Object.fromEntries((new window.URLSearchParams(window.location.search)).entries())}
 />
 
 <p>
-	<strong>TestOSWSyncStatusDelegateSelect</strong>
-	<span id="TestOSWSyncStatusDelegateSelect" bind:this={ TestOSWSyncStatusDelegateSelect }>0</span>
+	<strong>TestOSWSyncStatusDelegateDisconnect</strong>
+	<span id="TestOSWSyncStatusDelegateDisconnect" bind:this={ TestOSWSyncStatusDelegateDisconnect }>0</span>
 </p>

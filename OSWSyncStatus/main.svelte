@@ -17,7 +17,7 @@ const mod = {
 
 <div class="OSWSyncStatus">
 
-<button class="OSWSyncStatusDisconnectButton">{ OLSKLocalized('OSWSyncStatusDisconnectButtonText') }</button>
+<button class="OSWSyncStatusDisconnectButton" on:click={ mod.InterfaceDisconnectButtonDidClick }>{ OLSKLocalized('OSWSyncStatusDisconnectButtonText') }</button>
 
 </div>
 
