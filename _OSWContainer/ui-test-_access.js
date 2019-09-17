@@ -6,7 +6,7 @@ Object.entries({
 	OSWContainer: '.OSWContainer',
 	
 	OSWContainerRemoteStorageError: '.OSWContainerRemoteStorageError',
-	OSWContainerReconnectButton: '.OSWContainerReconnectButton',
+	OSWContainerRenewButton: '.OSWContainerRenewButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -25,8 +25,8 @@ describe('OSWContainerAccess', function () {
 		browser.assert.elements(OSWContainerRemoteStorageError, 0);
 	});
 	
-	it('hides OSWContainerReconnectButton', function() {
-		browser.assert.elements(OSWContainerReconnectButton, 0);
+	it('hides OSWContainerRenewButton', function() {
+		browser.assert.elements(OSWContainerRenewButton, 0);
 	});
 	
 	it('shows OSWStorageOptions', function() {
@@ -44,8 +44,8 @@ describe('OSWContainerAccess', function () {
 		});
 
 		
-		it('hides OSWContainerReconnectButton if Unauthorized', function() {
-			browser.assert.elements(OSWContainerReconnectButton, 0);
+		it('hides OSWContainerRenewButton if Unauthorized', function() {
+			browser.assert.elements(OSWContainerRenewButton, 0);
 		});
 
 	});
@@ -56,8 +56,8 @@ describe('OSWContainerAccess', function () {
 			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=Unauthorized`);
 		});
 		
-		it('shows OSWContainerReconnectButton', function() {
-			browser.assert.elements(OSWContainerReconnectButton, 1);
+		it('shows OSWContainerRenewButton', function() {
+			browser.assert.elements(OSWContainerRenewButton, 1);
 		});
 
 	});

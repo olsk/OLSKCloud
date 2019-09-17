@@ -8,10 +8,18 @@ const uLocalized = function (inputData) {
 	return OLSKTestingLocalized(inputData, languageCode);
 };
 
-describe(`LCHComposeLocalize-${ languageCode }`, function () {
+describe(`OSWContainerLocalize-${ languageCode }`, function () {
 
-	before(function() {
-		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
+	context('OSWContainerRemoteStorageErrorUnauthorized', function testOSWContainerRemoteStorageErrorUnauthorized () {
+
+		before(function() {
+			return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=Unauthorized`);
+		});
+		
+		it('localizes OSWContainerRenewButton', function() {
+			browser.assert.text(OSWContainerRenewButton, uLocalized('OSWContainerRenewButtonText'));
+		});
+
 	});
 
 });
