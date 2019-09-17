@@ -22,4 +22,16 @@ describe('OSWContainerAccess', function () {
 		browser.assert.elements(OSWStorageOptions, 1);
 	});
 
+	context('RemoteStorageConnect', function testRemoteStorageConnect () {
+
+		before(function () {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageDidConnect=true`);
+		});
+		
+		it('hides OSWStorageOptions', function() {
+			browser.assert.elements(OSWStorageOptions, 0);
+		});
+	
+	});
+
 });

@@ -15,9 +15,9 @@ const mod = {
 	SetupEverything () {
 		new Main({
 			target: document.body,
-			props: {
+			props: Object.assign(Object.fromEntries((new window.URLSearchParams(window.location.search)).entries()), {
 				ContainerDelegate,
-			},
+			}),
 		})
 	},
 

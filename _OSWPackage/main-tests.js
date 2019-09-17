@@ -70,28 +70,20 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 
 });
 
-describe('RemoteStorageError', function testRemoteStorageError() {
+describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 
-	let item;
+	let item = {
+		OSWContainerRemoteStorageDidConnect: false,
+	};
 
 	before(function () {
-		mainModule.ValueInstance({
-			ContainerDispatch (inputData) {
-				item = inputData
-			},
-		});
+		mainModule.ValueInstance(item);
 	});
 
-	it('calls ContainerDispatch', function() {
-		mainModule.RemoteStorageError({
-			name: 'alfa',
-			message: 'bravo',
-		});
+	it('sets OSWContainerRemoteStorageDidConnect', function() {
+		mainModule.RemoteStorageDidConnect();
 
-		deepEqual(item, {
-			name: 'alfa',
-			message: 'bravo',
-		});
+		deepEqual(item.OSWContainerRemoteStorageDidConnect, true);
 	});
 
 });

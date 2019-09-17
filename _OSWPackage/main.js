@@ -64,7 +64,8 @@ const mod = {
 			return
 		};
 
-		mod.ValueRemoteStorage().on('error', mod.RemoteStorageError);
+		mod.ValueRemoteStorage().on('error', mod.ValueInstance().ContainerDispatch.RemoteStorageError);
+		mod.ValueRemoteStorage().on('connected', mod.RemoteStorageDidConnect);
 	},
 
 	CommandInstanceDestroy () {
@@ -80,9 +81,9 @@ const mod = {
 
 	// REMOTE STORAGE
 
-	RemoteStorageError(inputData) {
-		mod.ValueInstance().ContainerDispatch(inputData);
-	},
+	RemoteStorageDidConnect() {
+		mod.ValueInstance().OSWContainerRemoteStorageDidConnect = true;
+	}
 
 };
 
