@@ -79,6 +79,10 @@ const mod = {
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 
+	StorageOptionsDispatchRenew() {
+		mod.ValueRemoteStorage().reconnect()
+	},
+
 	// REMOTE STORAGE
 
 	RemoteStorageError(event) {

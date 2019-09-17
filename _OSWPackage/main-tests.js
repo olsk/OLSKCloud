@@ -70,6 +70,25 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 
 });
 
+describe('StorageOptionsDispatchRenew', function testStorageOptionsDispatchRenew() {
+
+	let item;
+
+	before(function () {
+		mainModule.ValueRemoteStorage({
+			reconnect () {
+				item = 'alfa'
+			},
+		});
+	});
+
+	it('calls ValueRemoteStorage.reconnect', function() {
+		mainModule.StorageOptionsDispatchRenew()
+		deepEqual(item, 'alfa');
+	});
+
+});
+
 describe('RemoteStorageError', function testRemoteStorageError() {
 
 	let item = {
