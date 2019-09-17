@@ -1,6 +1,6 @@
 import { throws, deepEqual } from 'assert';
 
-import * as mainModule from './main.js';
+import mainModule from './main.js';
 
 const kTesting = {
 	StubAppClass: function() {
@@ -10,41 +10,41 @@ const kTesting = {
 	},
 };
 
-describe('instanceCreate', function testinstanceCreate() {
+describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 
 	before(function () {
-		mainModule.AppClass(kTesting.StubAppClass());
+		mainModule.ValueClass(kTesting.StubAppClass());
 	});
 
 	after(function () {
-		mainModule.instanceDestroy();
+		mainModule.CommandInstanceDestroy();
 	});
 
 	it('returns undefined', function() {
-		deepEqual(mainModule.instanceCreate(), undefined);
+		deepEqual(mainModule.CommandInstanceCreate(), undefined);
 	});
 
 });
 
-describe('instanceExists', function testinstanceExists() {
+describe('ValueInstance', function testValueInstance() {
 
 	before(function () {
-		mainModule.AppClass(kTesting.StubAppClass());
+		mainModule.ValueClass(kTesting.StubAppClass());
 	});
 
-	it('returns false', function() {
-		deepEqual(mainModule.instanceExists(), false);
+	it('returns undefined', function() {
+		deepEqual(mainModule.ValueInstance(), undefined);
 	});
 
-	it('returns true after instanceCreate', function() {
-		mainModule.instanceCreate();
-		deepEqual(mainModule.instanceExists(), true);
+	it('returns object after CommandInstanceCreate', function() {
+		mainModule.CommandInstanceCreate();
+		deepEqual(typeof mainModule.ValueInstance(), 'object');
 	});
 
-	it('returns false after instanceDestroy', function() {
-		mainModule.instanceCreate();
-		mainModule.instanceDestroy();
-		deepEqual(mainModule.instanceExists(), false);
+	it('returns null after CommandInstanceDestroy', function() {
+		mainModule.CommandInstanceCreate();
+		mainModule.CommandInstanceDestroy();
+		deepEqual(mainModule.ValueInstance(), null);
 	});
 
 });

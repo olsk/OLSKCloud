@@ -1,14 +1,14 @@
-import * as mod from './main.js';
+import mod from './main.js';
 
 import Main from '../_OSWContainer/__compiled/ui-behaviour.js';
-mod.AppClass(Main);
+mod.ValueClass(Main);
 
 const Widget = function (inputData) {
-	mod.AppRemoteStorage(inputData);
-	
+	mod.ValueRemoteStorage(inputData);
+
 	this.attach = function (inputData) {
-		mod.AppContainer(document.getElementById(inputData));
-		mod.instanceCreate();
+		mod.ValueContainer(document.getElementById(inputData));
+		mod.CommandInstanceCreate();
 	}
 }
 

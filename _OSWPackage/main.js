@@ -1,20 +1,3 @@
-let _AppClass;
-export const AppClass = function (inputData) {
-	_AppClass = inputData;
-};
-
-let _AppContainer;
-export const AppContainer = function (inputData) {
-	_AppContainer = inputData;
-};
-
-let _AppRemoteStorage;
-export const AppRemoteStorage = function (inputData) {
-	_AppRemoteStorage = inputData;
-};
-
-let appInstance;
-
 const OSWPackageValidateOptionsObject = function (inputData) {
 	if (typeof inputData !== 'object' || inputData === null) {
 		throw new Error('OSWErrorInputNotObject');
@@ -23,26 +6,64 @@ const OSWPackageValidateOptionsObject = function (inputData) {
 	return true;
 };
 
-export const instanceCreate = function () {
-	if (instanceExists()) {
-		instanceDestroy();
-	}
-	
-	appInstance = new _AppClass({
-		target: _AppContainer,
-		props: {},
-	});
+const mod = {
+
+	// VALUE
+
+	_ValueClass: undefined,
+	ValueClass (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueClass
+		};
+
+		mod._ValueClass = inputData;
+	},
+
+	_ValueContainer: undefined,
+	ValueContainer (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueContainer
+		};
+
+		mod._ValueContainer = inputData;
+	},
+
+	_ValueRemoteStorage: undefined,
+	ValueRemoteStorage (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueRemoteStorage
+		};
+
+		mod._ValueRemoteStorage = inputData;
+	},
+
+	_ValueInstance: undefined,
+	ValueInstance (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueInstance
+		};
+
+		mod._ValueInstance = inputData;
+	},
+
+	// COMMAND
+
+	CommandInstanceCreate () {
+		if (mod.ValueInstance()) {
+			mod.CommandInstanceDestroy();
+		}
+		
+		mod.ValueInstance(new mod._ValueClass({
+			target: mod._ValueContainer,
+			props: {},
+		}));
+	},
+
+	CommandInstanceDestroy () {
+		mod.ValueInstance().$destroy();
+		mod.ValueInstance(null)
+	},
+
 };
 
-export const instanceExists = function () {
-	return !!appInstance;
-};
-
-export const instanceDestroy = function () {
-	appInstance.$destroy();
-	appInstance = undefined;
-
-	if (typeof document === 'undefined') {
-		return;
-	}
-};
+export default mod;
