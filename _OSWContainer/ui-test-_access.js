@@ -17,5 +17,9 @@ describe('OSWContainerAccess', function () {
 	it('shows OSWContainer', function() {
 		browser.assert.elements(OSWContainer, 1);
 	});
+	
+	it('shows OSWStorageOptions', function() {
+		browser.assert.elements(OSWStorageOptions, 1);
+	});
 
 });

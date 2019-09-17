@@ -14,10 +14,6 @@ describe(`LCHComposeLocalize-${ languageCode }`, function () {
 		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
 	});
 
-	it('localizes OSWContainer', function () {
-		browser.assert.text(OSWContainer, uLocalized('OSWAlfa'))
-	});
-
 });
 
 });

@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-style.css">
+	<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
 
 	<script type="text/javascript">
 		window.OLSKPublicConstants = function (inputData) {
@@ -14,7 +15,11 @@
 </head>
 <body>
 
-<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
+<script type="text/javascript">
+	new Main({
+		target: document.body,
+	})
+</script>
 
 </body>
 </html>
