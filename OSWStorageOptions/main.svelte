@@ -1,5 +1,28 @@
 <script>
 import { OLSKLocalized } from '../_shared/_common/global.js';
+
+import OSWStorageOptionRemoteStorage from '../OSWStorageOptionRemoteStorage/main.svelte'
+
+const mod = {
+
+	// VALUE
+
+	_ValueOptionRemoteStorage: false,
+	ValueOptionRemoteStorage(inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueOptionRemoteStorage;
+		};
+
+		mod._ValueOptionRemoteStorage = inputData;
+	},
+
+	// INTERFACE
+
+	InterfaceRemoteStorageButtonDidClick () {
+		mod.ValueOptionRemoteStorage(true);
+	},
+
+};
 </script>
 
 <div class="OSWStorageOptions">
@@ -10,9 +33,13 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 <a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
 
-<button class="OSWStorageOptionsButtonRemoteStorage">{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
+<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
 <button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>
 <button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>
+
+{#if mod.ValueOptionRemoteStorage()}
+	<OSWStorageOptionRemoteStorage />
+{/if}
 
 </div>
 

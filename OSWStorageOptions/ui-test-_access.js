@@ -49,5 +49,19 @@ describe('OSWStorageOptionsAccess', function () {
 	it('shows OSWStorageOptionsButtonGoogleDrive', function() {
 		browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 1);
 	});
+	
+	it('hides OSWStorageOptionRemoteStorage', function() {
+		browser.assert.elements(OSWStorageOptionRemoteStorage, 0);
+	});
+
+	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
+	
+		it('show OSWStorageOptionRemoteStorage', async function() {
+			await browser.pressButton(OSWStorageOptionsButtonRemoteStorage);
+			
+			browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
+		});		
+	
+	});
 
 });
