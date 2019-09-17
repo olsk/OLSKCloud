@@ -6,6 +6,8 @@ Object.entries({
 	OSWStorageOptions: '.OSWStorageOptions',
 
 	OSWStorageOptionsHeading: '.OSWStorageOptionsHeading',
+	OSWStorageOptionsError: '.OSWStorageOptionsError',
+
 	OSWStorageOptionsDescription: '.OSWStorageOptionsDescription',
 	OSWStorageOptionsAnchor: '.OSWStorageOptionsAnchor',
 
@@ -28,6 +30,10 @@ describe('OSWStorageOptionsAccess', function () {
 	
 	it('shows OSWStorageOptionsHeading', function() {
 		browser.assert.elements(OSWStorageOptionsHeading, 1);
+	});
+	
+	it('hides OSWStorageOptionsError', function() {
+		browser.assert.elements(OSWStorageOptionsError, 0);
 	});
 	
 	it('shows OSWStorageOptionsDescription', function() {
@@ -84,6 +90,18 @@ describe('OSWStorageOptionsAccess', function () {
 			browser.assert.elements(OSWStorageOptionRemoteStorage, 1);
 		});
 	
+	});
+
+	context('OSWStorageOptionsError', function testOSWStorageOptionsError () {
+
+		before(function() {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsError=alfa`);
+		});
+
+		it('shows OSWStorageOptionsError', function () {
+			browser.assert.elements(OSWStorageOptionsError, 1)
+		});
+
 	});
 
 });
