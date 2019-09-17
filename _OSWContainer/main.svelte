@@ -1,5 +1,7 @@
 <script>
 export let ContainerDelegate;
+
+export let OSWContainerRemoteStorageError = '';
 export let OSWContainerRemoteStorageDidConnect = false;
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
@@ -7,30 +9,18 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
 
 const mod = {
-
-	OSWStorageOptionsError: '',
-
 };
-
-export const ContainerDispatch = {
-
-	RemoteStorageError(event) {
-		if (event.name === 'DiscoveryError' || event.name === 'Unauthorized') {
-			mod.OSWStorageOptionsError = `${ event.name } ${ event.message}`
-			return;
-		};
-
-		console.log(event);
-	},
-
-}
 </script>
 <svelte:options accessors={true} />
 
 <div class="OSWContainer">
 
+{#if OSWContainerRemoteStorageError}
+	<div class="OSWContainerRemoteStorageError">{ OSWContainerRemoteStorageError }</div>
+{/if}
+
 {#if !OSWContainerRemoteStorageDidConnect}
-	<OSWStorageOptions on:StorageOptionsDispatchSelect={ ContainerDelegate.StorageOptionsDispatchSelect } OSWStorageOptionsError={ mod.OSWStorageOptionsError } />
+	<OSWStorageOptions on:StorageOptionsDispatchSelect={ ContainerDelegate.StorageOptionsDispatchSelect } OSWContainerRemoteStorageError={ mod.OSWContainerRemoteStorageError } />
 {/if}
 
 </div>

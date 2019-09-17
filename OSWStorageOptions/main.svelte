@@ -1,6 +1,4 @@
 <script>
-export let OSWStorageOptionsError = '';
-
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptionRemoteStorage from '../OSWStorageOptionRemoteStorage/main.svelte'
@@ -40,10 +38,6 @@ const mod = {
 <div class="OSWStorageOptions">
 
 <h1 class="OSWStorageOptionsHeading">{ OLSKLocalized('OSWStorageOptionsHeadingText') }</h1>
-
-{#if OSWStorageOptionsError}
-	<div class="OSWStorageOptionsError">{ OSWStorageOptionsError }</div>
-{/if}
 
 {#if !mod.ValueOptionRemoteStorage()}
 	<p>

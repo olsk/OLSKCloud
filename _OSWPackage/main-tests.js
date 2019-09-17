@@ -70,6 +70,27 @@ describe('StorageOptionsDispatchSelect', function testStorageOptionsDispatchSele
 
 });
 
+describe('RemoteStorageError', function testRemoteStorageError() {
+
+	let item = {
+		OSWContainerRemoteStorageError: '',
+	};
+
+	before(function () {
+		mainModule.ValueInstance(item);
+	});
+
+	it('sets OSWContainerRemoteStorageError', function() {
+		mainModule.RemoteStorageError({
+			name: 'alfa',
+			message: 'bravo',
+		});
+
+		deepEqual(item.OSWContainerRemoteStorageError, 'alfa: bravo');
+	});
+
+});
+
 describe('RemoteStorageDidConnect', function testRemoteStorageDidConnect() {
 
 	let item = {
