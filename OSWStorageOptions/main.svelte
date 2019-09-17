@@ -3,7 +3,17 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptionRemoteStorage from '../OSWStorageOptionRemoteStorage/main.svelte'
 
+
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+
 const mod = {
+
+	// MESSAGE
+
+	StorageOptionRemoteStorageDispatchSubmit(inputData) {
+		dispatch('StorageOptionsDispatchSelect', inputData.detail)
+	},
 
 	// VALUE
 
@@ -41,7 +51,7 @@ const mod = {
 {/if}
 
 {#if mod.ValueOptionRemoteStorage()}
-	<OSWStorageOptionRemoteStorage />
+	<OSWStorageOptionRemoteStorage on:StorageOptionRemoteStorageDispatchSubmit={ mod.StorageOptionRemoteStorageDispatchSubmit } />
 {/if}
 
 </div>
