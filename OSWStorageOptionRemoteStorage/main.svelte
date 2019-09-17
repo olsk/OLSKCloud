@@ -10,6 +10,8 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 	<input class="OSWStorageOptionRemoteStorageConnectButton" type="submit" value="{ OLSKLocalized('OSWStorageOptionRemoteStorageConnectButtonText') }" />
 </form>
 
+<br>
+
 <a class="OSWStorageOptionRemoteStorageHelpAnchor" href="https://remotestorage.io/get/">{ OLSKLocalized('OSWStorageOptionRemoteStorageHelpAnchorText') }</a>
 
 </div>
