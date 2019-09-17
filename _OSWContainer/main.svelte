@@ -1,4 +1,6 @@
 <script>
+export let ContainerDelegate;
+
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
@@ -6,7 +8,7 @@ import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
 
 <div class="OSWContainer">
 
-<OSWStorageOptions />
+<OSWStorageOptions on:StorageOptionsDispatchSelect={ ContainerDelegate.StorageOptionsDispatchSelect } />
 
 </div>
 

@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-style.css">
+	<script src="/<%= OLSKSharedPageControllerSlug %>/ui-behaviour.js"></script>
 	<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
 
 	<script type="text/javascript">
@@ -16,10 +17,14 @@
 <body>
 
 <script type="text/javascript">
-	new Main({
-		target: document.body,
-	})
+OSWContainerStubBehaviour.LifecyclePageWillLoad()
 </script>
+
+<p>
+	<strong>TestContainerDispatchOptionsSelect</strong>
+	<span id="TestContainerDispatchOptionsSelect">0</span>
+	<span id="TestContainerDispatchOptionsSelectValue">undefined</span>
+</p>
 
 </body>
 </html>
