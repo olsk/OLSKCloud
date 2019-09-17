@@ -20,6 +20,10 @@ describe('OSWStorageOptionsForm', function () {
 		browser.assert.attribute(OSWStorageOptionRemoteStorageAddressField, 'autofocus', '')
 	});
 
+	it('sets OSWStorageOptionRemoteStorageAddressField required', function () {
+		browser.assert.attribute(OSWStorageOptionRemoteStorageAddressField, 'required', '')
+	});
+
 	context('Submit', function testSubmit () {
 
 		before(function () {

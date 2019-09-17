@@ -24,7 +24,7 @@ const mod = {
 <div class="OSWStorageOptionRemoteStorage">
 
 <form on:submit={ mod.InterfaceFormDidSubmit }>
-	<input class="OSWStorageOptionRemoteStorageAddressField" type="email" autofocus placeholder="example@example.com" bind:value={ mod._ValueAddress } />
+	<input class="OSWStorageOptionRemoteStorageAddressField" type="email" autofocus required placeholder="example@example.com" bind:value={ mod._ValueAddress } />
 
 	<button class="OSWStorageOptionRemoteStorageConnectButton" on:click={ mod.InterfaceFormDidSubmit }>{ OLSKLocalized('OSWStorageOptionRemoteStorageConnectButtonText') }</button>
 </form>
