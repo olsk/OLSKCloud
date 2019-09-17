@@ -20,4 +20,24 @@ describe('OSWStorageOptionsForm', function () {
 		browser.assert.attribute(OSWStorageOptionRemoteStorageAddressField, 'autofocus', '')
 	});
 
+	context('Submit', function testSubmit () {
+
+		before(function () {
+			browser.assert.text('#TestStorageOptionRemoteStorageDispatchSubmit', '0')
+			browser.assert.text('#TestStorageOptionRemoteStorageDispatchSubmitValue', 'undefined')
+
+			browser.fill(OSWStorageOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
+			browser.click(OSWStorageOptionRemoteStorageConnectButton)
+		});
+		
+		it('sends StorageOptionRemoteStorageDispatchSubmit', function () {
+			browser.assert.text('#TestStorageOptionRemoteStorageDispatchSubmit', '1')
+		});
+		
+		it('includes address', function () {
+			browser.assert.text('#TestStorageOptionRemoteStorageDispatchSubmitValue', 'alfa@bravo.charlie')
+		});
+	
+	});
+
 });

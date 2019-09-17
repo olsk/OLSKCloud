@@ -1,9 +1,24 @@
 <script>
 import Module from './main.svelte';
 
-const mod = {};
+let TestStorageOptionRemoteStorageDispatchSubmit;
+let TestStorageOptionRemoteStorageDispatchSubmitValue;
+const mod = {
+	StorageOptionRemoteStorageDispatchSubmit(inputData) {
+		TestStorageOptionRemoteStorageDispatchSubmit.innerHTML = parseInt(TestStorageOptionRemoteStorageDispatchSubmit.innerHTML) + 1;
+
+		TestStorageOptionRemoteStorageDispatchSubmitValue = inputData.detail;
+	},
+};
 </script>
 
 <Module
+	on:StorageOptionRemoteStorageDispatchSubmit={ mod.StorageOptionRemoteStorageDispatchSubmit }
 	{...Object.fromEntries((new window.URLSearchParams(window.location.search)).entries())}
 />
+
+<p>
+	<strong>TestStorageOptionRemoteStorageDispatchSubmit</strong>
+	<span id="TestStorageOptionRemoteStorageDispatchSubmit" bind:this={ TestStorageOptionRemoteStorageDispatchSubmit }>0</span>
+	<span id="TestStorageOptionRemoteStorageDispatchSubmitValue">{ TestStorageOptionRemoteStorageDispatchSubmitValue }</span>
+</p>
