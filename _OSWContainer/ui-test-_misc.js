@@ -2,13 +2,25 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-describe('OSWContainerOptions', function () {
+describe('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorageError () {
+
+	before(function() {
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=alfa`);
+	});
+
+	it('shows message', function () {
+		browser.assert.text(OSWContainerRemoteStorageError, 'alfa')
+	});
+
+});
+
+describe('OSWContainerOptions', function testOSWContainerOptions () {
 
 	before(function() {
 		return browser.visit(kDefaultRoute.OLSKRoutePath);
 	});
 
-	context('SelectStorageOptionRemoteStorage', function testSelectStorageOptionRemoteStorage () {
+	context('SelectStorageOptionRemoteStorage', function () {
 
 		before(function () {
 			return browser.click(OSWStorageOptionsButtonRemoteStorage)
@@ -30,6 +42,22 @@ describe('OSWContainerOptions', function () {
 			browser.assert.text('#TestContainerDispatchOptionsSelectValue', 'alfa@bravo.charlie')
 		});
 	
+	});
+
+});
+
+describe('OSWContainerRenew', function testOSWContainerRenew () {
+
+	before(function() {
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=Unauthorized`);
+	});
+
+	before(function () {
+		return browser.pressButton(OSWContainerRenewButton)
+	});
+	
+	it('sends ContainerDispatchOptionsRenew', function () {
+		browser.assert.text('#TestContainerDispatchOptionsRenew', '1')
 	});
 
 });
