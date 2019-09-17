@@ -6,6 +6,10 @@ const ContainerDelegate = {
 		window.TestContainerDispatchOptionsSelectValue.innerHTML = inputData.detail;
 	},
 
+	StorageOptionsDispatchRenew(inputData) {
+		window.TestContainerDispatchOptionsRenew.innerHTML = parseInt(window.TestContainerDispatchOptionsRenew.innerHTML) + 1;
+	},
+
 };
 
 const mod = {

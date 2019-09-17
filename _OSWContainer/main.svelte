@@ -20,7 +20,7 @@ const mod = {
 {/if}
 
 {#if OSWContainerRemoteStorageError.match('Unauthorized')}
-	<button class="OSWContainerRenewButton">{ OLSKLocalized('OSWContainerRenewButtonText') }</button>
+	<button class="OSWContainerRenewButton" on:click={ ContainerDelegate.StorageOptionsDispatchRenew }>{ OLSKLocalized('OSWContainerRenewButtonText') }</button>
 {/if}
 
 {#if !OSWContainerRemoteStorageDidConnect}
