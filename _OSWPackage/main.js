@@ -8,6 +8,11 @@ export const AppContainer = function (inputData) {
 	_AppContainer = inputData;
 };
 
+let _AppRemoteStorage;
+export const AppRemoteStorage = function (inputData) {
+	_AppRemoteStorage = inputData;
+};
+
 let appInstance;
 
 const OSWPackageValidateOptionsObject = function (inputData) {
