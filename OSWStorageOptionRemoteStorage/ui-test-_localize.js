@@ -15,7 +15,7 @@ describe(`OSWStorageOptionRemoteStorageLocalize-${ languageCode }`, function () 
 	});
 
 	it('localizes OSWStorageOptionRemoteStorageConnectButton', function () {
-		browser.assert.input(OSWStorageOptionRemoteStorageConnectButton, uLocalized('OSWStorageOptionRemoteStorageConnectButtonText'))
+		browser.assert.text(OSWStorageOptionRemoteStorageConnectButton, uLocalized('OSWStorageOptionRemoteStorageConnectButtonText'))
 	});
 
 	it('localizes OSWStorageOptionRemoteStorageHelpAnchor', function () {
