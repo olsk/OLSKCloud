@@ -15,11 +15,12 @@ const mod = {
 	// MESSAGE
 
 	MessageContainerDispatch (event) {
-		if (event.name !== 'DiscoveryError') {
+		if (event.name === 'DiscoveryError' || event.name === 'Unauthorized') {
+			mod.OSWStorageOptionsError = `${ event.name } ${ event.message}`
 			return;
 		};
 
-		mod.OSWStorageOptionsError = `${ event.name } ${ event.message}`
+		console.log(event);
 	},
 
 };
