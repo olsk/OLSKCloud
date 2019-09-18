@@ -30,6 +30,10 @@ const mod = {
 		dispatch('OSWStorageOptionsDelegateConnect', 'StorageOptionDropbox')
 	},
 
+	InterfaceGoogleDriveButtonDidClick () {
+		dispatch('OSWStorageOptionsDelegateConnect', 'StorageOptionGoogleDrive')
+	},
+
 };
 </script>
 
@@ -50,7 +54,7 @@ const mod = {
 	{/if}
 
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
-		<button class="OSWStorageOptionsButtonGoogleDrive">{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>		
+		<button class="OSWStorageOptionsButtonGoogleDrive" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>		
 	{/if}
 {/if}
 

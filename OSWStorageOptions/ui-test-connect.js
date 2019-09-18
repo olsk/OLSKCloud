@@ -52,4 +52,24 @@ describe('OSWStorageOptionsConnect', function () {
 	
 	});
 
+	context('StorageOptionGoogleDrive', function testStorageOptionGoogleDrive () {
+
+		before(function() {
+			return browser.visit(kDefaultRoute.OLSKRoutePath);
+		});
+
+		before(function () {
+			return browser.click(OSWStorageOptionsButtonGoogleDrive)
+		});
+		
+		it('sends OSWStorageOptionsDelegateConnect', function () {
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '1')
+		});
+		
+		it('sets detail', function () {
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectDetail', 'StorageOptionGoogleDrive')
+		});
+	
+	});
+
 });
