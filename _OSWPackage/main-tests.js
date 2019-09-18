@@ -50,6 +50,30 @@ describe('CommandInstanceCreateSetAPIDropbox', function () {
 
 });
 
+describe('CommandInstanceCreateSetAPIDropbox', function () {
+	
+	before(function () {
+		mainModule.ValueClass(kTesting.StubAppClass());
+
+		mainModule.ValueRemoteStorage({
+			apiKeys: {
+				googledrive: 'alfa',
+			},
+		});
+	});
+
+	it('sets OSWContainer state', function() {
+		mainModule.CommandInstanceCreate()
+
+		deepEqual(mainModule.ValueInstance().OSWContainerGoogleDriveIsEnabled, true);
+	});
+
+	after(function () {
+		mainModule.CommandInstanceDestroy();
+	});
+
+});
+
 describe('ValueInstance', function testValueInstance() {
 
 	before(function () {

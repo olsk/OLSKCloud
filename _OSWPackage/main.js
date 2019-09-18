@@ -65,6 +65,7 @@ const mod = {
 		};
 
 		mod.ValueInstance().OSWContainerDropboxIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('dropbox');
+		mod.ValueInstance().OSWContainerGoogleDriveIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('googledrive');
 
 		if (!mod.ValueRemoteStorage().on) {
 			return
