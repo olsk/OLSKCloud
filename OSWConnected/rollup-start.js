@@ -1,7 +1,7 @@
 import RollupStart from './stub-view.svelte';
 
-const OSWSyncStatus = new RollupStart({
+const OSWConnected = new RollupStart({
 	target: document.body,
 });
 
-export default OSWSyncStatus;
+export default OSWConnected;

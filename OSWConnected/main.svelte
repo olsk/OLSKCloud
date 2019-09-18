@@ -9,15 +9,15 @@ const mod = {
 	// INTERFACE
 
 	InterfaceDisconnectButtonDidClick () {
-		dispatch('OSWSyncStatusDelegateDisconnect')
+		dispatch('OSWConnectedDelegateDisconnect')
 	},
 
 };
 </script>
 
-<div class="OSWSyncStatus">
+<div class="OSWConnected">
 
-<button class="OSWSyncStatusDisconnectButton" on:click={ mod.InterfaceDisconnectButtonDidClick }>{ OLSKLocalized('OSWSyncStatusDisconnectButtonText') }</button>
+<button class="OSWConnectedDisconnectButton" on:click={ mod.InterfaceDisconnectButtonDidClick }>{ OLSKLocalized('OSWConnectedDisconnectButtonText') }</button>
 
 </div>
 

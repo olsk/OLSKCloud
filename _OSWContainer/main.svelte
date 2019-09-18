@@ -10,7 +10,7 @@ export let OSWContainerRemoteStorageConnected = false;
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
-import OSWSyncStatus from '../OSWSyncStatus/main.svelte'
+import OSWConnected from '../OSWConnected/main.svelte'
 
 const mod = {
 };
@@ -39,7 +39,7 @@ const mod = {
 {/if}
 
 {#if OSWContainerRemoteStorageConnected}
-	<OSWSyncStatus on:OSWSyncStatusDelegateDisconnect={ ContainerDelegate.OSWSyncStatusDelegateDisconnect } />
+	<OSWConnected on:OSWConnectedDelegateDisconnect={ ContainerDelegate.OSWConnectedDelegateDisconnect } />
 {/if}
 
 </div>

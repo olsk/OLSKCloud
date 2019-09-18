@@ -1,11 +1,11 @@
 exports.OLSKControllerRoutes = function() {
 	return [{
-			OLSKRoutePath: '/stubs/OSWSyncStatus',
+			OLSKRoutePath: '/stubs/OSWConnected',
 			OLSKRouteMethod: 'get',
 			OLSKRouteFunction: function(req, res, next) {
 				return res.render(req.OLSKLive.OLSKLivePathJoin(__dirname, 'stub-view'));
 			},
-			OLSKRouteSignature: 'OSWSyncStatusStubRoute',
+			OLSKRouteSignature: 'OSWConnectedStubRoute',
 			OLSKRouteLanguages: ['en'],
 			OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 		}];

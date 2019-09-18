@@ -8,14 +8,14 @@ const uLocalized = function (inputData) {
 	return OLSKTestingLocalized(inputData, languageCode);
 };
 
-describe(`OSWSyncStatusLocalize-${ languageCode }`, function () {
+describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 
 	before(function() {
 		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
 	});
 
-	it('localizes OSWSyncStatusDisconnectButton', function () {
-		browser.assert.text(OSWSyncStatusDisconnectButton, uLocalized('OSWSyncStatusDisconnectButtonText'))
+	it('localizes OSWConnectedDisconnectButton', function () {
+		browser.assert.text(OSWConnectedDisconnectButton, uLocalized('OSWConnectedDisconnectButtonText'))
 	});
 
 });

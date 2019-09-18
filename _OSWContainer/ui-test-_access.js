@@ -33,8 +33,8 @@ describe('OSWContainerAccess', function () {
 		browser.assert.elements(OSWStorageOptions, 1);
 	});
 	
-	it('hides OSWSyncStatus', function() {
-		browser.assert.elements(OSWSyncStatus, 0);
+	it('hides OSWConnected', function() {
+		browser.assert.elements(OSWConnected, 0);
 	});
 
 	context('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorageError () {
@@ -76,8 +76,8 @@ describe('OSWContainerAccess', function () {
 			browser.assert.elements(OSWStorageOptions, 0);
 		});
 		
-		it('shows OSWSyncStatus', function() {
-			browser.assert.elements(OSWSyncStatus, 1);
+		it('shows OSWConnected', function() {
+			browser.assert.elements(OSWConnected, 1);
 		});
 	
 	});

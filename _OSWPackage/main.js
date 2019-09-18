@@ -99,7 +99,7 @@ const mod = {
 		mod.ValueRemoteStorage().reconnect()
 	},
 
-	OSWSyncStatusDelegateDisconnect() {
+	OSWConnectedDelegateDisconnect() {
 		mod.ValueRemoteStorage().disconnect()
 	},
 

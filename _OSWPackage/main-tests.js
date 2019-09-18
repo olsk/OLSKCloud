@@ -162,7 +162,7 @@ describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
 });
 
-describe('OSWSyncStatusDelegateDisconnect', function testOSWSyncStatusDelegateDisconnect() {
+describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisconnect() {
 
 	let item = false;
 
@@ -175,7 +175,7 @@ describe('OSWSyncStatusDelegateDisconnect', function testOSWSyncStatusDelegateDi
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWSyncStatusDelegateDisconnect()
+		mainModule.OSWConnectedDelegateDisconnect()
 		deepEqual(item, true);
 	});
 
