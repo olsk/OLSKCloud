@@ -43,8 +43,18 @@ describe('OSWConnectedMisc', function () {
 			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedSyncButtonSyncing=true`);
 		});
 
+		before(function () {
+			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '0')
+			
+			browser.click(OSWConnectedSyncButton)
+		});
+
 		it('sets class', function () {
 			browser.assert.hasClass(OSWConnectedSyncButton, 'OSWConnectedSyncButtonSyncing')
+		});
+
+		it('sends OSWConnectedDelegateSyncStop', function () {
+			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '1')
 		});
 	
 	});
