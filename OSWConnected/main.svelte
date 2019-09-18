@@ -1,5 +1,6 @@
 <script>
 export let OSWConnectedSyncButtonSyncing = false;
+export let OSWConnectedAddress = '';
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
@@ -22,6 +23,8 @@ const mod = {
 </script>
 
 <div class="OSWConnected">
+
+<strong class="OSWConnectedAddress">{ OSWConnectedAddress }</strong>
 
 <button class="OSWConnectedSyncButton" on:click={ mod.InterfaceSyncButtonDidClick } class:OSWConnectedSyncButtonSyncing={ OSWConnectedSyncButtonSyncing }>{ OSWConnectedSyncButtonSyncing ? OLSKLocalized('OSWConnectedSyncButtonTextStop') : OLSKLocalized('OSWConnectedSyncButtonText') }</button>
 

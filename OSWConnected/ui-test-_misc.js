@@ -38,6 +38,18 @@ describe('OSWConnectedMisc', function () {
 	
 	});
 
+	context('OSWConnectedAddress', function testOSWConnectedAddress () {
+		
+		before(function() {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedAddress=alfa`);
+		});
+
+		it('sends OSWConnectedDelegateSyncStop', function () {
+			browser.assert.text(OSWConnectedAddress, 'alfa')
+		});
+	
+	});
+
 	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
 		
 		before(function() {
