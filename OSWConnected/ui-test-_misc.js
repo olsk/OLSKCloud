@@ -12,13 +12,22 @@ describe('OSWConnectedMisc', function () {
 		
 		before(function () {
 			browser.assert.text('#TestOSWConnectedDelegateSyncStart', '0')
+			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '0')
 			browser.assert.className(OSWConnectedSyncButton, 'OSWConnectedSyncButton')
-			
-			browser.click(OSWConnectedSyncButton)
 		});
 
 		it('sends OSWConnectedDelegateSyncStart', function () {
+			browser.click(OSWConnectedSyncButton)
 			browser.assert.text('#TestOSWConnectedDelegateSyncStart', '1')
+		});
+
+		it('sets class', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OSWConnectedSyncButtonSyncing')
+		});
+
+		it('sends OSWConnectedDelegateSyncStop', function () {
+			browser.click(OSWConnectedSyncButton)
+			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '1')
 		});
 	
 	});
@@ -33,28 +42,6 @@ describe('OSWConnectedMisc', function () {
 		
 		it('sends OSWConnectedDelegateDisconnect', function () {
 			browser.assert.text('#TestOSWConnectedDelegateDisconnect', '1')
-		});
-	
-	});
-
-	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
-
-		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedSyncButtonSyncing=true`);
-		});
-
-		before(function () {
-			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '0')
-			
-			browser.click(OSWConnectedSyncButton)
-		});
-
-		it('sets class', function () {
-			browser.assert.hasClass(OSWConnectedSyncButton, 'OSWConnectedSyncButtonSyncing')
-		});
-
-		it('sends OSWConnectedDelegateSyncStop', function () {
-			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '1')
 		});
 	
 	});
