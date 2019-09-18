@@ -4,11 +4,11 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 describe('OSWStorageOptionsSelect', function () {
 
-	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
-	});
-
 	context('StorageOptionRemoteStorage', function testStorageOptionRemoteStorage () {
+
+		before(function() {
+			return browser.visit(kDefaultRoute.OLSKRoutePath);
+		});
 
 		before(function () {
 			return browser.click(OSWStorageOptionsButtonRemoteStorage)
@@ -16,7 +16,7 @@ describe('OSWStorageOptionsSelect', function () {
 		
 		before(function () {
 			browser.assert.text('#TestOSWContainerDelegateSelect', '0')
-			browser.assert.text('#TestOSWContainerDelegateSelectValue', 'undefined')
+			browser.assert.text('#TestOSWContainerDelegateSelectDetail', 'undefined')
 
 			browser.fill(OSWOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
 			browser.click(OSWOptionRemoteStorageConnectButton)
@@ -27,7 +27,7 @@ describe('OSWStorageOptionsSelect', function () {
 		});
 		
 		it('includes address', function () {
-			browser.assert.text('#TestOSWContainerDelegateSelectValue', 'alfa@bravo.charlie')
+			browser.assert.text('#TestOSWContainerDelegateSelectDetail', 'alfa@bravo.charlie')
 		});
 	
 	});

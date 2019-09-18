@@ -2,13 +2,13 @@
 import Module from './main.svelte';
 
 let TestOSWContainerDelegateSelect;
-let TestOSWContainerDelegateSelectValue;
+let TestOSWContainerDelegateSelectDetail;
 const mod = {
 
 	TestOSWContainerDelegateSelect(inputData) {
 		TestOSWContainerDelegateSelect.innerHTML = parseInt(TestOSWContainerDelegateSelect.innerHTML) + 1;
 
-		TestOSWContainerDelegateSelectValue = inputData.detail;
+		TestOSWContainerDelegateSelectDetail = inputData.detail;
 	},
 	
 };
@@ -22,5 +22,5 @@ const mod = {
 <p>
 	<strong>TestOSWContainerDelegateSelect</strong>
 	<span id="TestOSWContainerDelegateSelect" bind:this={ TestOSWContainerDelegateSelect }>0</span>
-	<span id="TestOSWContainerDelegateSelectValue">{ TestOSWContainerDelegateSelectValue }</span>
+	<span id="TestOSWContainerDelegateSelectDetail">{ TestOSWContainerDelegateSelectDetail }</span>
 </p>
