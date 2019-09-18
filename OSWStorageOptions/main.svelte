@@ -24,6 +24,12 @@ const mod = {
 		OSWStorageOptionsGoogleDriveIsDisabled = true;
 	},
 
+	// INTERFACE
+
+	InterfaceDropboxButtonDidClick () {
+		dispatch('OSWContainerDelegateSelect', 'StorageOptionDropbox')
+	},
+
 };
 </script>
 
@@ -40,7 +46,7 @@ const mod = {
 	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
 
 	{#if !OSWStorageOptionsDropboxIsDisabled}
-		<button class="OSWStorageOptionsButtonDropbox">{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>		
+		<button class="OSWStorageOptionsButtonDropbox" on:click={ mod.InterfaceDropboxButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>		
 	{/if}
 
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}

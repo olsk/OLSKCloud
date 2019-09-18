@@ -26,8 +26,28 @@ describe('OSWStorageOptionsSelect', function () {
 			browser.assert.text('#TestOSWContainerDelegateSelect', '1')
 		});
 		
-		it('includes address', function () {
+		it('sets detail', function () {
 			browser.assert.text('#TestOSWContainerDelegateSelectDetail', 'alfa@bravo.charlie')
+		});
+	
+	});
+
+	context('StorageOptionDropbox', function testStorageOptionDropbox () {
+
+		before(function() {
+			return browser.visit(kDefaultRoute.OLSKRoutePath);
+		});
+
+		before(function () {
+			return browser.click(OSWStorageOptionsButtonDropbox)
+		});
+		
+		it('sends OSWContainerDelegateSelect', function () {
+			browser.assert.text('#TestOSWContainerDelegateSelect', '1')
+		});
+		
+		it('sets detail', function () {
+			browser.assert.text('#TestOSWContainerDelegateSelectDetail', 'StorageOptionDropbox')
 		});
 	
 	});
