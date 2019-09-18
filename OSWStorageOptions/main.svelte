@@ -14,7 +14,7 @@ const mod = {
 	// MESSAGE
 
 	StorageOptionRemoteStorageDispatchSubmit(inputData) {
-		dispatch('OSWStorageOptionsDelegateSelect', inputData.detail)
+		dispatch('OSWStorageOptionsDelegateConnect', inputData.detail)
 	},
 
 	// INTERFACE
@@ -27,7 +27,7 @@ const mod = {
 	// INTERFACE
 
 	InterfaceDropboxButtonDidClick () {
-		dispatch('OSWStorageOptionsDelegateSelect', 'StorageOptionDropbox')
+		dispatch('OSWStorageOptionsDelegateConnect', 'StorageOptionDropbox')
 	},
 
 };

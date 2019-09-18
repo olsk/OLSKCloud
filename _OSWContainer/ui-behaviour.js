@@ -1,6 +1,6 @@
 const ContainerDelegate = {
 
-	TestOSWStorageOptionsDelegateSelect(inputData) {
+	TestOSWStorageOptionsDelegateConnect(inputData) {
 		window.TestContainerDispatchOptionsSelect.innerHTML = parseInt(window.TestContainerDispatchOptionsSelect.innerHTML) + 1;
 
 		window.TestContainerDispatchOptionsSelectValue.innerHTML = inputData.detail;

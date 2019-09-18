@@ -83,7 +83,7 @@ const mod = {
 
 	// CONTAINER DELEGATE
 
-	OSWStorageOptionsDelegateSelect(inputData) {
+	OSWStorageOptionsDelegateConnect(inputData) {
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 

@@ -15,19 +15,19 @@ describe('OSWStorageOptionsSelect', function () {
 		});
 		
 		before(function () {
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelect', '0')
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelectDetail', 'undefined')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '0')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectDetail', 'undefined')
 
 			browser.fill(OSWOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
 			browser.click(OSWOptionRemoteStorageConnectButton)
 		});
 		
-		it('sends OSWStorageOptionsDelegateSelect', function () {
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelect', '1')
+		it('sends OSWStorageOptionsDelegateConnect', function () {
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '1')
 		});
 		
 		it('sets detail', function () {
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelectDetail', 'alfa@bravo.charlie')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectDetail', 'alfa@bravo.charlie')
 		});
 	
 	});
@@ -42,12 +42,12 @@ describe('OSWStorageOptionsSelect', function () {
 			return browser.click(OSWStorageOptionsButtonDropbox)
 		});
 		
-		it('sends OSWStorageOptionsDelegateSelect', function () {
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelect', '1')
+		it('sends OSWStorageOptionsDelegateConnect', function () {
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '1')
 		});
 		
 		it('sets detail', function () {
-			browser.assert.text('#TestOSWStorageOptionsDelegateSelectDetail', 'StorageOptionDropbox')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectDetail', 'StorageOptionDropbox')
 		});
 	
 	});

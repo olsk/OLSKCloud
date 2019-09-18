@@ -33,7 +33,7 @@ const mod = {
 	OSWStorageOptionsDropboxIsDisabled={ !OSWContainerDropboxIsEnabled }
 	OSWStorageOptionsGoogleDriveIsDisabled={ !OSWContainerGoogleDriveIsEnabled }
 
-	on:OSWStorageOptionsDelegateSelect={ ContainerDelegate.OSWStorageOptionsDelegateSelect }
+	on:OSWStorageOptionsDelegateConnect={ ContainerDelegate.OSWStorageOptionsDelegateConnect }
 	
 	/>
 {/if}
