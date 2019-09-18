@@ -88,6 +88,10 @@ const mod = {
 			return mod.ValueRemoteStorage().dropbox.connect()
 		};
 		
+		if (inputData.detail === 'StorageOptionGoogleDrive') {
+			return mod.ValueRemoteStorage().googledrive.connect()
+		};
+		
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 

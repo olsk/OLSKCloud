@@ -120,6 +120,27 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 	
 	});
 
+	context('StorageOptionGoogleDrive', function () {
+
+		before(function () {
+			mainModule.ValueRemoteStorage({
+				googledrive: {
+					connect () {
+						item = true
+					},
+				},
+			});
+		});
+
+		it('calls remotestorage', function() {
+			mainModule.OSWStorageOptionsDelegateConnect({
+				detail: 'StorageOptionGoogleDrive',
+			})
+			deepEqual(item, true);
+		});
+	
+	});
+
 });
 
 describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
