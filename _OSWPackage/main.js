@@ -76,6 +76,7 @@ const mod = {
 		mod.ValueRemoteStorage().on('disconnected', mod.RemoteStorageDisconnected);
 		mod.ValueRemoteStorage().on('sync-req-done', mod.RemoteStorageSyncReqDone);
 		mod.ValueRemoteStorage().on('sync-done', mod.RemoteStorageSyncDone);
+		mod.ValueRemoteStorage().on('network-offline', mod.RemoteStorageNetworkOffline);
 	},
 
 	CommandInstanceDestroy () {
@@ -136,6 +137,10 @@ const mod = {
 
 	RemoteStorageSyncDone() {
 		mod.ValueInstance().OSWRootSyncing = false;
+	},
+
+	RemoteStorageNetworkOffline() {
+		mod.ValueInstance().OSWRootRemoteStorageNetworkOffline = true;
 	},
 
 };
