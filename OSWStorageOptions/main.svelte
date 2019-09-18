@@ -5,6 +5,9 @@ export let OSWStorageOptionsGoogleDriveIsDisabled = false;
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWOptionRemoteStorage from '../OSWOptionRemoteStorage/main.svelte'
+import OSWOptionRemoteStorageIcon from '../_shared/icons/OSWOptionRemoteStorage.svelte'
+import OSWOptionDropboxIcon from '../_shared/icons/OSWOptionDropbox.svelte'
+import OSWOptionGoogleDriveIcon from '../_shared/icons/OSWOptionGoogleDrive.svelte'
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
@@ -47,14 +50,23 @@ const mod = {
 		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
 	</p>
 
-	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
+	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>
+		<OSWOptionRemoteStorageIcon /><br>
+		{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }
+	</button>
 
 	{#if !OSWStorageOptionsDropboxIsDisabled}
-		<button class="OSWStorageOptionsDropboxButton" on:click={ mod.InterfaceDropboxButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsDropboxButtonText') }</button>		
+		<button class="OSWStorageOptionsDropboxButton" on:click={ mod.InterfaceDropboxButtonDidClick }>
+			<OSWOptionDropboxIcon /><br>
+		{ OLSKLocalized('OSWStorageOptionsDropboxButtonText') }
+		</button>
 	{/if}
 
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
-		<button class="OSWStorageOptionsGoogleDriveButton" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsGoogleDriveButtonText') }</button>		
+		<button class="OSWStorageOptionsGoogleDriveButton" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>
+			<OSWOptionGoogleDriveIcon /><br>
+			{ OLSKLocalized('OSWStorageOptionsGoogleDriveButtonText') }
+		</button>
 	{/if}
 {/if}
 
