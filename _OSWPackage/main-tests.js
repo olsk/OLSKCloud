@@ -337,3 +337,22 @@ describe('RemoteStorageNetworkOffline', function testRemoteStorageNetworkOffline
 	});
 
 });
+
+describe('RemoteStorageNetworkOnline', function testRemoteStorageNetworkOnline() {
+
+	let item = {};
+
+	before(function () {
+		mainModule.ValueInstance(item);
+	});
+
+	it('sets OSWRoot state', function() {
+		mainModule.RemoteStorageNetworkOnline();
+
+		deepEqual(item, {
+			OSWRootRemoteStorageNetworkOffline: false,
+			OSWRootRemoteStorageError: '',
+		});
+	});
+
+});
