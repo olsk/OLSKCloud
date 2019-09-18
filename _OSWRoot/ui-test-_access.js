@@ -6,6 +6,7 @@ Object.entries({
 	OSWRoot: '.OSWRoot',
 	
 	OSWRootRemoteStorageError: '.OSWRootRemoteStorageError',
+	OSWRootRemoteStorageNetworkOfflineAlert: '.OSWRootRemoteStorageNetworkOfflineAlert',
 	OSWRootRenewButton: '.OSWRootRenewButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
@@ -23,6 +24,10 @@ describe('OSWRootAccess', function () {
 	
 	it('hides OSWRootRemoteStorageError', function() {
 		browser.assert.elements(OSWRootRemoteStorageError, 0);
+	});
+	
+	it('hides OSWRootRemoteStorageNetworkOfflineAlert', function() {
+		browser.assert.elements(OSWRootRemoteStorageNetworkOfflineAlert, 0);
 	});
 	
 	it('hides OSWRootRenewButton', function() {
@@ -46,10 +51,21 @@ describe('OSWRootAccess', function () {
 		it('shows OSWRootRemoteStorageError', function () {
 			browser.assert.elements(OSWRootRemoteStorageError, 1)
 		});
-
 		
 		it('hides OSWRootRenewButton if Unauthorized', function() {
 			browser.assert.elements(OSWRootRenewButton, 0);
+		});
+
+	});
+
+	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
+
+		before(function() {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageNetworkOffline=alfa`);
+		});
+
+		it('shows OSWRootRemoteStorageNetworkOfflineAlert', function () {
+			browser.assert.elements(OSWRootRemoteStorageNetworkOfflineAlert, 1)
 		});
 
 	});

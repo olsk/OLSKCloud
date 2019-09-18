@@ -19,7 +19,11 @@ const mod = {
 </script>
 <svelte:options accessors={true} />
 
-<div class="OSWRoot" class:OSWRootNetworkOffline={ OSWRootRemoteStorageNetworkOffline }>
+<div class="OSWRoot">
+
+{#if OSWRootRemoteStorageNetworkOffline}
+	<div class="OSWRootRemoteStorageNetworkOfflineAlert">{ OLSKLocalized('OSWRootRemoteStorageNetworkOfflineAlertText') }</div>
+{/if}
 
 {#if OSWRootRemoteStorageError}
 	<div class="OSWRootRemoteStorageError">{ OSWRootRemoteStorageError }</div>

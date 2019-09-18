@@ -22,6 +22,18 @@ describe(`OSWRootLocalize-${ languageCode }`, function () {
 
 	});
 
+	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
+
+		before(function() {
+			return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageNetworkOffline=true`);
+		});
+		
+		it('localizes OSWRootRemoteStorageNetworkOfflineAlert', function() {
+			browser.assert.text(OSWRootRemoteStorageNetworkOfflineAlert, uLocalized('OSWRootRemoteStorageNetworkOfflineAlertText'));
+		});
+
+	});
+
 });
 
 });
