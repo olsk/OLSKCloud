@@ -80,7 +80,7 @@ describe('CommandInstanceDestroy', function testCommandInstanceDestroy() {
 
 });
 
-describe('OSWContainerDelegateSelect', function testOSWContainerDelegateSelect() {
+describe('OSWStorageOptionsDelegateSelect', function testOSWStorageOptionsDelegateSelect() {
 
 	let item;
 
@@ -93,7 +93,7 @@ describe('OSWContainerDelegateSelect', function testOSWContainerDelegateSelect()
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWContainerDelegateSelect({
+		mainModule.OSWStorageOptionsDelegateSelect({
 			detail: 'alfa',
 		})
 		deepEqual(item, 'alfa');

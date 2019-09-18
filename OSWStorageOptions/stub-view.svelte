@@ -1,26 +1,26 @@
 <script>
 import Module from './main.svelte';
 
-let TestOSWContainerDelegateSelect;
-let TestOSWContainerDelegateSelectDetail;
+let TestOSWStorageOptionsDelegateSelect;
+let TestOSWStorageOptionsDelegateSelectDetail;
 const mod = {
 
-	TestOSWContainerDelegateSelect(inputData) {
-		TestOSWContainerDelegateSelect.innerHTML = parseInt(TestOSWContainerDelegateSelect.innerHTML) + 1;
+	TestOSWStorageOptionsDelegateSelect(inputData) {
+		TestOSWStorageOptionsDelegateSelect.innerHTML = parseInt(TestOSWStorageOptionsDelegateSelect.innerHTML) + 1;
 
-		TestOSWContainerDelegateSelectDetail = inputData.detail;
+		TestOSWStorageOptionsDelegateSelectDetail = inputData.detail;
 	},
 	
 };
 </script>
 
 <Module
-	on:OSWContainerDelegateSelect={ mod.TestOSWContainerDelegateSelect }
+	on:OSWStorageOptionsDelegateSelect={ mod.TestOSWStorageOptionsDelegateSelect }
 	{...Object.fromEntries((new window.URLSearchParams(window.location.search)).entries())}
 />
 
 <p>
-	<strong>TestOSWContainerDelegateSelect</strong>
-	<span id="TestOSWContainerDelegateSelect" bind:this={ TestOSWContainerDelegateSelect }>0</span>
-	<span id="TestOSWContainerDelegateSelectDetail">{ TestOSWContainerDelegateSelectDetail }</span>
+	<strong>TestOSWStorageOptionsDelegateSelect</strong>
+	<span id="TestOSWStorageOptionsDelegateSelect" bind:this={ TestOSWStorageOptionsDelegateSelect }>0</span>
+	<span id="TestOSWStorageOptionsDelegateSelectDetail">{ TestOSWStorageOptionsDelegateSelectDetail }</span>
 </p>
