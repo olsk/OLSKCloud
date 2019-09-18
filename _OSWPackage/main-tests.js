@@ -145,7 +145,7 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 
 describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
-	let item = false;
+	let item;
 
 	before(function () {
 		mainModule.ValueRemoteStorage({
@@ -190,7 +190,7 @@ describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncS
 
 describe('OSWConnectedDelegateSyncStop', function testOSWConnectedDelegateSyncStop() {
 
-	let item = false;
+	let item;
 
 	before(function () {
 		mainModule.ValueRemoteStorage({
@@ -209,7 +209,7 @@ describe('OSWConnectedDelegateSyncStop', function testOSWConnectedDelegateSyncSt
 
 describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisconnect() {
 
-	let item = false;
+	let item;
 
 	before(function () {
 		mainModule.ValueRemoteStorage({
@@ -228,9 +228,7 @@ describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisc
 
 describe('RemoteStorageError', function testRemoteStorageError() {
 
-	let item = {
-		OSWContainerRemoteStorageError: '',
-	};
+	let item = {};
 
 	before(function () {
 		mainModule.ValueInstance(item);
@@ -251,9 +249,7 @@ describe('RemoteStorageError', function testRemoteStorageError() {
 
 describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 
-	let item = {
-		OSWContainerRemoteStorageConnected: false,
-	};
+	let item = {};
 
 	before(function () {
 		mainModule.ValueInstance(item);
@@ -271,10 +267,7 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 
 describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 
-	let item = {
-		OSWContainerRemoteStorageConnected: true,
-		OSWContainerRemoteStorageError: 'alfa',
-	};
+	let item = {};
 
 	before(function () {
 		mainModule.ValueInstance(item);
