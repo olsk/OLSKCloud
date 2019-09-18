@@ -153,6 +153,10 @@ const mod = {
 	RemoteStorageDisconnected() {
 		mod.ValueInstance().OSWRootRemoteStorageError = '';
 		mod.ValueInstance().OSWRootRemoteStorageConnected = false;
+
+		if (mod.ValueBackendDelegate()) {
+			mod.ValueBackendDelegate()(null);
+		};
 	},
 
 	RemoteStorageSyncReqDone() {

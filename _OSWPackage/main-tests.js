@@ -308,6 +308,18 @@ describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 		});
 	});
 
+	it('calls ValueBackendDelegate', function() {
+		let item;
+
+		mainModule.ValueBackendDelegate(function (inputData) {
+			item = inputData;
+		});
+
+		mainModule.RemoteStorageDisconnected();
+
+		deepEqual(item, null);
+	});
+
 });
 
 describe('RemoteStorageSyncReqDone', function testRemoteStorageSyncReqDone() {
