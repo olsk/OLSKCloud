@@ -2,22 +2,22 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-describe('OSWContainerRemoteStorageError', function testOSWContainerRemoteStorageError () {
+describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=alfa`);
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=alfa`);
 	});
 
-	it('shows OSWContainerRemoteStorageError', function () {
-		browser.assert.text(OSWContainerRemoteStorageError, 'alfa')
+	it('shows OSWRootRemoteStorageError', function () {
+		browser.assert.text(OSWRootRemoteStorageError, 'alfa')
 	});
 
 });
 
-describe('OSWContainerOptions', function testOSWContainerOptions () {
+describe('OSWRootOptions', function testOSWRootOptions () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerDropboxIsEnabled=true&OSWContainerGoogleDriveIsEnabled=true`);
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootDropboxIsEnabled=true&OSWRootGoogleDriveIsEnabled=true`);
 	});
 
 	context('StorageOptionRemoteStorage', function () {
@@ -46,18 +46,18 @@ describe('OSWContainerOptions', function testOSWContainerOptions () {
 
 });
 
-describe('OSWContainerRenew', function testOSWContainerRenew () {
+describe('OSWRootRenew', function testOSWRootRenew () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerRemoteStorageError=Unauthorized`);
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=Unauthorized`);
 	});
 
 	before(function () {
-		return browser.pressButton(OSWContainerRenewButton)
+		return browser.pressButton(OSWRootRenewButton)
 	});
 	
 	it('sends ContainerDispatchOptionsRenew', function () {
-		browser.assert.text('#TestOSWContainerDelegateRenew', '1')
+		browser.assert.text('#TestOSWRootDelegateRenew', '1')
 	});
 
 });

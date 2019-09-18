@@ -2,16 +2,16 @@ import { throws, deepEqual } from 'assert';
 
 import * as mainModule from './rollup-config-custom.js';
 
-describe('OSWContainerRollupConfigCustom', function testOSWContainerRollupConfigCustom() {
+describe('OSWRootRollupConfigCustom', function testOSWRootRollupConfigCustom() {
 
 	it('throws error if not object', function() {
 		throws(function() {
-			mainModule.OSWContainerRollupConfigCustom(null);
+			mainModule.OSWRootRollupConfigCustom(null);
 		}, /OSWErrorInputInvalid/);
 	})
 
 	it('sets output.format', function() {
-		deepEqual(mainModule.OSWContainerRollupConfigCustom({
+		deepEqual(mainModule.OSWRootRollupConfigCustom({
 			output: {},
 		}).output.format, 'umd');
 	});

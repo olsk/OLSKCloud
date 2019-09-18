@@ -37,10 +37,10 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 			});
 		});
 
-		it('sets OSWContainer state', function() {
+		it('sets OSWRoot state', function() {
 			mainModule.CommandInstanceCreate()
 
-			deepEqual(mainModule.ValueInstance().OSWContainerDropboxIsEnabled, true);
+			deepEqual(mainModule.ValueInstance().OSWRootDropboxIsEnabled, true);
 		});
 
 	});
@@ -55,10 +55,10 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 			});
 		});
 
-		it('sets OSWContainer state', function() {
+		it('sets OSWRoot state', function() {
 			mainModule.CommandInstanceCreate()
 
-			deepEqual(mainModule.ValueInstance().OSWContainerGoogleDriveIsEnabled, true);
+			deepEqual(mainModule.ValueInstance().OSWRootGoogleDriveIsEnabled, true);
 		});
 
 	});
@@ -143,7 +143,7 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 
 });
 
-describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
+describe('OSWRootDelegateRenew', function testOSWRootDelegateRenew() {
 
 	let item;
 
@@ -156,7 +156,7 @@ describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWContainerDelegateRenew()
+		mainModule.OSWRootDelegateRenew()
 		deepEqual(item, true);
 	});
 
@@ -182,8 +182,8 @@ describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncS
 		deepEqual(item.alfa, true);
 	});
 
-	it('sets OSWContainer state', function() {
-		deepEqual(item.OSWContainerSyncing, true);
+	it('sets OSWRoot state', function() {
+		deepEqual(item.OSWRootSyncing, true);
 	});
 
 });
@@ -234,14 +234,14 @@ describe('RemoteStorageError', function testRemoteStorageError() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainer state', function() {
+	it('sets OSWRoot state', function() {
 		mainModule.RemoteStorageError({
 			name: 'alfa',
 			message: 'bravo',
 		});
 
 		deepEqual(item, {
-			OSWContainerRemoteStorageError: 'alfa: bravo',
+			OSWRootRemoteStorageError: 'alfa: bravo',
 		});
 	});
 
@@ -255,11 +255,11 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainer state', function() {
+	it('sets OSWRoot state', function() {
 		mainModule.RemoteStorageConnected();
 
 		deepEqual(item, {
-			OSWContainerRemoteStorageConnected: true,
+			OSWRootRemoteStorageConnected: true,
 		});
 	});
 
@@ -273,12 +273,12 @@ describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainer state', function() {
+	it('sets OSWRoot state', function() {
 		mainModule.RemoteStorageDisconnected();
 
 		deepEqual(item, {
-			OSWContainerRemoteStorageConnected: false,
-			OSWContainerRemoteStorageError: '',
+			OSWRootRemoteStorageConnected: false,
+			OSWRootRemoteStorageError: '',
 		});
 	});
 
@@ -292,11 +292,11 @@ describe('RemoteStorageSyncReqDone', function testRemoteStorageSyncReqDone() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainer state', function() {
+	it('sets OSWRoot state', function() {
 		mainModule.RemoteStorageSyncReqDone();
 
 		deepEqual(item, {
-			OSWContainerSyncing: true,
+			OSWRootSyncing: true,
 		});
 	});
 
@@ -310,11 +310,11 @@ describe('RemoteStorageSyncDone', function testRemoteStorageSyncDone() {
 		mainModule.ValueInstance(item);
 	});
 
-	it('sets OSWContainer state', function() {
+	it('sets OSWRoot state', function() {
 		mainModule.RemoteStorageSyncDone();
 
 		deepEqual(item, {
-			OSWContainerSyncing: false,
+			OSWRootSyncing: false,
 		});
 	});
 

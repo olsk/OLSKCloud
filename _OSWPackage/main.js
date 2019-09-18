@@ -64,8 +64,8 @@ const mod = {
 			return
 		};
 
-		mod.ValueInstance().OSWContainerDropboxIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('dropbox');
-		mod.ValueInstance().OSWContainerGoogleDriveIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('googledrive');
+		mod.ValueInstance().OSWRootDropboxIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('dropbox');
+		mod.ValueInstance().OSWRootGoogleDriveIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('googledrive');
 
 		if (!mod.ValueRemoteStorage().on) {
 			return
@@ -97,12 +97,12 @@ const mod = {
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 
-	OSWContainerDelegateRenew() {
+	OSWRootDelegateRenew() {
 		mod.ValueRemoteStorage().reconnect()
 	},
 
 	OSWConnectedDelegateSyncStart() {
-		mod.ValueInstance().OSWContainerSyncing = true;
+		mod.ValueInstance().OSWRootSyncing = true;
 
 		mod.ValueRemoteStorage().startSync()
 	},
@@ -118,24 +118,24 @@ const mod = {
 	// REMOTE STORAGE
 
 	RemoteStorageError(event) {
-		mod.ValueInstance().OSWContainerRemoteStorageError = `${ event.name }: ${ event.message}`
+		mod.ValueInstance().OSWRootRemoteStorageError = `${ event.name }: ${ event.message}`
 	},
 
 	RemoteStorageConnected() {
-		mod.ValueInstance().OSWContainerRemoteStorageConnected = true;
+		mod.ValueInstance().OSWRootRemoteStorageConnected = true;
 	},
 
 	RemoteStorageDisconnected() {
-		mod.ValueInstance().OSWContainerRemoteStorageError = '';
-		mod.ValueInstance().OSWContainerRemoteStorageConnected = false;
+		mod.ValueInstance().OSWRootRemoteStorageError = '';
+		mod.ValueInstance().OSWRootRemoteStorageConnected = false;
 	},
 
 	RemoteStorageSyncReqDone() {
-		mod.ValueInstance().OSWContainerSyncing = true;
+		mod.ValueInstance().OSWRootSyncing = true;
 	},
 
 	RemoteStorageSyncDone() {
-		mod.ValueInstance().OSWContainerSyncing = false;
+		mod.ValueInstance().OSWRootSyncing = false;
 	},
 
 };

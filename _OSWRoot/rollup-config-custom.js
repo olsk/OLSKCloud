@@ -1,5 +1,5 @@
 module.exports = {
-	OSWContainerRollupConfigCustom (inputData, options = {}) {
+	OSWRootRollupConfigCustom (inputData, options = {}) {
 		if (typeof inputData !== 'object' || inputData === null) {
 			throw 'OSWErrorInputInvalid';
 		}
@@ -9,6 +9,6 @@ module.exports = {
 		return inputData;
 	},
 	OLSKRollupConfigCustom (inputData, options) {
-		return module.exports.OSWContainerRollupConfigCustom(inputData, options);
+		return module.exports.OSWRootRollupConfigCustom(inputData, options);
 	}
 };

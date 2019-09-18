@@ -6,8 +6,8 @@ const ContainerDelegate = {
 		window.TestOSWStorageOptionsDelegateConnectValue.innerHTML = inputData.detail;
 	},
 
-	TestOSWContainerDelegateRenew(inputData) {
-		window.TestOSWContainerDelegateRenew.innerHTML = parseInt(window.TestOSWContainerDelegateRenew.innerHTML) + 1;
+	TestOSWRootDelegateRenew(inputData) {
+		window.TestOSWRootDelegateRenew.innerHTML = parseInt(window.TestOSWRootDelegateRenew.innerHTML) + 1;
 	},
 
 };
@@ -35,4 +35,4 @@ const mod = {
 	
 };
 
-window.OSWContainerStubBehaviour = mod;
+window.OSWRootStubBehaviour = mod;
