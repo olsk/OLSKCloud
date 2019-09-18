@@ -1,12 +1,12 @@
 <script>
 export let OSWContainerDropboxIsEnabled = false;
 export let OSWContainerGoogleDriveIsEnabled = false;
-export let OSWContainerSyncing = false;
 
 export let ContainerDelegate;
 
 export let OSWContainerRemoteStorageError = '';
 export let OSWContainerRemoteStorageConnected = false;
+export let OSWContainerSyncing = false;
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
 

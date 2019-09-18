@@ -164,19 +164,26 @@ describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 
 describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncStart() {
 
-	let item = false;
+	let item = {};
 
 	before(function () {
+		mainModule.ValueInstance(item);
+
 		mainModule.ValueRemoteStorage({
 			startSync () {
-				item = true
+				item.alfa = true
 			},
 		});
+		
+		mainModule.OSWConnectedDelegateSyncStart()
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWConnectedDelegateSyncStart()
-		deepEqual(item, true);
+		deepEqual(item.alfa, true);
+	});
+
+	it('sets OSWContainer state', function() {
+		deepEqual(item.OSWContainerSyncing, true);
 	});
 
 });
@@ -279,6 +286,24 @@ describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 		deepEqual(item, {
 			OSWContainerRemoteStorageConnected: false,
 			OSWContainerRemoteStorageError: '',
+		});
+	});
+
+});
+
+describe('RemoteStorageSyncDone', function testRemoteStorageSyncDone() {
+
+	let item = {};
+
+	before(function () {
+		mainModule.ValueInstance(item);
+	});
+
+	it('sets OSWContainer state', function() {
+		mainModule.RemoteStorageSyncDone();
+
+		deepEqual(item, {
+			OSWContainerSyncing: false,
 		});
 	});
 

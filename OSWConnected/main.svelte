@@ -12,8 +12,6 @@ const mod = {
 
 	InterfaceSyncButtonDidClick () {
 		dispatch(OSWConnectedSyncButtonSyncing ? 'OSWConnectedDelegateSyncStop' : 'OSWConnectedDelegateSyncStart')
-
-		OSWConnectedSyncButtonSyncing = true
 	},
 
 	InterfaceDisconnectButtonDidClick () {
