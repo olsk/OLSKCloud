@@ -6,6 +6,7 @@ export let ContainerDelegate;
 
 export let OSWRootRemoteStorageError = '';
 export let OSWRootRemoteStorageConnected = false;
+export let OSWRootRemoteStorageConnectedAddress = '';
 export let OSWRootRemoteStorageNetworkOffline = false;
 export let OSWRootSyncing = false;
 
@@ -46,6 +47,7 @@ const mod = {
 
 {#if OSWRootRemoteStorageConnected}
 	<OSWConnected
+	OSWConnectedAddress={ OSWRootRemoteStorageConnectedAddress }
 	OSWConnectedSyncButtonSyncing={ OSWRootSyncing }
 	on:OSWConnectedDelegateSyncStart={ ContainerDelegate.OSWConnectedDelegateSyncStart }
 	on:OSWConnectedDelegateSyncStop={ ContainerDelegate.OSWConnectedDelegateSyncStop }
