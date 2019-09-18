@@ -22,6 +22,18 @@ describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 		browser.assert.text(OSWConnectedDisconnectButton, uLocalized('OSWConnectedDisconnectButtonText'))
 	});
 
+	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
+
+		before(function() {
+			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedSyncButtonSyncing=true`);
+		});
+
+		it('localizes OSWConnectedSyncButton', function () {
+			browser.assert.text(OSWConnectedSyncButton, uLocalized('OSWConnectedSyncButtonTextStop'))
+		});
+	
+	});
+
 });
 
 });
