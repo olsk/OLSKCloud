@@ -1,0 +1,9 @@
+{
+  "name": "OLSKStorageWidget",
+  "files": [
+  	"__compiled/OLSKStorageWidget*"
+  ],
+  "scripts": {
+    "build": "rollup -c ../rollup-config.js"
+  }
+}
