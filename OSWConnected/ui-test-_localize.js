@@ -14,6 +14,10 @@ describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
 	});
 
+	it('localizes OSWConnectedSyncButton', function () {
+		browser.assert.text(OSWConnectedSyncButton, uLocalized('OSWConnectedSyncButtonText'))
+	});
+
 	it('localizes OSWConnectedDisconnectButton', function () {
 		browser.assert.text(OSWConnectedDisconnectButton, uLocalized('OSWConnectedDisconnectButtonText'))
 	});

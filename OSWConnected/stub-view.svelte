@@ -1,9 +1,14 @@
 <script>
 import Module from './main.svelte';
 
-let TestOSWConnectedDelegateDisconnect;
 const mod = {
-
+	
+	_TestOSWConnectedDelegateSyncStart: undefined,
+	TestOSWConnectedDelegateSyncStart(inputData) {
+		TestOSWConnectedDelegateSyncStart.innerHTML = parseInt(TestOSWConnectedDelegateSyncStart.innerHTML) + 1;
+	},
+	
+	_TestOSWConnectedDelegateDisconnect: undefined,
 	TestOSWConnectedDelegateDisconnect(inputData) {
 		TestOSWConnectedDelegateDisconnect.innerHTML = parseInt(TestOSWConnectedDelegateDisconnect.innerHTML) + 1;
 	},
@@ -12,11 +17,17 @@ const mod = {
 </script>
 
 <Module
+	on:OSWConnectedDelegateSyncStart={ mod.TestOSWConnectedDelegateSyncStart }
 	on:OSWConnectedDelegateDisconnect={ mod.TestOSWConnectedDelegateDisconnect }
 	{...Object.fromEntries((new window.URLSearchParams(window.location.search)).entries())}
 />
 
 <p>
+	<strong>TestOSWConnectedDelegateSyncStart</strong>
+	<span id="TestOSWConnectedDelegateSyncStart" bind:this={ mod._TestOSWConnectedDelegateSyncStart }>0</span>
+</p>
+
+<p>
 	<strong>TestOSWConnectedDelegateDisconnect</strong>
-	<span id="TestOSWConnectedDelegateDisconnect" bind:this={ TestOSWConnectedDelegateDisconnect }>0</span>
+	<span id="TestOSWConnectedDelegateDisconnect" bind:this={ mod._TestOSWConnectedDelegateDisconnect }>0</span>
 </p>

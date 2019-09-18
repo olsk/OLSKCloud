@@ -5,6 +5,7 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 Object.entries({
 	OSWConnected: '.OSWConnected',
 
+	OSWConnectedSyncButton: '.OSWConnectedSyncButton',
 	OSWConnectedDisconnectButton: '.OSWConnectedDisconnectButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
@@ -18,6 +19,10 @@ describe('OSWConnectedAccess', function () {
 	
 	it('shows OSWConnected', function() {
 		browser.assert.elements(OSWConnected, 1);
+	});
+	
+	it('shows OSWConnectedSyncButton', function() {
+		browser.assert.elements(OSWConnectedSyncButton, 1);
 	});
 	
 	it('shows OSWConnectedDisconnectButton', function() {
