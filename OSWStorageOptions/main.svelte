@@ -50,20 +50,20 @@ const mod = {
 		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
 	</p>
 
-	<button class="OSWStorageOptionsButtonRemoteStorage OLSKLayoutButtonNoStyle" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>
+	<button class="OSWStorageOptionsButtonRemoteStorage OLSKLayoutButtonNoStyle OLSKLayoutElementTappable" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>
 		<OSWOptionRemoteStorageIcon /><br>
 		{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }
 	</button>
 
 	{#if !OSWStorageOptionsDropboxIsDisabled}
-		<button class="OSWStorageOptionsDropboxButton OLSKLayoutButtonNoStyle" on:click={ mod.InterfaceDropboxButtonDidClick }>
+		<button class="OSWStorageOptionsDropboxButton OLSKLayoutButtonNoStyle OLSKLayoutElementTappable" on:click={ mod.InterfaceDropboxButtonDidClick }>
 			<OSWOptionDropboxIcon /><br>
 		{ OLSKLocalized('OSWStorageOptionsDropboxButtonText') }
 		</button>
 	{/if}
 
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
-		<button class="OSWStorageOptionsGoogleDriveButton OLSKLayoutButtonNoStyle" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>
+		<button class="OSWStorageOptionsGoogleDriveButton OLSKLayoutButtonNoStyle OLSKLayoutElementTappable" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>
 			<OSWOptionGoogleDriveIcon /><br>
 			{ OLSKLocalized('OSWStorageOptionsGoogleDriveButtonText') }
 		</button>
