@@ -99,6 +99,27 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 		deepEqual(item, 'alfa');
 	});
 
+	context('StorageOptionDropbox', function () {
+
+		before(function () {
+			mainModule.ValueRemoteStorage({
+				dropbox: {
+					connect () {
+						item = true
+					},
+				},
+			});
+		});
+
+		it('calls remotestorage', function() {
+			mainModule.OSWStorageOptionsDelegateConnect({
+				detail: 'StorageOptionDropbox',
+			})
+			deepEqual(item, true);
+		});
+	
+	});
+
 });
 
 describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {

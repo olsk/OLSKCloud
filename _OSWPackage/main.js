@@ -84,6 +84,10 @@ const mod = {
 	// CONTAINER DELEGATE
 
 	OSWStorageOptionsDelegateConnect(inputData) {
+		if (inputData.detail === 'StorageOptionDropbox') {
+			return mod.ValueRemoteStorage().dropbox.connect()
+		};
+		
 		mod.ValueRemoteStorage().connect(inputData.detail)
 	},
 
