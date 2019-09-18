@@ -103,6 +103,10 @@ const mod = {
 		mod.ValueRemoteStorage().startSync()
 	},
 
+	OSWConnectedDelegateSyncStop() {
+		mod.ValueRemoteStorage().stopSync()
+	},
+
 	OSWConnectedDelegateDisconnect() {
 		mod.ValueRemoteStorage().disconnect()
 	},

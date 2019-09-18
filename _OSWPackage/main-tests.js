@@ -181,6 +181,25 @@ describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncS
 
 });
 
+describe('OSWConnectedDelegateSyncStop', function testOSWConnectedDelegateSyncStop() {
+
+	let item = false;
+
+	before(function () {
+		mainModule.ValueRemoteStorage({
+			stopSync () {
+				item = true
+			},
+		});
+	});
+
+	it('calls remotestorage', function() {
+		mainModule.OSWConnectedDelegateSyncStop()
+		deepEqual(item, true);
+	});
+
+});
+
 describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisconnect() {
 
 	let item = false;
