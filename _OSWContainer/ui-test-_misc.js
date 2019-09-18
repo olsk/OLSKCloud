@@ -20,26 +20,26 @@ describe('OSWContainerOptions', function testOSWContainerOptions () {
 		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWContainerDropboxIsEnabled=true&OSWContainerGoogleDriveIsEnabled=true`);
 	});
 
-	context('SelectStorageOptionRemoteStorage', function () {
+	context('StorageOptionRemoteStorage', function () {
 
 		before(function () {
 			return browser.click(OSWStorageOptionsButtonRemoteStorage)
 		});
 		
 		before(function () {
-			browser.assert.text('#TestContainerDispatchOptionsSelect', '0')
-			browser.assert.text('#TestContainerDispatchOptionsSelectValue', 'undefined')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '0')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectValue', 'undefined')
 
 			browser.fill(OSWOptionRemoteStorageAddressField, 'alfa@bravo.charlie')
 			browser.click(OSWOptionRemoteStorageConnectButton)
 		});
 		
-		it('sends ContainerDispatchOptionsSelect', function () {
-			browser.assert.text('#TestContainerDispatchOptionsSelect', '1')
+		it('sends OSWStorageOptionsDelegateConnect', function () {
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '1')
 		});
 		
 		it('sends address', function () {
-			browser.assert.text('#TestContainerDispatchOptionsSelectValue', 'alfa@bravo.charlie')
+			browser.assert.text('#TestOSWStorageOptionsDelegateConnectValue', 'alfa@bravo.charlie')
 		});
 	
 	});
@@ -57,7 +57,7 @@ describe('OSWContainerRenew', function testOSWContainerRenew () {
 	});
 	
 	it('sends ContainerDispatchOptionsRenew', function () {
-		browser.assert.text('#TestContainerDispatchOptionsRenew', '1')
+		browser.assert.text('#TestOSWContainerDelegateRenew', '1')
 	});
 
 });

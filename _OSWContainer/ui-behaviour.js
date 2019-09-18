@@ -1,13 +1,13 @@
 const ContainerDelegate = {
 
 	TestOSWStorageOptionsDelegateConnect(inputData) {
-		window.TestContainerDispatchOptionsSelect.innerHTML = parseInt(window.TestContainerDispatchOptionsSelect.innerHTML) + 1;
+		window.TestOSWStorageOptionsDelegateConnect.innerHTML = parseInt(window.TestOSWStorageOptionsDelegateConnect.innerHTML) + 1;
 
-		window.TestContainerDispatchOptionsSelectValue.innerHTML = inputData.detail;
+		window.TestOSWStorageOptionsDelegateConnectValue.innerHTML = inputData.detail;
 	},
 
 	TestOSWContainerDelegateRenew(inputData) {
-		window.TestContainerDispatchOptionsRenew.innerHTML = parseInt(window.TestContainerDispatchOptionsRenew.innerHTML) + 1;
+		window.TestOSWContainerDelegateRenew.innerHTML = parseInt(window.TestOSWContainerDelegateRenew.innerHTML) + 1;
 	},
 
 };
