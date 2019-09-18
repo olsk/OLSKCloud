@@ -253,6 +253,7 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 
 	before(function () {
 		mainModule.ValueInstance(item);
+
 		mainModule.ValueRemoteStorage({
 			remote: {
 				userAddress: 'alfa'
@@ -267,6 +268,18 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 			OSWRootRemoteStorageConnected: true,
 			OSWRootRemoteStorageConnectedAddress: 'alfa',
 		});
+	});
+
+	it('calls ValueBackendDelegate', function() {
+		let item;
+
+		mainModule.ValueBackendDelegate(function () {
+			item = true;
+		});
+
+		mainModule.RemoteStorageConnected();
+
+		deepEqual(item, true);
 	});
 
 });

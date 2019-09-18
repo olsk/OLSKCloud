@@ -46,6 +46,15 @@ const mod = {
 		mod._ValueInstance = inputData;
 	},
 
+	_ValueBackendDelegate: undefined,
+	ValueBackendDelegate (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueBackendDelegate
+		};
+
+		mod._ValueBackendDelegate = inputData;
+	},
+
 	// COMMAND
 
 	CommandInstanceCreate () {
@@ -126,6 +135,10 @@ const mod = {
 	RemoteStorageConnected() {
 		mod.ValueInstance().OSWRootRemoteStorageConnected = true;
 		mod.ValueInstance().OSWRootRemoteStorageConnectedAddress = mod.ValueRemoteStorage().remote.userAddress;
+
+		if (mod.ValueBackendDelegate()) {
+			mod.ValueBackendDelegate()();
+		};
 	},
 
 	RemoteStorageDisconnected() {
