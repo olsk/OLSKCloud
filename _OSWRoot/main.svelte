@@ -6,6 +6,7 @@ export let ContainerDelegate;
 
 export let OSWRootRemoteStorageError = '';
 export let OSWRootRemoteStorageConnected = false;
+export let OSWRootRemoteStorageNetworkOffline = false;
 export let OSWRootSyncing = false;
 
 import { OLSKLocalized } from '../_shared/_common/global.js';
@@ -18,7 +19,7 @@ const mod = {
 </script>
 <svelte:options accessors={true} />
 
-<div class="OSWRoot">
+<div class="OSWRoot" class:OSWRootNetworkOffline={ OSWRootRemoteStorageNetworkOffline }>
 
 {#if OSWRootRemoteStorageError}
 	<div class="OSWRootRemoteStorageError">{ OSWRootRemoteStorageError }</div>

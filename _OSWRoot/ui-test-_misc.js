@@ -2,6 +2,18 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
+describe('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
+
+	before(function() {
+		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageNetworkOffline=alfa`);
+	})
+
+	it('adds class', function () {
+		browser.assert.hasClass(OSWRoot, 'OSWRootNetworkOffline')
+	});
+
+});
+
 describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
 
 	before(function() {
