@@ -291,6 +291,24 @@ describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 
 });
 
+describe('RemoteStorageSyncReqDone', function testRemoteStorageSyncReqDone() {
+
+	let item = {};
+
+	before(function () {
+		mainModule.ValueInstance(item);
+	});
+
+	it('sets OSWContainer state', function() {
+		mainModule.RemoteStorageSyncReqDone();
+
+		deepEqual(item, {
+			OSWContainerSyncing: true,
+		});
+	});
+
+});
+
 describe('RemoteStorageSyncDone', function testRemoteStorageSyncDone() {
 
 	let item = {};
