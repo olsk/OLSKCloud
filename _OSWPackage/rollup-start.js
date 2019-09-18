@@ -22,8 +22,23 @@ const Widget = function (inputData) {
 		return this
 	};
 
-	this.backend = function (inputData) {
-		mod.ValueBackendDelegate(inputData)
+	this.backend = function (target) {
+		let iconInstance;
+
+		mod.ValueBackendDelegate(function (inputData) {
+			if (!inputData) {
+				iconInstance.$destroy();
+				iconInstance = null;
+
+				return target.classList.remove('OSWIconVisible');
+			};
+
+			iconInstance = new inputData({
+				target,
+			})
+
+			target.classList.add('OSWIconVisible')
+		})
 
 		return this;
 	}
