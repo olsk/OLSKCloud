@@ -1,4 +1,4 @@
-<svg width="40" height="40" version="1.1"
+<svg version="1.1"
   stroke-miterlimit="1.4142" xml:space="preserve"
   xmlns="http://www.w3.org/2000/svg"stroke-linejoin="round"
   clip-rule="evenodd" viewBox="0 0 511 442">

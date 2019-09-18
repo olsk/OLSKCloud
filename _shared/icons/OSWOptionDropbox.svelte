@@ -1,5 +1,4 @@
-<svg width="40" height="40"
-     xml:space="preserve" stroke-miterlimit="1.4142"
+<svg xml:space="preserve" stroke-miterlimit="1.4142"
      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 97"
      stroke-linejoin="round" version="1.1" clip-rule="evenodd">
   <path d="m30.691 0l-30.691 20.039 21.221 16.994 30.946-19.108-21.476-17.925z" fill="#007ee5"/>

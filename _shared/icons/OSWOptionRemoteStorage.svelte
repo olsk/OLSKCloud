@@ -1,4 +1,4 @@
-<svg fill-rule="evenodd" height="40" width="40"
+<svg fill-rule="evenodd"
    xmlns="http://www.w3.org/2000/svg" version="1.1"
    style="shape-rendering:geometricPrecision;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
    clip-rule="evenodd" xml:space="preserve" viewBox="0 0 739 853">
