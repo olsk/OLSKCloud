@@ -125,6 +125,7 @@ const mod = {
 
 	RemoteStorageConnected() {
 		mod.ValueInstance().OSWRootRemoteStorageConnected = true;
+		mod.ValueInstance().OSWRootRemoteStorageConnectedAddress = mod.ValueRemoteStorage().remote.userAddress;
 	},
 
 	RemoteStorageDisconnected() {
