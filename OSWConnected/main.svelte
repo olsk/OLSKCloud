@@ -1,4 +1,6 @@
 <script>
+export let OSWConnectedSyncButtonSyncing = false;
+
 import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import { createEventDispatcher } from 'svelte';
@@ -21,7 +23,7 @@ const mod = {
 
 <div class="OSWConnected">
 
-<button class="OSWConnectedSyncButton" on:click={ mod.InterfaceSyncButtonDidClick }>{ OLSKLocalized('OSWConnectedSyncButtonText') }</button>
+<button class="OSWConnectedSyncButton" on:click={ mod.InterfaceSyncButtonDidClick } class:OSWConnectedSyncButtonSyncing={ OSWConnectedSyncButtonSyncing }>{ OLSKLocalized('OSWConnectedSyncButtonText') }</button>
 
 <button class="OSWConnectedDisconnectButton" on:click={ mod.InterfaceDisconnectButtonDidClick }>{ OLSKLocalized('OSWConnectedDisconnectButtonText') }</button>
 
