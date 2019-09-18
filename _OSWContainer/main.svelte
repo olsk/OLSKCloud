@@ -1,6 +1,7 @@
 <script>
 export let OSWContainerDropboxIsEnabled = false;
 export let OSWContainerGoogleDriveIsEnabled = false;
+export let OSWContainerSyncing = false;
 
 export let ContainerDelegate;
 
@@ -39,7 +40,12 @@ const mod = {
 {/if}
 
 {#if OSWContainerRemoteStorageConnected}
-	<OSWConnected on:OSWConnectedDelegateDisconnect={ ContainerDelegate.OSWConnectedDelegateDisconnect } />
+	<OSWConnected
+	OSWConnectedSyncButtonSyncing={ OSWContainerSyncing }
+	on:OSWConnectedDelegateSyncStart={ ContainerDelegate.OSWConnectedDelegateSyncStart }
+	on:OSWConnectedDelegateSyncStop={ ContainerDelegate.OSWConnectedDelegateSyncStop }
+	on:OSWConnectedDelegateDisconnect={ ContainerDelegate.OSWConnectedDelegateDisconnect }
+	/>
 {/if}
 
 </div>
