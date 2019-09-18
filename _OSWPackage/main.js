@@ -64,6 +64,12 @@ const mod = {
 			return
 		};
 
+		mod.ValueInstance().OSWContainerDropboxIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('dropbox');
+
+		if (!mod.ValueRemoteStorage().on) {
+			return
+		};
+
 		mod.ValueRemoteStorage().on('error', mod.RemoteStorageError);
 		mod.ValueRemoteStorage().on('connected', mod.RemoteStorageConnected);
 		mod.ValueRemoteStorage().on('disconnected', mod.RemoteStorageDisconnected);

@@ -26,6 +26,30 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 
 });
 
+describe('CommandInstanceCreateSetAPIDropbox', function () {
+	
+	before(function () {
+		mainModule.ValueClass(kTesting.StubAppClass());
+
+		mainModule.ValueRemoteStorage({
+			apiKeys: {
+				dropbox: 'alfa',
+			},
+		});
+	});
+
+	it('sets OSWContainer state', function() {
+		mainModule.CommandInstanceCreate()
+
+		deepEqual(mainModule.ValueInstance().OSWContainerDropboxIsEnabled, true);
+	});
+
+	after(function () {
+		mainModule.CommandInstanceDestroy();
+	});
+
+});
+
 describe('ValueInstance', function testValueInstance() {
 
 	before(function () {
