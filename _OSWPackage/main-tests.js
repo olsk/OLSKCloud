@@ -12,85 +12,68 @@ const kTesting = {
 
 describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 
-	before(function () {
-		mainModule.ValueClass(kTesting.StubAppClass());
-	});
-
-	after(function () {
-		mainModule.CommandInstanceDestroy();
-	});
-
-	it('returns undefined', function() {
-		deepEqual(mainModule.CommandInstanceCreate(), undefined);
-	});
-
-});
-
-describe('CommandInstanceCreateSetAPIDropbox', function () {
-	
-	before(function () {
+	beforeEach(function () {
 		mainModule.ValueClass(kTesting.StubAppClass());
 
-		mainModule.ValueRemoteStorage({
-			apiKeys: {
-				dropbox: 'alfa',
-			},
-		});
-	});
-
-	it('sets OSWContainer state', function() {
-		mainModule.CommandInstanceCreate()
-
-		deepEqual(mainModule.ValueInstance().OSWContainerDropboxIsEnabled, true);
-	});
-
-	after(function () {
-		mainModule.CommandInstanceDestroy();
-	});
-
-});
-
-describe('CommandInstanceCreateSetAPIDropbox', function () {
-	
-	before(function () {
-		mainModule.ValueClass(kTesting.StubAppClass());
-
-		mainModule.ValueRemoteStorage({
-			apiKeys: {
-				googledrive: 'alfa',
-			},
-		});
-	});
-
-	it('sets OSWContainer state', function() {
-		mainModule.CommandInstanceCreate()
-
-		deepEqual(mainModule.ValueInstance().OSWContainerGoogleDriveIsEnabled, true);
-	});
-
-	after(function () {
-		mainModule.CommandInstanceDestroy();
-	});
-
-});
-
-describe('ValueInstance', function testValueInstance() {
-
-	before(function () {
-		mainModule.ValueClass(kTesting.StubAppClass());
-	});
-
-	it('returns undefined', function() {
 		deepEqual(mainModule.ValueInstance(), undefined);
 	});
 
-	it('returns object after CommandInstanceCreate', function() {
+	afterEach(function () {
+		mainModule.CommandInstanceDestroy();
+	});
+
+	it('sets ValueInstance', function() {
 		mainModule.CommandInstanceCreate();
 		deepEqual(typeof mainModule.ValueInstance(), 'object');
 	});
 
-	it('returns null after CommandInstanceDestroy', function() {
+	context('APIDropbox', function () {
+		
+		before(function () {
+			mainModule.ValueRemoteStorage({
+				apiKeys: {
+					dropbox: 'alfa',
+				},
+			});
+		});
+
+		it('sets OSWContainer state', function() {
+			mainModule.CommandInstanceCreate()
+
+			deepEqual(mainModule.ValueInstance().OSWContainerDropboxIsEnabled, true);
+		});
+
+	});
+
+	context('APIGoogleDrive', function () {
+		
+		before(function () {
+			mainModule.ValueRemoteStorage({
+				apiKeys: {
+					googledrive: 'alfa',
+				},
+			});
+		});
+
+		it('sets OSWContainer state', function() {
+			mainModule.CommandInstanceCreate()
+
+			deepEqual(mainModule.ValueInstance().OSWContainerGoogleDriveIsEnabled, true);
+		});
+
+	});
+
+});
+
+describe('CommandInstanceDestroy', function testCommandInstanceDestroy() {
+
+	before(function () {
+		mainModule.ValueClass(kTesting.StubAppClass());
+
 		mainModule.CommandInstanceCreate();
+	});
+
+	it('sets ValueInstance', function() {
 		mainModule.CommandInstanceDestroy();
 		deepEqual(mainModule.ValueInstance(), null);
 	});
@@ -109,7 +92,7 @@ describe('OSWContainerDelegateSelect', function testOSWContainerDelegateSelect()
 		});
 	});
 
-	it('calls ValueRemoteStorage.connect', function() {
+	it('calls remotestorage', function() {
 		mainModule.OSWContainerDelegateSelect({
 			detail: 'alfa',
 		})
@@ -130,7 +113,7 @@ describe('OSWContainerDelegateRenew', function testOSWContainerDelegateRenew() {
 		});
 	});
 
-	it('calls ValueRemoteStorage.reconnect', function() {
+	it('calls remotestorage', function() {
 		mainModule.OSWContainerDelegateRenew()
 		deepEqual(item, true);
 	});
@@ -149,7 +132,7 @@ describe('OSWSyncStatusDelegateDisconnect', function testOSWSyncStatusDelegateDi
 		});
 	});
 
-	it('calls ValueRemoteStorage.disconnect', function() {
+	it('calls remotestorage', function() {
 		mainModule.OSWSyncStatusDelegateDisconnect()
 		deepEqual(item, true);
 	});
