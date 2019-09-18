@@ -273,13 +273,20 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 	it('calls ValueBackendDelegate', function() {
 		let item;
 
-		mainModule.ValueBackendDelegate(function () {
-			item = true;
+		mainModule.ValueBackendIconMap({
+			alfa: 'bravo',
+		});
+		mainModule.ValueRemoteStorage({
+			backend: 'alfa',
+			remote: {}
+		});
+		mainModule.ValueBackendDelegate(function (inputData) {
+			item = inputData;
 		});
 
 		mainModule.RemoteStorageConnected();
 
-		deepEqual(item, true);
+		deepEqual(item, 'bravo');
 	});
 
 });

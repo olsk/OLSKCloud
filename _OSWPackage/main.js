@@ -55,6 +55,15 @@ const mod = {
 		mod._ValueBackendDelegate = inputData;
 	},
 
+	_ValueBackendIconMap: undefined,
+	ValueBackendIconMap (inputData) {
+		if (typeof inputData === 'undefined') {
+			return mod._ValueBackendIconMap
+		};
+
+		mod._ValueBackendIconMap = inputData;
+	},
+
 	// COMMAND
 
 	CommandInstanceCreate () {
@@ -137,7 +146,7 @@ const mod = {
 		mod.ValueInstance().OSWRootRemoteStorageConnectedAddress = mod.ValueRemoteStorage().remote.userAddress;
 
 		if (mod.ValueBackendDelegate()) {
-			mod.ValueBackendDelegate()();
+			mod.ValueBackendDelegate()(mod.ValueBackendIconMap()[mod.ValueRemoteStorage().backend]);
 		};
 	},
 
