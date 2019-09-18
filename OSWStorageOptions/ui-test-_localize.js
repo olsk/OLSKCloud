@@ -30,12 +30,12 @@ describe(`OSWStorageOptionsLocalize-${ languageCode }`, function () {
 		browser.assert.text(OSWStorageOptionsButtonRemoteStorage, uLocalized('OSWStorageOptionsButtonRemoteStorageText'))
 	});
 
-	it('localizes OSWStorageOptionsButtonDropbox', function () {
-		browser.assert.text(OSWStorageOptionsButtonDropbox, uLocalized('OSWStorageOptionsButtonDropboxText'))
+	it('localizes OSWStorageOptionsDropboxButton', function () {
+		browser.assert.text(OSWStorageOptionsDropboxButton, uLocalized('OSWStorageOptionsDropboxButtonText'))
 	});
 
-	it('localizes OSWStorageOptionsButtonGoogleDrive', function () {
-		browser.assert.text(OSWStorageOptionsButtonGoogleDrive, uLocalized('OSWStorageOptionsButtonGoogleDriveText'))
+	it('localizes OSWStorageOptionsGoogleDriveButton', function () {
+		browser.assert.text(OSWStorageOptionsGoogleDriveButton, uLocalized('OSWStorageOptionsGoogleDriveButtonText'))
 	});
 
 });

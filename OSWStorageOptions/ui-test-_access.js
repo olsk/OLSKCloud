@@ -11,8 +11,8 @@ Object.entries({
 	OSWStorageOptionsAnchor: '.OSWStorageOptionsAnchor',
 
 	OSWStorageOptionsButtonRemoteStorage: '.OSWStorageOptionsButtonRemoteStorage',
-	OSWStorageOptionsButtonDropbox: '.OSWStorageOptionsButtonDropbox',
-	OSWStorageOptionsButtonGoogleDrive: '.OSWStorageOptionsButtonGoogleDrive',
+	OSWStorageOptionsDropboxButton: '.OSWStorageOptionsDropboxButton',
+	OSWStorageOptionsGoogleDriveButton: '.OSWStorageOptionsGoogleDriveButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -43,12 +43,12 @@ describe('OSWStorageOptionsAccess', function () {
 		browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 1);
 	});
 	
-	it('shows OSWStorageOptionsButtonDropbox', function() {
-		browser.assert.elements(OSWStorageOptionsButtonDropbox, 1);
+	it('shows OSWStorageOptionsDropboxButton', function() {
+		browser.assert.elements(OSWStorageOptionsDropboxButton, 1);
 	});
 	
-	it('shows OSWStorageOptionsButtonGoogleDrive', function() {
-		browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 1);
+	it('shows OSWStorageOptionsGoogleDriveButton', function() {
+		browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 1);
 	});
 	
 	it('hides OSWOptionRemoteStorage', function() {
@@ -69,12 +69,12 @@ describe('OSWStorageOptionsAccess', function () {
 			browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 0);
 		});
 		
-		it('hides OSWStorageOptionsButtonDropbox', function() {
-			browser.assert.elements(OSWStorageOptionsButtonDropbox, 0);
+		it('hides OSWStorageOptionsDropboxButton', function() {
+			browser.assert.elements(OSWStorageOptionsDropboxButton, 0);
 		});
 		
-		it('hides OSWStorageOptionsButtonGoogleDrive', function() {
-			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
+		it('hides OSWStorageOptionsGoogleDriveButton', function() {
+			browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 0);
 		});
 		
 		it('shows OSWOptionRemoteStorage', function() {
@@ -99,8 +99,8 @@ describe('OSWStorageOptionsAccess', function () {
 			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsDropboxIsDisabled=true`);
 		});
 	
-		it('hides OSWStorageOptionsButtonDropbox', function() {
-			browser.assert.elements(OSWStorageOptionsButtonDropbox, 0);
+		it('hides OSWStorageOptionsDropboxButton', function() {
+			browser.assert.elements(OSWStorageOptionsDropboxButton, 0);
 		});
 	
 	});
@@ -111,8 +111,8 @@ describe('OSWStorageOptionsAccess', function () {
 			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsGoogleDriveIsDisabled=true`);
 		});
 	
-		it('hides OSWStorageOptionsButtonGoogleDrive', function() {
-			browser.assert.elements(OSWStorageOptionsButtonGoogleDrive, 0);
+		it('hides OSWStorageOptionsGoogleDriveButton', function() {
+			browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 0);
 		});
 	
 	});

@@ -99,7 +99,7 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 		deepEqual(item, 'alfa');
 	});
 
-	context('StorageOptionDropbox', function () {
+	context('OSWStorageOptionsDropbox', function () {
 
 		before(function () {
 			mainModule.ValueRemoteStorage({
@@ -113,14 +113,14 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 
 		it('calls remotestorage', function() {
 			mainModule.OSWStorageOptionsDelegateConnect({
-				detail: 'StorageOptionDropbox',
+				detail: 'OSWStorageOptionsDropbox',
 			})
 			deepEqual(item, true);
 		});
 	
 	});
 
-	context('StorageOptionGoogleDrive', function () {
+	context('OSWStorageOptionsGoogleDrive', function () {
 
 		before(function () {
 			mainModule.ValueRemoteStorage({
@@ -134,7 +134,7 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 
 		it('calls remotestorage', function() {
 			mainModule.OSWStorageOptionsDelegateConnect({
-				detail: 'StorageOptionGoogleDrive',
+				detail: 'OSWStorageOptionsGoogleDrive',
 			})
 			deepEqual(item, true);
 		});

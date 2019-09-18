@@ -86,11 +86,11 @@ const mod = {
 	// CONTAINER DELEGATE
 
 	OSWStorageOptionsDelegateConnect(inputData) {
-		if (inputData.detail === 'StorageOptionDropbox') {
+		if (inputData.detail === 'OSWStorageOptionsDropbox') {
 			return mod.ValueRemoteStorage().dropbox.connect()
 		};
 		
-		if (inputData.detail === 'StorageOptionGoogleDrive') {
+		if (inputData.detail === 'OSWStorageOptionsGoogleDrive') {
 			return mod.ValueRemoteStorage().googledrive.connect()
 		};
 		

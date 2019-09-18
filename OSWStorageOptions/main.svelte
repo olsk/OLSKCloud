@@ -27,11 +27,11 @@ const mod = {
 	// INTERFACE
 
 	InterfaceDropboxButtonDidClick () {
-		dispatch('OSWStorageOptionsDelegateConnect', 'StorageOptionDropbox')
+		dispatch('OSWStorageOptionsDelegateConnect', 'OSWStorageOptionsDropbox')
 	},
 
 	InterfaceGoogleDriveButtonDidClick () {
-		dispatch('OSWStorageOptionsDelegateConnect', 'StorageOptionGoogleDrive')
+		dispatch('OSWStorageOptionsDelegateConnect', 'OSWStorageOptionsGoogleDrive')
 	},
 
 };
@@ -50,11 +50,11 @@ const mod = {
 	<button class="OSWStorageOptionsButtonRemoteStorage" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }</button>
 
 	{#if !OSWStorageOptionsDropboxIsDisabled}
-		<button class="OSWStorageOptionsButtonDropbox" on:click={ mod.InterfaceDropboxButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonDropboxText') }</button>		
+		<button class="OSWStorageOptionsDropboxButton" on:click={ mod.InterfaceDropboxButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsDropboxButtonText') }</button>		
 	{/if}
 
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
-		<button class="OSWStorageOptionsButtonGoogleDrive" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsButtonGoogleDriveText') }</button>		
+		<button class="OSWStorageOptionsGoogleDriveButton" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>{ OLSKLocalized('OSWStorageOptionsGoogleDriveButtonText') }</button>		
 	{/if}
 {/if}
 
