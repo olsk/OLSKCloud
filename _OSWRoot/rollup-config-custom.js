@@ -1,7 +1,7 @@
 module.exports = {
 	OSWRootRollupConfigCustom (inputData, options = {}) {
 		if (typeof inputData !== 'object' || inputData === null) {
-			throw 'OSWErrorInputInvalid';
+			throw new Error('OSWErrorInputInvalid');
 		}
 
 		inputData.output.format = 'umd';
