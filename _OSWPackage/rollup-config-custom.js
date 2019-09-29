@@ -3,7 +3,7 @@ const pathPackage = require('path');
 module.exports = {
 	OSWPackageRollupConfigCustom (inputData, options) {
 		if (typeof inputData !== 'object' || inputData === null) {
-			throw new Error('OSWErrorInputInvalid');
+			throw new Error('OSWErrorInputNotValid');
 		}
 
 		inputData.output.name = 'OLSKStorageWidget';

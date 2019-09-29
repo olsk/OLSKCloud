@@ -7,7 +7,7 @@ describe('OSWRootRollupConfigCustom', function testOSWRootRollupConfigCustom() {
 	it('throws error if not object', function() {
 		throws(function() {
 			mainModule.OSWRootRollupConfigCustom(null);
-		}, /OSWErrorInputInvalid/);
+		}, /OSWErrorInputNotValid/);
 	})
 
 	it('sets output.format', function() {

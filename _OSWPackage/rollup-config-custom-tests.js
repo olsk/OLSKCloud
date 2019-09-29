@@ -7,7 +7,7 @@ describe('OSWPackageRollupConfigCustom', function testOSWPackageRollupConfigCust
 	it('throws error if not object', function() {
 		throws(function() {
 			mainModule.OSWPackageRollupConfigCustom(null);
-		}, /OSWErrorInputInvalid/);
+		}, /OSWErrorInputNotValid/);
 	})
 
 	it('sets output.name', function() {
