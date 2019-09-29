@@ -47,7 +47,7 @@ const mod = {
 {#if !(OSWStorageOptionsDropboxIsDisabled && OSWStorageOptionsGoogleDriveIsDisabled)}
 	<p>
 		<span class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</span>
-		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
+		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/" target="_blank">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
 	</p>
 
 	<button class="OSWStorageOptionsButtonRemoteStorage OLSKLayoutButtonNoStyle OLSKLayoutElementTappable" on:click={ mod.InterfaceRemoteStorageButtonDidClick }>

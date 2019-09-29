@@ -4,6 +4,18 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 describe('OSWStorageOptionsMisc', function () {
 
+describe('OSWStorageOptionsAnchor', function() {
+
+	before(function() {
+		return browser.visit(kDefaultRoute.OLSKRoutePath);
+	});
+
+	it('sets target', function () {
+		browser.assert.attribute(OSWStorageOptionsAnchor, 'target', '_blank')
+	});
+	
+});
+
 describe('OSWOptionRemoteStorage', function testOSWOptionRemoteStorage () {
 
 	before(function() {
