@@ -1,6 +1,6 @@
-import { throws, deepEqual } from 'assert';
+const { throws, deepEqual } = require('assert');
 
-import mainModule from './main.js';
+const mainModule = require('./main.js');
 
 const kTesting = {
 	StubAppClass: function() {

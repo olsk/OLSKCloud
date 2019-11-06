@@ -178,4 +178,4 @@ const mod = {
 
 };
 
-export default mod;
+Object.assign(exports, mod);
