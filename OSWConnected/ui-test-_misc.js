@@ -5,7 +5,7 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 describe('OSWConnectedMisc', function () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	context('OSWConnectedSyncButton', function testOSWConnectedSyncButton () {
@@ -41,7 +41,9 @@ describe('OSWConnectedMisc', function () {
 	context('OSWConnectedAddress', function testOSWConnectedAddress () {
 		
 		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedAddress=alfa`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWConnectedAddress: 'alfa',
+			});
 		});
 
 		it('sends OSWConnectedDelegateSyncStop', function () {
@@ -53,7 +55,9 @@ describe('OSWConnectedMisc', function () {
 	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
 		
 		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWConnectedSyncButtonSyncing=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWConnectedSyncButtonSyncing: true,
+			});
 		});
 		
 		before(function() {

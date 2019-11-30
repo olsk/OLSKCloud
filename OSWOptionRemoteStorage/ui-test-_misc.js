@@ -7,7 +7,7 @@ describe('OSWOptionRemoteStorageMisc', function () {
 describe('OSWOptionRemoteStorageHelpAnchor', function() {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	it('sets target', function () {
@@ -19,7 +19,7 @@ describe('OSWOptionRemoteStorageHelpAnchor', function() {
 describe('OSWOptionRemoteStorageForm', function testOSWOptionRemoteStorageForm () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	it('sets OSWOptionRemoteStorageAddressField placeholder', function () {

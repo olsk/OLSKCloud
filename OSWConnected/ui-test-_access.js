@@ -15,7 +15,7 @@ Object.entries({
 describe('OSWConnectedAccess', function () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 	
 	it('shows OSWConnected', function() {

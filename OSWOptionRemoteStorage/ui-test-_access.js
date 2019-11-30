@@ -16,7 +16,7 @@ Object.entries({
 describe('OSWOptionRemoteStorageAccess', function () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 	
 	it('shows OSWOptionRemoteStorage', function() {

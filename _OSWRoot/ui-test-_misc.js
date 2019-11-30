@@ -5,7 +5,9 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=alfa`);
+		return browser.OLSKVisit(kDefaultRoute, {
+			OSWRootRemoteStorageError: 'alfa',
+		});
 	});
 
 	it('shows OSWRootRemoteStorageError', function () {
@@ -17,7 +19,10 @@ describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () 
 describe('OSWRootOptions', function testOSWRootOptions () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootDropboxIsEnabled=true&OSWRootGoogleDriveIsEnabled=true`);
+		return browser.OLSKVisit(kDefaultRoute, {
+			OSWRootDropboxIsEnabled: true,
+			OSWRootGoogleDriveIsEnabled: true,
+		});
 	});
 
 	context('StorageOptionRemoteStorage', function () {
@@ -49,7 +54,9 @@ describe('OSWRootOptions', function testOSWRootOptions () {
 describe('OSWRootRenew', function testOSWRootRenew () {
 
 	before(function() {
-		return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=Unauthorized`);
+		return browser.OLSKVisit(kDefaultRoute, {
+			OSWRootRemoteStorageError: 'Unauthorized',
+		});
 	});
 
 	before(function () {

@@ -13,7 +13,10 @@ describe(`OSWRootLocalize-${ languageCode }`, function () {
 	context('OSWRootRemoteStorageErrorUnauthorized', function testOSWRootRemoteStorageErrorUnauthorized () {
 
 		before(function() {
-			return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=Unauthorized`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKRoutingLanguage: languageCode,
+				OSWRootRemoteStorageError: 'Unauthorized',
+			});
 		});
 		
 		it('localizes OSWRootRenewButton', function() {
@@ -25,7 +28,10 @@ describe(`OSWRootLocalize-${ languageCode }`, function () {
 	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
 
 		before(function() {
-			return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageNetworkOffline=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKRoutingLanguage: languageCode,
+				OSWRootRemoteStorageNetworkOffline: true,
+			});
 		});
 		
 		it('localizes OSWRootRemoteStorageNetworkOfflineAlert', function() {

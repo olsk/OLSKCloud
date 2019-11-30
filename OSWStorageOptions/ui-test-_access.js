@@ -20,7 +20,7 @@ Object.entries({
 describe('OSWStorageOptionsAccess', function () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 	
 	it('shows OSWStorageOptions', function() {
@@ -96,7 +96,9 @@ describe('OSWStorageOptionsAccess', function () {
 	context('OSWStorageOptionsDropboxIsDisabled', function testOSWStorageOptionsDropboxIsDisabled () {
 
 		before(function () {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsDropboxIsDisabled=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWStorageOptionsDropboxIsDisabled: true,
+			});
 		});
 	
 		it('hides OSWStorageOptionsDropboxButton', function() {
@@ -108,7 +110,9 @@ describe('OSWStorageOptionsAccess', function () {
 	context('OSWStorageOptionsGoogleDriveIsDisabled', function testOSWStorageOptionsGoogleDriveIsDisabled () {
 
 		before(function () {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsGoogleDriveIsDisabled=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWStorageOptionsGoogleDriveIsDisabled: true,
+			});
 		});
 	
 		it('hides OSWStorageOptionsGoogleDriveButton', function() {
@@ -120,7 +124,10 @@ describe('OSWStorageOptionsAccess', function () {
 	context('OSWStorageOptionsBothDisabled', function testOSWStorageOptionsBothDisabled () {
 
 		before(function () {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWStorageOptionsDropboxIsDisabled=true&OSWStorageOptionsGoogleDriveIsDisabled=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWStorageOptionsDropboxIsDisabled: true,
+				OSWStorageOptionsGoogleDriveIsDisabled: true,
+			});
 		});
 	
 		uHideOptions()

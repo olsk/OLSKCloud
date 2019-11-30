@@ -7,7 +7,7 @@ describe('OSWStorageOptionsMisc', function () {
 describe('OSWStorageOptionsAnchor', function() {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	it('sets target', function () {
@@ -19,7 +19,7 @@ describe('OSWStorageOptionsAnchor', function() {
 describe('OSWOptionRemoteStorage', function testOSWOptionRemoteStorage () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	before(function () {
@@ -49,7 +49,7 @@ describe('OSWOptionRemoteStorage', function testOSWOptionRemoteStorage () {
 describe('OSWStorageOptionsDropbox', function testOSWStorageOptionsDropbox () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	before(function () {
@@ -73,7 +73,7 @@ describe('OSWStorageOptionsDropbox', function testOSWStorageOptionsDropbox () {
 describe('OSWStorageOptionsGoogleDrive', function testOSWStorageOptionsGoogleDrive () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	before(function () {

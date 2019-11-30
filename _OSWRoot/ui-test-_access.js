@@ -15,7 +15,7 @@ Object.entries({
 describe('OSWRootAccess', function () {
 
 	before(function() {
-		return browser.visit(kDefaultRoute.OLSKRoutePath);
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 	
 	it('shows OSWRoot', function() {
@@ -45,7 +45,9 @@ describe('OSWRootAccess', function () {
 	context('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
 
 		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=alfa`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWRootRemoteStorageError: 'alfa',
+			});
 		});
 
 		it('shows OSWRootRemoteStorageError', function () {
@@ -61,7 +63,9 @@ describe('OSWRootAccess', function () {
 	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
 
 		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageNetworkOffline=alfa`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWRootRemoteStorageNetworkOffline: 'alfa',
+			});
 		});
 
 		it('shows OSWRootRemoteStorageNetworkOfflineAlert', function () {
@@ -73,7 +77,9 @@ describe('OSWRootAccess', function () {
 	context('OSWRootRemoteStorageErrorUnauthorized', function testOSWRootRemoteStorageErrorUnauthorized () {
 
 		before(function() {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageError=Unauthorized`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWRootRemoteStorageError: 'Unauthorized',
+			});
 		});
 		
 		it('shows OSWRootRenewButton', function() {
@@ -85,7 +91,9 @@ describe('OSWRootAccess', function () {
 	context('OSWRootRemoteStorageConnected', function testOSWRootRemoteStorageConnected () {
 
 		before(function () {
-			return browser.visit(`${ kDefaultRoute.OLSKRoutePath }?OSWRootRemoteStorageConnected=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OSWRootRemoteStorageConnected: true,
+			});
 		});
 		
 		it('hides OSWStorageOptions', function() {

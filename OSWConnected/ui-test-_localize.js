@@ -11,7 +11,9 @@ const uLocalized = function (inputData) {
 describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 
 	before(function() {
-		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
+		return browser.OLSKVisit(kDefaultRoute, {
+			OLSKRoutingLanguage: languageCode,
+		});
 	});
 
 	it('localizes OSWConnectedSyncButton', function () {
@@ -25,7 +27,10 @@ describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
 
 		before(function() {
-			return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }?OSWConnectedSyncButtonSyncing=true`);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKRoutingLanguage: languageCode,
+				OSWConnectedSyncButtonSyncing: true,
+			});
 		});
 
 		it('localizes OSWConnectedSyncButton', function () {

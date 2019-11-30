@@ -11,7 +11,9 @@ const uLocalized = function (inputData) {
 describe(`OSWOptionRemoteStorageLocalize-${ languageCode }`, function () {
 
 	before(function() {
-		return browser.visit(`${ languageCode }${ kDefaultRoute.OLSKRoutePath }`);
+		return browser.OLSKVisit(kDefaultRoute, {
+			OLSKRoutingLanguage: languageCode,
+		});
 	});
 
 	it('localizes OSWOptionRemoteStorageConnectButton', function () {
