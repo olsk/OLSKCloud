@@ -3,6 +3,8 @@
     "postinstall": "node ./package-postinstall.js",
 
     "start": "olsk-app .",
+
+    "test": "olsk-spec",
     
     "build": "rollup -c rollup-config.js",
     "build-watch": "rollup -w -c rollup-config.js"
@@ -23,6 +25,12 @@
 
     "// SERVE UI TEST STUBS": null,
     "OLSKApp": "olsk/OLSKApp",
+
+    "// SPEC": null,
+    "OLSKSpec": "olsk/OLSKSpec",
+
+    "// SILENCE ERRORS": null,
+    "OLSKDisk": "olsk/OLSKDisk",
 
     "// I sacrifice myself for the commas of others": null    
   }
