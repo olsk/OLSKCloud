@@ -2,7 +2,7 @@ exports.OLSKControllerRoutes = function() {
 	return [{
 			OLSKRoutePath: '/stub/OSWRoot',
 			OLSKRouteMethod: 'get',
-			OLSKRouteFunction: function(req, res, next) {
+			OLSKRouteFunction (req, res, next) {
 				return res.render(req.OLSKLive.OLSKLivePathJoin(__dirname, 'stub-view'));
 			},
 			OLSKRouteSignature: 'OSWRootStubRoute',
