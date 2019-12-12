@@ -10,7 +10,7 @@ const kTesting = {
 	},
 };
 
-describe('CommandInstanceCreate', function testCommandInstanceCreate() {
+describe('ControlInstanceCreate', function testControlInstanceCreate() {
 
 	beforeEach(function () {
 		mainModule.ValueClass(kTesting.StubAppClass());
@@ -19,11 +19,11 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 	});
 
 	afterEach(function () {
-		mainModule.CommandInstanceDestroy();
+		mainModule.ControlInstanceDestroy();
 	});
 
 	it('sets ValueInstance', function() {
-		mainModule.CommandInstanceCreate();
+		mainModule.ControlInstanceCreate();
 		deepEqual(typeof mainModule.ValueInstance(), 'object');
 	});
 
@@ -38,7 +38,7 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 		});
 
 		it('sets OSWRoot state', function() {
-			mainModule.CommandInstanceCreate()
+			mainModule.ControlInstanceCreate()
 
 			deepEqual(mainModule.ValueInstance().OSWRootDropboxIsEnabled, true);
 		});
@@ -56,7 +56,7 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 		});
 
 		it('sets OSWRoot state', function() {
-			mainModule.CommandInstanceCreate()
+			mainModule.ControlInstanceCreate()
 
 			deepEqual(mainModule.ValueInstance().OSWRootGoogleDriveIsEnabled, true);
 		});
@@ -65,16 +65,16 @@ describe('CommandInstanceCreate', function testCommandInstanceCreate() {
 
 });
 
-describe('CommandInstanceDestroy', function testCommandInstanceDestroy() {
+describe('ControlInstanceDestroy', function testControlInstanceDestroy() {
 
 	before(function () {
 		mainModule.ValueClass(kTesting.StubAppClass());
 
-		mainModule.CommandInstanceCreate();
+		mainModule.ControlInstanceCreate();
 	});
 
 	it('sets ValueInstance', function() {
-		mainModule.CommandInstanceDestroy();
+		mainModule.ControlInstanceDestroy();
 		deepEqual(mainModule.ValueInstance(), null);
 	});
 

@@ -64,11 +64,11 @@ const mod = {
 		mod._ValueBackendIconMap = inputData;
 	},
 
-	// COMMAND
+	// CONTROL
 
-	CommandInstanceCreate () {
+	ControlInstanceCreate () {
 		if (mod.ValueInstance()) {
-			mod.CommandInstanceDestroy();
+			mod.ControlInstanceDestroy();
 		}
 		
 		mod.ValueInstance(new mod._ValueClass({
@@ -98,7 +98,7 @@ const mod = {
 		mod.ValueRemoteStorage().on('network-online', mod.RemoteStorageNetworkOnline);
 	},
 
-	CommandInstanceDestroy () {
+	ControlInstanceDestroy () {
 		mod.ValueInstance().$destroy();
 		mod.ValueInstance(null)
 	},

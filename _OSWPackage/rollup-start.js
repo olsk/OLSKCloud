@@ -17,7 +17,7 @@ const Widget = function (inputData) {
 
 	this.attach = function (inputData) {
 		mod.ValueContainer(document.getElementById(inputData));
-		mod.CommandInstanceCreate();
+		mod.ControlInstanceCreate();
 
 		return this
 	};
