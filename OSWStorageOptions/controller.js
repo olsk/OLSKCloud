@@ -1,6 +1,6 @@
 exports.OLSKControllerRoutes = function() {
 	return [{
-			OLSKRoutePath: '/stubs/OSWStorageOptions',
+			OLSKRoutePath: '/stub/OSWStorageOptions',
 			OLSKRouteMethod: 'get',
 			OLSKRouteFunction: function(req, res, next) {
 				return res.render(req.OLSKLive.OLSKLivePathJoin(__dirname, 'stub-view'));

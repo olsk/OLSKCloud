@@ -1,6 +1,6 @@
 exports.OLSKControllerRoutes = function() {
 	return [{
-			OLSKRoutePath: '/stubs/OSWPackage',
+			OLSKRoutePath: '/stub/OSWPackage',
 			OLSKRouteMethod: 'get',
 			OLSKRouteFunction: function(req, res, next) {
 				return res.render(req.OLSKLive.OLSKLivePathJoin(__dirname, 'ui-view'));
