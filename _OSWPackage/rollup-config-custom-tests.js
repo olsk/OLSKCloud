@@ -24,13 +24,4 @@ describe('OSWPackageRollupConfigCustom', function testOSWPackageRollupConfigCust
 		}).output.file, require('path').join(__dirname, '__compiled/OLSKStorageWidget.js'));
 	});
 
-	it('removes livereload', function() {
-		deepEqual(mainModule.OSWPackageRollupConfigCustom({
-			output: {},
-			plugins: [{
-				name: 'livereload',
-			}],
-		}).plugins, []);
-	});
-
 });

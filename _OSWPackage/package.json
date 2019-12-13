@@ -4,6 +4,6 @@
   	"__compiled/OLSKStorageWidget*"
   ],
   "scripts": {
-    "build": "rollup -c ../rollup-config.js"
+    "build": "rollup -c ../rollup-config.js && rollup -c ../rollup-config.js"
   }
 }
