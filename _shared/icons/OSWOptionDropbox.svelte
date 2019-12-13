@@ -1,3 +1,3 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 104 97" xml:space="preserve">
+<svg class="OSWOptionImage" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 104 97" xml:space="preserve">
 	<path stroke="none" fill="#007ee5" d="M 30.69,-0 L 0,20.04 21.22,37.03 52.17,17.93 30.69,-0 Z M 0,54.03 L 30.69,74.07 52.17,56.14 21.22,37.03 0,54.03 Z M 52.17,56.14 L 73.64,74.07 104.34,54.03 83.11,37.03 52.17,56.14 Z M 104.34,20.04 L 73.64,-0 52.17,17.93 83.11,37.03 104.34,20.04 Z M 52.23,60 L 30.69,77.87 21.47,71.85 21.47,78.6 52.23,97.04 82.99,78.6 82.99,71.85 73.77,77.87 52.23,60 Z M 52.23,60" />
 </svg>
