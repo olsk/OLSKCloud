@@ -20,7 +20,7 @@ module.exports = {
 			}
 			
 			return e.name === 'svelte';
-		}).pop()), 1, require('rollup-plugin-svelte')(Object.assign(require('OLSKRollup').OLSKRollupScaffoldSvelteConfig(options), {
+		}).pop()), 1, require('rollup-plugin-svelte')(Object.assign(require('OLSKRollupScaffold').OLSKRollupScaffoldSvelteConfig(options), {
 			css (css) {
 				css.code = require('fs').readFileSync(pathPackage.join(__dirname, '../_OSWRoot/__compiled/ui-style.css'), 'utf8').replace('ui-style', 'OLSKStorageWidget');
 
