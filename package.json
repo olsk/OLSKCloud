@@ -2,7 +2,7 @@
   "scripts": {
     "postinstall": "node ./package-postinstall.js",
 
-    "start": "olsk-app .",
+    "start": "olsk-express .",
 
     "test": "olsk-spec",
     
