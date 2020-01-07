@@ -28,7 +28,7 @@ const mod = {
 
 <button class="OSWConnectedSyncButton" on:click={ mod.InterfaceSyncButtonDidClick } class:OSWConnectedSyncButtonSyncing={ OSWConnectedSyncButtonSyncing }>{ OSWConnectedSyncButtonSyncing ? OLSKLocalized('OSWConnectedSyncButtonTextStop') : OLSKLocalized('OSWConnectedSyncButtonText') }</button>
 
-<button class="OSWConnectedDisconnectButton" on:click={ mod.InterfaceDisconnectButtonDidClick }>{ OLSKLocalized('OSWConnectedDisconnectButtonText') }</button>
+<button class="OSWConnectedDisconnectButton" on:click={ () => window.confirm(OLSKLocalized('OSWConnectedDisconnectPromptText')) && mod.InterfaceDisconnectButtonDidClick() }>{ OLSKLocalized('OSWConnectedDisconnectButtonText') }</button>
 
 </div>
 

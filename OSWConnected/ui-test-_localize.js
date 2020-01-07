@@ -24,6 +24,16 @@ describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 		browser.assert.text(OSWConnectedDisconnectButton, uLocalized('OSWConnectedDisconnectButtonText'))
 	});
 
+	context('discard', function () {
+	
+		it('localizes OSWConnectedDisconnectPrompt', async function() {
+			deepEqual((await browser.OLSKConfirm(async function () {
+				browser.pressButton(OSWConnectedDisconnectButton);
+			})).question, uLocalized('OSWConnectedDisconnectPromptText'));
+		});
+
+	});
+
 	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
 
 		before(function() {
