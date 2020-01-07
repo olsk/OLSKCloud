@@ -24,7 +24,7 @@
     "zombie": "latest",
 
     "// SERVE UI TEST STUBS": null,
-    "OLSKApp": "olsk/OLSKApp",
+    "OLSKExpress": "olsk/OLSKExpress",
 
     "// SPEC": null,
     "OLSKSpec": "olsk/OLSKSpec",
