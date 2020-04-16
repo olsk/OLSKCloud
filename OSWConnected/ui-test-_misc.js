@@ -2,7 +2,7 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-describe('OSWConnectedMisc', function () {
+describe('OSWConnected_Misc', function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);

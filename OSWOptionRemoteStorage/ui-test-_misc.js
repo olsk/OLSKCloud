@@ -2,7 +2,7 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-describe('OSWOptionRemoteStorageMisc', function () {
+describe('OSWOptionRemoteStorage_Misc', function () {
 
 describe('OSWOptionRemoteStorageHelpAnchor', function() {
 
