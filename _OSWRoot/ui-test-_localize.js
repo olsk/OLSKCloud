@@ -8,7 +8,7 @@ const uLocalized = function (inputData) {
 	return OLSKTestingLocalized(inputData, languageCode);
 };
 
-describe(`OSWRootLocalize-${ languageCode }`, function () {
+describe(`OSWRoot_Localize-${ languageCode }`, function () {
 
 	context('OSWRootRemoteStorageErrorUnauthorized', function test_OSWRootRemoteStorageErrorUnauthorized () {
 

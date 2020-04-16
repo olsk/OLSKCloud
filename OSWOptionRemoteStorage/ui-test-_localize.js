@@ -8,7 +8,7 @@ const uLocalized = function (inputData) {
 	return OLSKTestingLocalized(inputData, languageCode);
 };
 
-describe(`OSWOptionRemoteStorageLocalize-${ languageCode }`, function () {
+describe(`OSWOptionRemoteStorage_Localize-${ languageCode }`, function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
