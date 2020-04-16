@@ -64,7 +64,7 @@ describe('OSWConnectedMisc', function () {
 			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '0')
 		});
 
-		it('sets class', function () {
+		it('classes OSWConnectedSyncButtonSyncing', function () {
 			browser.assert.hasClass(OSWConnectedSyncButton, 'OSWConnectedSyncButtonSyncing')
 		});
 
