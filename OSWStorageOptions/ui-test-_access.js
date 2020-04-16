@@ -17,7 +17,7 @@ Object.entries({
 	return global[e.shift()]  = e.pop();
 });
 
-describe('OSWStorageOptionsAccess', function () {
+describe('OSWStorageOptions_Access', function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);

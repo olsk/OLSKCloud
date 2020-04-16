@@ -13,7 +13,7 @@ Object.entries({
 	return global[e.shift()]  = e.pop();
 });
 
-describe('OSWOptionRemoteStorageAccess', function () {
+describe('OSWOptionRemoteStorage_Access', function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);

@@ -12,7 +12,7 @@ Object.entries({
 	return global[e.shift()]  = e.pop();
 });
 
-describe('OSWConnectedAccess', function () {
+describe('OSWConnected_Access', function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);

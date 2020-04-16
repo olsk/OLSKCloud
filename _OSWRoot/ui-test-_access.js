@@ -12,7 +12,7 @@ Object.entries({
 	return global[e.shift()]  = e.pop();
 });
 
-describe('OSWRootAccess', function () {
+describe('OSWRoot_Access', function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);
