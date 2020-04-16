@@ -34,7 +34,7 @@ describe(`OSWConnectedLocalize-${ languageCode }`, function () {
 
 	});
 
-	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
+	context('OSWConnectedSyncButtonSyncing', function test_OSWConnectedSyncButtonSyncing () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {

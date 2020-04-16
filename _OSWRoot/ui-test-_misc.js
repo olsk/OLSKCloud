@@ -2,7 +2,7 @@ import { deepEqual } from 'assert';
 
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
+describe('OSWRootRemoteStorageError', function test_OSWRootRemoteStorageError () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
@@ -16,7 +16,7 @@ describe('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () 
 
 });
 
-describe('OSWRootOptions', function testOSWRootOptions () {
+describe('OSWRootOptions', function test_OSWRootOptions () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
@@ -51,7 +51,7 @@ describe('OSWRootOptions', function testOSWRootOptions () {
 
 });
 
-describe('OSWRootRenew', function testOSWRootRenew () {
+describe('OSWRootRenew', function test_OSWRootRenew () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {

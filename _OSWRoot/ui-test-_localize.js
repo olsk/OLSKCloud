@@ -10,7 +10,7 @@ const uLocalized = function (inputData) {
 
 describe(`OSWRootLocalize-${ languageCode }`, function () {
 
-	context('OSWRootRemoteStorageErrorUnauthorized', function testOSWRootRemoteStorageErrorUnauthorized () {
+	context('OSWRootRemoteStorageErrorUnauthorized', function test_OSWRootRemoteStorageErrorUnauthorized () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -25,7 +25,7 @@ describe(`OSWRootLocalize-${ languageCode }`, function () {
 
 	});
 
-	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
+	context('OSWRootRemoteStorageNetworkOffline', function test_OSWRootRemoteStorageNetworkOffline () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {

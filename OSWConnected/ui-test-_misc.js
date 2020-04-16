@@ -8,7 +8,7 @@ describe('OSWConnectedMisc', function () {
 		return browser.OLSKVisit(kDefaultRoute);
 	});
 
-	context('OSWConnectedSyncButton', function testOSWConnectedSyncButton () {
+	context('OSWConnectedSyncButton', function test_OSWConnectedSyncButton () {
 		
 		before(function () {
 			browser.assert.text('#TestOSWConnectedDelegateSyncStart', '0')
@@ -24,7 +24,7 @@ describe('OSWConnectedMisc', function () {
 	
 	});
 
-	context('OSWConnectedDisconnectButton', function testOSWConnectedDisconnectButton () {
+	context('OSWConnectedDisconnectButton', function test_OSWConnectedDisconnectButton () {
 
 		before(function () {
 			browser.assert.text('#TestOSWConnectedDelegateDisconnect', '0')
@@ -38,7 +38,7 @@ describe('OSWConnectedMisc', function () {
 	
 	});
 
-	context('OSWConnectedAddress', function testOSWConnectedAddress () {
+	context('OSWConnectedAddress', function test_OSWConnectedAddress () {
 		
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -52,7 +52,7 @@ describe('OSWConnectedMisc', function () {
 	
 	});
 
-	context('OSWConnectedSyncButtonSyncing', function testOSWConnectedSyncButtonSyncing () {
+	context('OSWConnectedSyncButtonSyncing', function test_OSWConnectedSyncButtonSyncing () {
 		
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {

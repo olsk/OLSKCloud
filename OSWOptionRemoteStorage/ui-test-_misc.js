@@ -16,7 +16,7 @@ describe('OSWOptionRemoteStorageHelpAnchor', function() {
 	
 });
 
-describe('OSWOptionRemoteStorageForm', function testOSWOptionRemoteStorageForm () {
+describe('OSWOptionRemoteStorageForm', function test_OSWOptionRemoteStorageForm () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);
@@ -38,7 +38,7 @@ describe('OSWOptionRemoteStorageForm', function testOSWOptionRemoteStorageForm (
 		browser.assert.attribute(OSWOptionRemoteStorageAddressField, 'required', '')
 	});
 
-	context('Submit', function testSubmit () {
+	context('Submit', function test_Submit () {
 
 		before(function () {
 			browser.assert.text('#TestStorageOptionRemoteStorageDispatchSubmit', '0')

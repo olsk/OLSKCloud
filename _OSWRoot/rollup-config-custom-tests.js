@@ -2,7 +2,7 @@ const { throws, deepEqual } = require('assert');
 
 const mainModule = require('./rollup-config-custom.js');
 
-describe('OSWRootRollupConfigCustom', function testOSWRootRollupConfigCustom() {
+describe('OSWRootRollupConfigCustom', function test_OSWRootRollupConfigCustom() {
 
 	it('throws error if not object', function() {
 		throws(function() {

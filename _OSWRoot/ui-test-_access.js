@@ -42,7 +42,7 @@ describe('OSWRootAccess', function () {
 		browser.assert.elements(OSWConnected, 0);
 	});
 
-	context('OSWRootRemoteStorageError', function testOSWRootRemoteStorageError () {
+	context('OSWRootRemoteStorageError', function test_OSWRootRemoteStorageError () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -60,7 +60,7 @@ describe('OSWRootAccess', function () {
 
 	});
 
-	context('OSWRootRemoteStorageNetworkOffline', function testOSWRootRemoteStorageNetworkOffline () {
+	context('OSWRootRemoteStorageNetworkOffline', function test_OSWRootRemoteStorageNetworkOffline () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -74,7 +74,7 @@ describe('OSWRootAccess', function () {
 
 	});
 
-	context('OSWRootRemoteStorageErrorUnauthorized', function testOSWRootRemoteStorageErrorUnauthorized () {
+	context('OSWRootRemoteStorageErrorUnauthorized', function test_OSWRootRemoteStorageErrorUnauthorized () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -88,7 +88,7 @@ describe('OSWRootAccess', function () {
 
 	});
 
-	context('OSWRootRemoteStorageConnected', function testOSWRootRemoteStorageConnected () {
+	context('OSWRootRemoteStorageConnected', function test_OSWRootRemoteStorageConnected () {
 
 		before(function () {
 			return browser.OLSKVisit(kDefaultRoute, {

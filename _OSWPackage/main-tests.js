@@ -10,7 +10,7 @@ const kTesting = {
 	},
 };
 
-describe('ControlInstanceCreate', function testControlInstanceCreate() {
+describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 
 	beforeEach(function () {
 		mainModule.ValueClass(kTesting.StubAppClass());
@@ -65,7 +65,7 @@ describe('ControlInstanceCreate', function testControlInstanceCreate() {
 
 });
 
-describe('ControlInstanceDestroy', function testControlInstanceDestroy() {
+describe('ControlInstanceDestroy', function test_ControlInstanceDestroy() {
 
 	before(function () {
 		mainModule.ValueClass(kTesting.StubAppClass());
@@ -80,7 +80,7 @@ describe('ControlInstanceDestroy', function testControlInstanceDestroy() {
 
 });
 
-describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDelegateConnect() {
+describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDelegateConnect() {
 
 	let item;
 
@@ -143,7 +143,7 @@ describe('OSWStorageOptionsDelegateConnect', function testOSWStorageOptionsDeleg
 
 });
 
-describe('OSWRootDelegateRenew', function testOSWRootDelegateRenew() {
+describe('OSWRootDelegateRenew', function test_OSWRootDelegateRenew() {
 
 	let item;
 
@@ -162,7 +162,7 @@ describe('OSWRootDelegateRenew', function testOSWRootDelegateRenew() {
 
 });
 
-describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncStart() {
+describe('OSWConnectedDelegateSyncStart', function test_OSWConnectedDelegateSyncStart() {
 
 	let item = {};
 
@@ -188,7 +188,7 @@ describe('OSWConnectedDelegateSyncStart', function testOSWConnectedDelegateSyncS
 
 });
 
-describe('OSWConnectedDelegateSyncStop', function testOSWConnectedDelegateSyncStop() {
+describe('OSWConnectedDelegateSyncStop', function test_OSWConnectedDelegateSyncStop() {
 
 	let item;
 
@@ -207,7 +207,7 @@ describe('OSWConnectedDelegateSyncStop', function testOSWConnectedDelegateSyncSt
 
 });
 
-describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisconnect() {
+describe('OSWConnectedDelegateDisconnect', function test_OSWConnectedDelegateDisconnect() {
 
 	let item;
 
@@ -226,7 +226,7 @@ describe('OSWConnectedDelegateDisconnect', function testOSWConnectedDelegateDisc
 
 });
 
-describe('RemoteStorageError', function testRemoteStorageError() {
+describe('RemoteStorageError', function test_RemoteStorageError() {
 
 	let item = {};
 
@@ -247,7 +247,7 @@ describe('RemoteStorageError', function testRemoteStorageError() {
 
 });
 
-describe('RemoteStorageConnected', function testRemoteStorageConnected() {
+describe('RemoteStorageConnected', function test_RemoteStorageConnected() {
 
 	let item = {};
 
@@ -291,7 +291,7 @@ describe('RemoteStorageConnected', function testRemoteStorageConnected() {
 
 });
 
-describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
+describe('RemoteStorageDisconnected', function test_RemoteStorageDisconnected() {
 
 	let item = {};
 
@@ -322,7 +322,7 @@ describe('RemoteStorageDisconnected', function testRemoteStorageDisconnected() {
 
 });
 
-describe('RemoteStorageSyncReqDone', function testRemoteStorageSyncReqDone() {
+describe('RemoteStorageSyncReqDone', function test_RemoteStorageSyncReqDone() {
 
 	let item = {};
 
@@ -340,7 +340,7 @@ describe('RemoteStorageSyncReqDone', function testRemoteStorageSyncReqDone() {
 
 });
 
-describe('RemoteStorageSyncDone', function testRemoteStorageSyncDone() {
+describe('RemoteStorageSyncDone', function test_RemoteStorageSyncDone() {
 
 	let item = {};
 
@@ -358,7 +358,7 @@ describe('RemoteStorageSyncDone', function testRemoteStorageSyncDone() {
 
 });
 
-describe('RemoteStorageNetworkOffline', function testRemoteStorageNetworkOffline() {
+describe('RemoteStorageNetworkOffline', function test_RemoteStorageNetworkOffline() {
 
 	let item = {};
 
@@ -376,7 +376,7 @@ describe('RemoteStorageNetworkOffline', function testRemoteStorageNetworkOffline
 
 });
 
-describe('RemoteStorageNetworkOnline', function testRemoteStorageNetworkOnline() {
+describe('RemoteStorageNetworkOnline', function test_RemoteStorageNetworkOnline() {
 
 	let item = {};
 

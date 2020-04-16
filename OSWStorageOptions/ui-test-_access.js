@@ -83,7 +83,7 @@ describe('OSWStorageOptionsAccess', function () {
 
 	};
 
-	context('ClickOSWStorageOptionsButtonRemoteStorage', function testClickOSWStorageOptionsButtonRemoteStorage () {
+	context('ClickOSWStorageOptionsButtonRemoteStorage', function test_ClickOSWStorageOptionsButtonRemoteStorage () {
 
 		before(function () {
 			return browser.pressButton(OSWStorageOptionsButtonRemoteStorage);;
@@ -93,7 +93,7 @@ describe('OSWStorageOptionsAccess', function () {
 
 	});
 
-	context('OSWStorageOptionsDropboxIsDisabled', function testOSWStorageOptionsDropboxIsDisabled () {
+	context('OSWStorageOptionsDropboxIsDisabled', function test_OSWStorageOptionsDropboxIsDisabled () {
 
 		before(function () {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -107,7 +107,7 @@ describe('OSWStorageOptionsAccess', function () {
 	
 	});
 
-	context('OSWStorageOptionsGoogleDriveIsDisabled', function testOSWStorageOptionsGoogleDriveIsDisabled () {
+	context('OSWStorageOptionsGoogleDriveIsDisabled', function test_OSWStorageOptionsGoogleDriveIsDisabled () {
 
 		before(function () {
 			return browser.OLSKVisit(kDefaultRoute, {
@@ -121,7 +121,7 @@ describe('OSWStorageOptionsAccess', function () {
 	
 	});
 
-	context('OSWStorageOptionsBothDisabled', function testOSWStorageOptionsBothDisabled () {
+	context('OSWStorageOptionsBothDisabled', function test_OSWStorageOptionsBothDisabled () {
 
 		before(function () {
 			return browser.OLSKVisit(kDefaultRoute, {
