@@ -23,7 +23,7 @@ describe('OSWOptionRemoteStorageForm', function test_OSWOptionRemoteStorageForm 
 	});
 
 	it('sets OSWOptionRemoteStorageAddressField placeholder', function () {
-		browser.assert.attribute(OSWOptionRemoteStorageAddressField, 'placeholder', 'example@example.com')
+		browser.assert.attribute(OSWOptionRemoteStorageAddressField, 'placeholder', 'example@5apps.com')
 	});
 
 	it('sets OSWOptionRemoteStorageAddressField type', function () {
