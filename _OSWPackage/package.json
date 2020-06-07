@@ -1,7 +1,9 @@
 {
   "name": "OLSKStorageWidget",
+  "main": "main.svelte",
   "files": [
-  	"__compiled/OLSKStorageWidget*"
+    "main.svelte",
+    "__compiled/OLSKStorageWidget*"
   ],
   "scripts": {
     "build": "rollup -c ../rollup-config.js && rollup -c ../rollup-config.js"
