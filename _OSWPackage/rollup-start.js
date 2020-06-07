@@ -16,7 +16,7 @@ const Widget = function (inputData) {
 	mod.ValueRemoteStorage(inputData);
 
 	this.attach = function (inputData) {
-		mod.ValueContainer(document.getElementById(inputData));
+		mod.ValueContainer(typeof inputData === 'string' ? document.getElementById(inputData) : inputData);
 		mod.ControlInstanceCreate();
 
 		return this
