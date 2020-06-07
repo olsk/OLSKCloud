@@ -6,6 +6,6 @@ function SetupStorageWidget (inputData) {
 };
 </script>
 
-<div use:SetupStorageWidget></div>
+<div class="OLSKStorageWidget" use:SetupStorageWidget></div>
 
 <style global src="./__compiled/OLSKStorageWidget.css"></style>
