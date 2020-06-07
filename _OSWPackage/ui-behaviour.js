@@ -9,7 +9,7 @@ const mod = {
 	// LIFECYCLE
 
 	LifecyclePageWillLoad () {
-		moi.SetupEverything();
+		mod.SetupEverything();
 	},
 
 };
