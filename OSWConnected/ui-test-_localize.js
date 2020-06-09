@@ -1,5 +1,3 @@
-import { deepEqual } from 'assert';
-
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 kDefaultRoute.OLSKRouteLanguages.forEach(function (languageCode) {
@@ -26,10 +24,10 @@ describe(`OSWConnected_Localize-${ languageCode }`, function () {
 
 	context('discard', function () {
 	
-		it('localizes OSWConnectedDisconnectPrompt', async function() {
-			deepEqual((await browser.OLSKConfirm(async function () {
-				browser.pressButton(OSWConnectedDisconnectButton);
-			})).question, uLocalized('OSWConnectedDisconnectPromptText'));
+		it('localizes OSWConnectedDisconnectPrompt', function() {
+			browser.assert.OLSKConfirmQuestion(function () {
+				return browser.pressButton(OSWConnectedDisconnectButton);
+			}, uLocalized('OSWConnectedDisconnectPromptText'));
 		});
 
 	});
