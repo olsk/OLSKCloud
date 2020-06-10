@@ -2,7 +2,7 @@
 export let StorageClient;
 
 function SetupStorageWidget (inputData) {
-	(new window.OLSKStorageWidget(StorageClient)).attach(inputData).backend(document.querySelector('.OLSKAppToolbarStorageButton'));
+	(new window.OLSKStorageWidget(StorageClient)).attach(inputData);
 };
 </script>
 
