@@ -31,7 +31,7 @@ const mod = {
 
 <br>
 
-<a class="OSWOptionRemoteStorageHelpAnchor" href="https://5apps.com/users/sign_up" target="_blank">{ OLSKLocalized('OSWOptionRemoteStorageHelpAnchorText') }</a>
+<a class="OSWOptionRemoteStorageHelpAnchor" href="https://5apps.com/users/sign_up?site=storage" target="_blank">{ OLSKLocalized('OSWOptionRemoteStorageHelpAnchorText') }</a>
 
 </div>
 

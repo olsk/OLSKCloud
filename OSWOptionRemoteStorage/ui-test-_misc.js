@@ -9,7 +9,7 @@ describe('OSWOptionRemoteStorage_Misc', function () {
 	describe('OSWOptionRemoteStorageHelpAnchor', function() {
 
 		it('sets href', function () {
-			browser.assert.attribute(OSWOptionRemoteStorageHelpAnchor, 'href', 'https://5apps.com/users/sign_up')
+			browser.assert.attribute(OSWOptionRemoteStorageHelpAnchor, 'href', 'https://5apps.com/users/sign_up?site=storage')
 		});
 
 		it('sets target', function () {
