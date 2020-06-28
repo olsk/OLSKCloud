@@ -20,10 +20,10 @@
     "// MOCHA PREPROCESS": null,
     "OLSKTesting": "olsk/OLSKTesting",
 
-    "// UI TESTS": null,
+    "// INTERFACE TESTS": null,
     "zombie": "latest",
 
-    "// SERVE UI TEST STUBS": null,
+    "// SERVE INTERFACE TEST STUBS": null,
     "OLSKExpress": "olsk/OLSKExpress",
 
     "// SPEC": null,
