@@ -4,5 +4,6 @@
 
 	OLSKAssets.OLSKAssetsCopyAssetsFromTo([
 		'normalize.css',
+		'OLSKUIAssets',
 	], pathPackage.join(__dirname, 'node_modules'), pathPackage.join(__dirname, '_shared/__external'));
 })();

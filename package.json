@@ -31,6 +31,9 @@
 
     "// SILENCE ERRORS": null,
     "OLSKDisk": "olsk/OLSKDisk",
+    
+    "// ASSETS": null,
+    "OLSKUIAssets": "olsk/OLSKUIAssets",
 
     "// I sacrifice myself for the commas of others": null    
   }
