@@ -30,11 +30,11 @@ import _OLSKSharedStorageDisconnect from '../_shared/__external/OLSKUIAssets/_OL
 
 <strong class="OSWConnectedAddress">{ OSWConnectedAddress }</strong>
 
-<button class="OSWConnectedSyncButton" title={ OSWConnectedSyncButtonSyncing ? OLSKLocalized('OSWConnectedSyncButtonTextStop') : OLSKLocalized('OSWConnectedSyncButtonText') } on:click={ mod.InterfaceSyncButtonDidClick } class:OSWConnectedSyncButtonSyncing={ OSWConnectedSyncButtonSyncing }>
+<button class="OSWConnectedSyncButton OLSKLayoutButtonNoStyle OLSKLayoutElementTappable OLSKToolbarButton" title={ OSWConnectedSyncButtonSyncing ? OLSKLocalized('OSWConnectedSyncButtonTextStop') : OLSKLocalized('OSWConnectedSyncButtonText') } on:click={ mod.InterfaceSyncButtonDidClick } class:OSWConnectedSyncButtonSyncing={ OSWConnectedSyncButtonSyncing }>
 	<div class="OSWConnectedSyncButtonImage">{@html OSWConnectedSyncButtonSyncing ? _OLSKSharedSyncStop : _OLSKSharedSyncStart }</div>
 </button>
 
-<button class="OSWConnectedDisconnectButton" title={ OLSKLocalized('OSWConnectedDisconnectButtonText') } on:click={ () => window.confirm(OLSKLocalized('OSWConnectedDisconnectConfirmText')) && mod.InterfaceDisconnectButtonDidClick() }>
+<button class="OSWConnectedDisconnectButton OLSKLayoutButtonNoStyle OLSKLayoutElementTappable OLSKToolbarButton" title={ OLSKLocalized('OSWConnectedDisconnectButtonText') } on:click={ () => window.confirm(OLSKLocalized('OSWConnectedDisconnectConfirmText')) && mod.InterfaceDisconnectButtonDidClick() }>
 	<div class="OSWConnectedDisconnectButtonImage">{@html _OLSKSharedStorageDisconnect }</div>
 </button>
 

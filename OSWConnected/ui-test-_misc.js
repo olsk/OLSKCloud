@@ -8,16 +8,32 @@ describe('OSWConnected_Misc', function () {
 
 	context('OSWConnectedSyncButton', function test_OSWConnectedSyncButton () {
 		
-		before(function () {
-			browser.assert.text('#TestOSWConnectedDelegateSyncStart', '0')
-			browser.assert.className(OSWConnectedSyncButton, 'OSWConnectedSyncButton')
-
-			browser.click(OSWConnectedSyncButton)
-
+		it('classes OLSKLayoutButtonNoStyle', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKLayoutButtonNoStyle');
 		});
 
-		it('sends OSWConnectedDelegateSyncStart', function () {
-			browser.assert.text('#TestOSWConnectedDelegateSyncStart', '1')
+		it('classes OLSKLayoutElementTappable', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKLayoutElementTappable');
+		});
+
+		it('classes OLSKToolbarButton', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKToolbarButton');
+		});
+		
+		context('click', function () {
+			
+			before(function () {
+				browser.assert.text('#TestOSWConnectedDelegateSyncStart', '0');
+			});
+
+			before(function () {
+				browser.click(OSWConnectedSyncButton)
+			});
+
+			it('sends OSWConnectedDelegateSyncStart', function () {
+				browser.assert.text('#TestOSWConnectedDelegateSyncStart', '1')
+			});
+		
 		});
 	
 	});
@@ -32,14 +48,40 @@ describe('OSWConnected_Misc', function () {
 
 	context('OSWConnectedDisconnectButton', function test_OSWConnectedDisconnectButton () {
 
-		before(function () {
-			browser.assert.text('#TestOSWConnectedDelegateDisconnect', '0')
-			
-			browser.click(OSWConnectedDisconnectButton)
+		it('classes OLSKLayoutButtonNoStyle', function () {
+			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKLayoutButtonNoStyle');
+		});
+
+		it('classes OLSKLayoutElementTappable', function () {
+			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKLayoutElementTappable');
+		});
+
+		it('classes OLSKToolbarButton', function () {
+			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKToolbarButton');
 		});
 		
-		it('sends OSWConnectedDelegateDisconnect', function () {
-			browser.assert.text('#TestOSWConnectedDelegateDisconnect', '1')
+		context('click', function () {
+			
+			before(function () {
+				browser.assert.text('#TestOSWConnectedDelegateDisconnect', '0');
+			});
+
+			before(function () {
+				browser.click(OSWConnectedDisconnectButton)
+			});
+
+			it('sends OSWConnectedDelegateSyncStart', function () {
+				browser.assert.text('#TestOSWConnectedDelegateDisconnect', '1')
+			});
+		
+		});
+
+	});
+
+	describe('OSWConnectedDisconnectButtonImage', function test_OSWConnectedDisconnectButtonImage () {
+
+		it('sets src', function () {
+			browser.assert.elements(`${ OSWConnectedDisconnectButtonImage } #_OLSKSharedStorageDisconnect`, 1);
 		});
 	
 	});
