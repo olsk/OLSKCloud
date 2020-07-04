@@ -15,11 +15,11 @@ describe(`OSWConnected_Localize-${ languageCode }`, function () {
 	});
 
 	it('localizes OSWConnectedSyncButton', function () {
-		browser.assert.text(OSWConnectedSyncButton, uLocalized('OSWConnectedSyncButtonText'))
+		browser.assert.attribute(OSWConnectedSyncButton, 'title', uLocalized('OSWConnectedSyncButtonText'))
 	});
 
 	it('localizes OSWConnectedDisconnectButton', function () {
-		browser.assert.text(OSWConnectedDisconnectButton, uLocalized('OSWConnectedDisconnectButtonText'))
+		browser.assert.attribute(OSWConnectedDisconnectButton, 'title', uLocalized('OSWConnectedDisconnectButtonText'))
 	});
 
 	context('discard', function () {
@@ -42,7 +42,7 @@ describe(`OSWConnected_Localize-${ languageCode }`, function () {
 		});
 
 		it('localizes OSWConnectedSyncButton', function () {
-			browser.assert.text(OSWConnectedSyncButton, uLocalized('OSWConnectedSyncButtonTextStop'))
+			browser.assert.attribute(OSWConnectedSyncButton, 'title', uLocalized('OSWConnectedSyncButtonTextStop'))
 		});
 	
 	});

@@ -22,6 +22,14 @@ describe('OSWConnected_Misc', function () {
 	
 	});
 
+	describe('OSWConnectedSyncButtonImage', function test_OSWConnectedSyncButtonImage () {
+
+		it('sets src', function () {
+			browser.assert.elements(`${ OSWConnectedSyncButtonImage } #_OLSKSharedSyncStart`, 1);
+		});
+	
+	});
+
 	context('OSWConnectedDisconnectButton', function test_OSWConnectedDisconnectButton () {
 
 		before(function () {
@@ -70,6 +78,16 @@ describe('OSWConnected_Misc', function () {
 			browser.click(OSWConnectedSyncButton)
 			browser.assert.text('#TestOSWConnectedDelegateSyncStop', '1')
 		});
+
+		describe('OSWConnectedSyncButtonImage', function test_OSWConnectedSyncButtonImage () {
+
+			it('sets src', function () {
+				browser.assert.elements(`${ OSWConnectedSyncButtonImage } #_OLSKSharedSyncStop`, 1);
+			});
+		
+		});
+
+		
 	
 	});
 	
