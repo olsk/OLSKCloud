@@ -24,10 +24,10 @@ describe(`OSWConnected_Localize-${ languageCode }`, function () {
 
 	context('discard', function () {
 	
-		it('localizes OSWConnectedDisconnectPrompt', function() {
+		it('localizes OSWConnectedDisconnectConfirm', function() {
 			browser.assert.OLSKConfirmQuestion(function () {
 				return browser.pressButton(OSWConnectedDisconnectButton);
-			}, uLocalized('OSWConnectedDisconnectPromptText'));
+			}, uLocalized('OSWConnectedDisconnectConfirmText'));
 		});
 
 	});

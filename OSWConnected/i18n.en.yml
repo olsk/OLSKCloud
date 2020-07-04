@@ -1,4 +1,4 @@
 OSWConnectedSyncButtonText: Sync
 OSWConnectedSyncButtonTextStop: Stop
 OSWConnectedDisconnectButtonText: Disconnect
-OSWConnectedDisconnectPromptText: Are you sure?
+OSWConnectedDisconnectConfirmText: Are you sure?
