@@ -14,12 +14,6 @@ const dispatch = createEventDispatcher();
 
 const mod = {
 
-	// MESSAGE
-
-	StorageOptionRemoteStorageDispatchSubmit(inputData) {
-		dispatch('OSWStorageOptionsDelegateConnect', inputData.detail)
-	},
-
 	// INTERFACE
 
 	InterfaceRemoteStorageButtonDidClick () {
@@ -27,14 +21,18 @@ const mod = {
 		OSWStorageOptionsGoogleDriveIsDisabled = true;
 	},
 
-	// INTERFACE
-
 	InterfaceDropboxButtonDidClick () {
 		dispatch('OSWStorageOptionsDelegateConnect', 'OSWStorageOptionsDropbox')
 	},
 
 	InterfaceGoogleDriveButtonDidClick () {
 		dispatch('OSWStorageOptionsDelegateConnect', 'OSWStorageOptionsGoogleDrive')
+	},
+
+	// MESSAGE
+
+	StorageOptionRemoteStorageDispatchSubmit(inputData) {
+		dispatch('OSWStorageOptionsDelegateConnect', inputData.detail)
 	},
 
 };
