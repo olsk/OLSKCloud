@@ -20,7 +20,7 @@ const mod = {
 />
 
 <p>
-	<strong>TestOSWStorageOptionsDelegateConnect</strong>
+	<strong>OSWStorageOptionsDelegateConnect</strong>
 	<span id="TestOSWStorageOptionsDelegateConnect" bind:this={ TestOSWStorageOptionsDelegateConnect }>0</span>
 	<span id="TestOSWStorageOptionsDelegateConnectDetail">{ TestOSWStorageOptionsDelegateConnectDetail }</span>
 </p>

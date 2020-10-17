@@ -20,7 +20,7 @@ const mod = {
 />
 
 <p>
-	<strong>TestStorageOptionRemoteStorageDispatchSubmit</strong>
+	<strong>StorageOptionRemoteStorageDispatchSubmit</strong>
 	<span id="TestStorageOptionRemoteStorageDispatchSubmit" bind:this={ TestStorageOptionRemoteStorageDispatchSubmit }>0</span>
 	<span id="TestStorageOptionRemoteStorageDispatchSubmitValue">{ TestStorageOptionRemoteStorageDispatchSubmitValue }</span>
 </p>

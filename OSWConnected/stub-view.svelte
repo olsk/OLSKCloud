@@ -29,16 +29,16 @@ const mod = {
 />
 
 <p>
-	<strong>TestOSWConnectedDelegateSyncStart</strong>
+	<strong>OSWConnectedDelegateSyncStart</strong>
 	<span id="TestOSWConnectedDelegateSyncStart" bind:this={ mod._TestOSWConnectedDelegateSyncStart }>0</span>
 </p>
 
 <p>
-	<strong>TestOSWConnectedDelegateSyncStop</strong>
+	<strong>OSWConnectedDelegateSyncStop</strong>
 	<span id="TestOSWConnectedDelegateSyncStop" bind:this={ mod._TestOSWConnectedDelegateSyncStop }>0</span>
 </p>
 
 <p>
-	<strong>TestOSWConnectedDelegateDisconnect</strong>
+	<strong>OSWConnectedDelegateDisconnect</strong>
 	<span id="TestOSWConnectedDelegateDisconnect" bind:this={ mod._TestOSWConnectedDelegateDisconnect }>0</span>
 </p>
