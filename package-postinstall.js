@@ -1,9 +1,6 @@
 (function OLSKPostinstallExternalAssets() {
-	const OLSKAssets = require('./node_modules/OLSKExpress/modules/OLSKAssets/main.js');
-	const pathPackage = require('path');
-
-	OLSKAssets.OLSKAssetsCopyAssetsFromTo([
+	require('./node_modules/OLSKExpress/modules/OLSKAssets/main.js').OLSKAssetsCopyAssetsFromTo([
 		'normalize.css',
-		'OLSKUIAssets',
-	], pathPackage.join(__dirname, 'node_modules'), pathPackage.join(__dirname, '_shared/__external'));
+				'OLSKUIAssets',
+	], require('path').join(__dirname, 'node_modules'), require('path').join(__dirname, '_shared/__external'));
 })();
