@@ -3,7 +3,7 @@ exports.OLSKControllerRoutes = function() {
 			OLSKRoutePath: '/stub/OSWConnected',
 			OLSKRouteMethod: 'get',
 			OLSKRouteFunction (req, res, next) {
-				return res.render(req.OLSKLive.OLSKLivePathJoin(__dirname, 'stub-view'));
+				return res.render(require('path').join(__dirname, 'stub-view'));
 			},
 			OLSKRouteSignature: 'OSWConnectedStubRoute',
 			OLSKRouteLanguages: ['en', 'fr', 'es'],
