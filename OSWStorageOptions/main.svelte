@@ -2,7 +2,7 @@
 export let OSWStorageOptionsDropboxIsDisabled = false;
 export let OSWStorageOptionsGoogleDriveIsDisabled = false;
 
-import { OLSKLocalized } from '../_shared/_common/global.js';
+import { OLSKLocalized } from 'OLSKInternational';
 
 import OSWOptionRemoteStorage from '../OSWOptionRemoteStorage/main.svelte'
 import OSWOptionRemoteStorageIcon from '../_shared/icons/OSWOptionRemoteStorage.svelte'

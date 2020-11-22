@@ -10,7 +10,7 @@ export let OSWRootRemoteStorageConnectedAddress = '';
 export let OSWRootRemoteStorageNetworkOffline = false;
 export let OSWRootSyncing = false;
 
-import { OLSKLocalized } from '../_shared/_common/global.js';
+import { OLSKLocalized } from 'OLSKInternational';
 
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
 import OSWConnected from '../OSWConnected/main.svelte'

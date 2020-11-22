@@ -2,7 +2,7 @@
 export let OSWConnectedSyncButtonSyncing = false;
 export let OSWConnectedAddress = '';
 
-import { OLSKLocalized } from '../_shared/_common/global.js';
+import { OLSKLocalized } from 'OLSKInternational';
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();

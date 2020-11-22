@@ -1,5 +1,5 @@
 <script>
-import { OLSKLocalized } from '../_shared/_common/global.js';
+import { OLSKLocalized } from 'OLSKInternational';
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
