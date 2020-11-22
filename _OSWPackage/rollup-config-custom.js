@@ -24,7 +24,7 @@ module.exports = {
 			css (css) {
 				css.code = require('fs').readFileSync(pathPackage.join(__dirname, '../_OSWRoot/__compiled/ui-style.css'), 'utf8').replace('ui-style', 'OLSKStorageWidget');
 
-				return css.write(pathPackage.join(__dirname, '__compiled/OLSKStorageWidget.css'));
+				return css.write('OLSKStorageWidget.css');
 			},
 		})));
 
