@@ -14,9 +14,6 @@ import { OLSKLocalized } from '../_shared/_common/global.js';
 
 import OSWStorageOptions from '../OSWStorageOptions/main.svelte'
 import OSWConnected from '../OSWConnected/main.svelte'
-
-const mod = {
-};
 </script>
 <svelte:options accessors={true} />
 
