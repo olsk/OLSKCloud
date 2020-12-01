@@ -1,18 +1,18 @@
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (languageCode) {
+kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 
 const uLocalized = function (inputData) {
-	return OLSKTestingLocalized(inputData, languageCode);
+	return OLSKTestingLocalized(inputData, OLSKRoutingLanguage);
 };
 
-describe(`OSWRoot_Localize-${ languageCode }`, function () {
+describe(`OSWRoot_Localize-${ OLSKRoutingLanguage }`, function () {
 
 	context('OSWRootRemoteStorageErrorUnauthorized', function test_OSWRootRemoteStorageErrorUnauthorized () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKRoutingLanguage: languageCode,
+				OLSKRoutingLanguage,
 				OSWRootRemoteStorageError: 'Unauthorized',
 			});
 		});
@@ -27,7 +27,7 @@ describe(`OSWRoot_Localize-${ languageCode }`, function () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKRoutingLanguage: languageCode,
+				OLSKRoutingLanguage,
 				OSWRootRemoteStorageNetworkOffline: true,
 			});
 		});

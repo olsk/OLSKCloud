@@ -1,16 +1,16 @@
 const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
-kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (languageCode) {
+kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 
 const uLocalized = function (inputData) {
-	return OLSKTestingLocalized(inputData, languageCode);
+	return OLSKTestingLocalized(inputData, OLSKRoutingLanguage);
 };
 
-describe(`OSWConnected_Localize-${ languageCode }`, function () {
+describe(`OSWConnected_Localize-${ OLSKRoutingLanguage }`, function () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
-			OLSKRoutingLanguage: languageCode,
+			OLSKRoutingLanguage,
 		});
 	});
 
@@ -36,7 +36,7 @@ describe(`OSWConnected_Localize-${ languageCode }`, function () {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKRoutingLanguage: languageCode,
+				OLSKRoutingLanguage,
 				OSWConnectedSyncButtonSyncing: true,
 			});
 		});
