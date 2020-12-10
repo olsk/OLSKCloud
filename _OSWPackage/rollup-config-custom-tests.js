@@ -1,24 +1,24 @@
 const { throws, deepEqual } = require('assert');
 
-const mainModule = require('./rollup-config-custom.js');
+const mod = require('./rollup-config-custom.js');
 
 describe('OSWPackageRollupConfigCustom', function test_OSWPackageRollupConfigCustom() {
 
 	it('throws error if not object', function() {
 		throws(function() {
-			mainModule.OSWPackageRollupConfigCustom(null);
+			mod.OSWPackageRollupConfigCustom(null);
 		}, /OSWErrorInputNotValid/);
 	})
 
 	it('sets output.name', function() {
-		deepEqual(mainModule.OSWPackageRollupConfigCustom({
+		deepEqual(mod.OSWPackageRollupConfigCustom({
 			output: {},
 			plugins: [],
 		}).output.name, 'OLSKStorageWidget');
 	});
 
 	it('sets output.file', function() {
-		deepEqual(mainModule.OSWPackageRollupConfigCustom({
+		deepEqual(mod.OSWPackageRollupConfigCustom({
 			output: {},
 			plugins: [],
 		}).output.file, require('path').join(__dirname, '__compiled/OLSKStorageWidget.js'));

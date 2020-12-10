@@ -1,17 +1,17 @@
 const { throws, deepEqual } = require('assert');
 
-const mainModule = require('./rollup-config-custom.js');
+const mod = require('./rollup-config-custom.js');
 
 describe('OSWRootRollupConfigCustom', function test_OSWRootRollupConfigCustom() {
 
 	it('throws error if not object', function() {
 		throws(function() {
-			mainModule.OSWRootRollupConfigCustom(null);
+			mod.OSWRootRollupConfigCustom(null);
 		}, /OSWErrorInputNotValid/);
 	})
 
 	it('sets output.format', function() {
-		deepEqual(mainModule.OSWRootRollupConfigCustom({
+		deepEqual(mod.OSWRootRollupConfigCustom({
 			output: {},
 		}).output.format, 'umd');
 	});

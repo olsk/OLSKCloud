@@ -1,6 +1,6 @@
 const { throws, deepEqual } = require('assert');
 
-const mainModule = require('./main.js');
+const mod = require('./main.js');
 
 const kTesting = {
 	StubAppClass: function() {
@@ -13,24 +13,24 @@ const kTesting = {
 describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 
 	beforeEach(function () {
-		mainModule.ValueClass(kTesting.StubAppClass());
+		mod.ValueClass(kTesting.StubAppClass());
 
-		deepEqual(mainModule.ValueInstance(), undefined);
+		deepEqual(mod.ValueInstance(), undefined);
 	});
 
 	afterEach(function () {
-		mainModule.ControlInstanceDestroy();
+		mod.ControlInstanceDestroy();
 	});
 
 	it('sets ValueInstance', function() {
-		mainModule.ControlInstanceCreate();
-		deepEqual(typeof mainModule.ValueInstance(), 'object');
+		mod.ControlInstanceCreate();
+		deepEqual(typeof mod.ValueInstance(), 'object');
 	});
 
 	context('APIDropbox', function () {
 		
 		before(function () {
-			mainModule.ValueRemoteStorage({
+			mod.ValueRemoteStorage({
 				apiKeys: {
 					dropbox: 'alfa',
 				},
@@ -38,9 +38,9 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 		});
 
 		it('sets OSWRoot state', function() {
-			mainModule.ControlInstanceCreate()
+			mod.ControlInstanceCreate()
 
-			deepEqual(mainModule.ValueInstance().OSWRootDropboxIsEnabled, true);
+			deepEqual(mod.ValueInstance().OSWRootDropboxIsEnabled, true);
 		});
 
 	});
@@ -48,7 +48,7 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 	context('APIGoogleDrive', function () {
 		
 		before(function () {
-			mainModule.ValueRemoteStorage({
+			mod.ValueRemoteStorage({
 				apiKeys: {
 					googledrive: 'alfa',
 				},
@@ -56,9 +56,9 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 		});
 
 		it('sets OSWRoot state', function() {
-			mainModule.ControlInstanceCreate()
+			mod.ControlInstanceCreate()
 
-			deepEqual(mainModule.ValueInstance().OSWRootGoogleDriveIsEnabled, true);
+			deepEqual(mod.ValueInstance().OSWRootGoogleDriveIsEnabled, true);
 		});
 
 	});
@@ -68,14 +68,14 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 describe('ControlInstanceDestroy', function test_ControlInstanceDestroy() {
 
 	before(function () {
-		mainModule.ValueClass(kTesting.StubAppClass());
+		mod.ValueClass(kTesting.StubAppClass());
 
-		mainModule.ControlInstanceCreate();
+		mod.ControlInstanceCreate();
 	});
 
 	it('sets ValueInstance', function() {
-		mainModule.ControlInstanceDestroy();
-		deepEqual(mainModule.ValueInstance(), null);
+		mod.ControlInstanceDestroy();
+		deepEqual(mod.ValueInstance(), null);
 	});
 
 });
@@ -85,7 +85,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 	let item;
 
 	before(function () {
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			connect (inputData) {
 				item = inputData
 			},
@@ -93,7 +93,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWStorageOptionsDelegateConnect({
+		mod.OSWStorageOptionsDelegateConnect({
 			detail: 'alfa',
 		})
 		deepEqual(item, 'alfa');
@@ -102,7 +102,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 	context('OSWStorageOptionsDropbox', function () {
 
 		before(function () {
-			mainModule.ValueRemoteStorage({
+			mod.ValueRemoteStorage({
 				dropbox: {
 					connect () {
 						item = true
@@ -112,7 +112,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 		});
 
 		it('calls remotestorage', function() {
-			mainModule.OSWStorageOptionsDelegateConnect({
+			mod.OSWStorageOptionsDelegateConnect({
 				detail: 'OSWStorageOptionsDropbox',
 			})
 			deepEqual(item, true);
@@ -123,7 +123,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 	context('OSWStorageOptionsGoogleDrive', function () {
 
 		before(function () {
-			mainModule.ValueRemoteStorage({
+			mod.ValueRemoteStorage({
 				googledrive: {
 					connect () {
 						item = true
@@ -133,7 +133,7 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 		});
 
 		it('calls remotestorage', function() {
-			mainModule.OSWStorageOptionsDelegateConnect({
+			mod.OSWStorageOptionsDelegateConnect({
 				detail: 'OSWStorageOptionsGoogleDrive',
 			})
 			deepEqual(item, true);
@@ -148,7 +148,7 @@ describe('OSWRootDelegateRenew', function test_OSWRootDelegateRenew() {
 	let item;
 
 	before(function () {
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			reconnect () {
 				item = true
 			},
@@ -156,7 +156,7 @@ describe('OSWRootDelegateRenew', function test_OSWRootDelegateRenew() {
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWRootDelegateRenew()
+		mod.OSWRootDelegateRenew()
 		deepEqual(item, true);
 	});
 
@@ -167,15 +167,15 @@ describe('OSWConnectedDelegateSyncStart', function test_OSWConnectedDelegateSync
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			startSync () {
 				item.alfa = true
 			},
 		});
 		
-		mainModule.OSWConnectedDelegateSyncStart()
+		mod.OSWConnectedDelegateSyncStart()
 	});
 
 	it('calls remotestorage', function() {
@@ -193,7 +193,7 @@ describe('OSWConnectedDelegateSyncStop', function test_OSWConnectedDelegateSyncS
 	let item;
 
 	before(function () {
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			stopSync () {
 				item = true
 			},
@@ -201,7 +201,7 @@ describe('OSWConnectedDelegateSyncStop', function test_OSWConnectedDelegateSyncS
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWConnectedDelegateSyncStop()
+		mod.OSWConnectedDelegateSyncStop()
 		deepEqual(item, true);
 	});
 
@@ -212,7 +212,7 @@ describe('OSWConnectedDelegateDisconnect', function test_OSWConnectedDelegateDis
 	let item;
 
 	before(function () {
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			disconnect () {
 				item = true
 			},
@@ -220,7 +220,7 @@ describe('OSWConnectedDelegateDisconnect', function test_OSWConnectedDelegateDis
 	});
 
 	it('calls remotestorage', function() {
-		mainModule.OSWConnectedDelegateDisconnect()
+		mod.OSWConnectedDelegateDisconnect()
 		deepEqual(item, true);
 	});
 
@@ -231,11 +231,11 @@ describe('RemoteStorageError', function test_RemoteStorageError() {
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageError({
+		mod.RemoteStorageError({
 			name: 'alfa',
 			message: 'bravo',
 		});
@@ -252,9 +252,9 @@ describe('RemoteStorageConnected', function test_RemoteStorageConnected() {
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			remote: {
 				userAddress: 'alfa'
 			},
@@ -262,7 +262,7 @@ describe('RemoteStorageConnected', function test_RemoteStorageConnected() {
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageConnected();
+		mod.RemoteStorageConnected();
 
 		deepEqual(item, {
 			OSWRootRemoteStorageConnected: true,
@@ -273,18 +273,18 @@ describe('RemoteStorageConnected', function test_RemoteStorageConnected() {
 	it('calls ValueBackendDelegate', function() {
 		let item;
 
-		mainModule.ValueBackendIconMap({
+		mod.ValueBackendIconMap({
 			alfa: 'bravo',
 		});
-		mainModule.ValueRemoteStorage({
+		mod.ValueRemoteStorage({
 			backend: 'alfa',
 			remote: {}
 		});
-		mainModule.ValueBackendDelegate(function (inputData) {
+		mod.ValueBackendDelegate(function (inputData) {
 			item = inputData;
 		});
 
-		mainModule.RemoteStorageConnected();
+		mod.RemoteStorageConnected();
 
 		deepEqual(item, 'bravo');
 	});
@@ -296,11 +296,11 @@ describe('RemoteStorageDisconnected', function test_RemoteStorageDisconnected() 
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageDisconnected();
+		mod.RemoteStorageDisconnected();
 
 		deepEqual(item, {
 			OSWRootRemoteStorageConnected: false,
@@ -311,11 +311,11 @@ describe('RemoteStorageDisconnected', function test_RemoteStorageDisconnected() 
 	it('calls ValueBackendDelegate', function() {
 		let item;
 
-		mainModule.ValueBackendDelegate(function (inputData) {
+		mod.ValueBackendDelegate(function (inputData) {
 			item = inputData;
 		});
 
-		mainModule.RemoteStorageDisconnected();
+		mod.RemoteStorageDisconnected();
 
 		deepEqual(item, null);
 	});
@@ -327,11 +327,11 @@ describe('RemoteStorageSyncReqDone', function test_RemoteStorageSyncReqDone() {
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageSyncReqDone();
+		mod.RemoteStorageSyncReqDone();
 
 		deepEqual(item, {
 			OSWRootSyncing: true,
@@ -345,11 +345,11 @@ describe('RemoteStorageSyncDone', function test_RemoteStorageSyncDone() {
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageSyncDone();
+		mod.RemoteStorageSyncDone();
 
 		deepEqual(item, {
 			OSWRootSyncing: false,
@@ -363,11 +363,11 @@ describe('RemoteStorageNetworkOffline', function test_RemoteStorageNetworkOfflin
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageNetworkOffline();
+		mod.RemoteStorageNetworkOffline();
 
 		deepEqual(item, {
 			OSWRootRemoteStorageNetworkOffline: true,
@@ -381,11 +381,11 @@ describe('RemoteStorageNetworkOnline', function test_RemoteStorageNetworkOnline(
 	let item = {};
 
 	before(function () {
-		mainModule.ValueInstance(item);
+		mod.ValueInstance(item);
 	});
 
 	it('sets OSWRoot state', function() {
-		mainModule.RemoteStorageNetworkOnline();
+		mod.RemoteStorageNetworkOnline();
 
 		deepEqual(item, {
 			OSWRootRemoteStorageNetworkOffline: false,
