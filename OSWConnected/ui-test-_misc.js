@@ -8,12 +8,12 @@ describe('OSWConnected_Misc', function () {
 
 	context('OSWConnectedSyncButton', function test_OSWConnectedSyncButton () {
 		
-		it('classes OLSKLayoutButtonNoStyle', function () {
-			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKLayoutButtonNoStyle');
+		it('classes OLSKDecorButtonNoStyle', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKDecorButtonNoStyle');
 		});
 
-		it('classes OLSKLayoutElementTappable', function () {
-			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKLayoutElementTappable');
+		it('classes OLSKDecorTappable', function () {
+			browser.assert.hasClass(OSWConnectedSyncButton, 'OLSKDecorTappable');
 		});
 
 		it('classes OLSKToolbarButton', function () {
@@ -48,12 +48,12 @@ describe('OSWConnected_Misc', function () {
 
 	context('OSWConnectedDisconnectButton', function test_OSWConnectedDisconnectButton () {
 
-		it('classes OLSKLayoutButtonNoStyle', function () {
-			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKLayoutButtonNoStyle');
+		it('classes OLSKDecorButtonNoStyle', function () {
+			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKDecorButtonNoStyle');
 		});
 
-		it('classes OLSKLayoutElementTappable', function () {
-			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKLayoutElementTappable');
+		it('classes OLSKDecorTappable', function () {
+			browser.assert.hasClass(OSWConnectedDisconnectButton, 'OLSKDecorTappable');
 		});
 
 		it('classes OLSKToolbarButton', function () {

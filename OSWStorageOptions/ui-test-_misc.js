@@ -21,7 +21,7 @@ describe('OSWOptionRemoteStorage', function test_OSWOptionRemoteStorage () {
 	});
 
 	before(function () {
-		browser.assert.hasClass(OSWStorageOptionsButtonRemoteStorage, 'OLSKLayoutElementTappable')
+		browser.assert.hasClass(OSWStorageOptionsButtonRemoteStorage, 'OLSKDecorTappable')
 
 		return browser.click(OSWStorageOptionsButtonRemoteStorage)
 	});
@@ -55,7 +55,7 @@ describe('OSWStorageOptionsDropbox', function test_OSWStorageOptionsDropbox () {
 	});
 	
 	it('has class', function () {
-		browser.assert.hasClass(OSWStorageOptionsDropboxButton, 'OLSKLayoutElementTappable')
+		browser.assert.hasClass(OSWStorageOptionsDropboxButton, 'OLSKDecorTappable')
 	});
 	
 	it('sends OSWStorageOptionsDelegateConnect', function () {
@@ -79,7 +79,7 @@ describe('OSWStorageOptionsGoogleDrive', function test_OSWStorageOptionsGoogleDr
 	});
 	
 	it('has class', function () {
-		browser.assert.hasClass(OSWStorageOptionsGoogleDriveButton, 'OLSKLayoutElementTappable')
+		browser.assert.hasClass(OSWStorageOptionsGoogleDriveButton, 'OLSKDecorTappable')
 	});
 	
 	it('sends OSWStorageOptionsDelegateConnect', function () {
