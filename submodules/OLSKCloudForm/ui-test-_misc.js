@@ -6,6 +6,14 @@ describe('OLSKCloudForm_Misc', function () {
 		return browser.OLSKVisit(kDefaultRoute);
 	});
 
+	describe('OLSKCloudForm', function test_OLSKCloudForm () {
+		
+		it('classes OLSKDecor', function () {
+			browser.assert.hasClass(OLSKCloudForm, 'OLSKDecor');
+		});
+
+	});
+
 	describe('OLSKCloudFormAddressField', function test_OLSKCloudFormAddressField () {
 		
 		it('sets type', function () {
