@@ -1,42 +1,7 @@
 {
-  "scripts": {
-    "postinstall": "node ./package-postinstall.js",
-    
-    "setup": "olsk-bundle",
-
-    "start": "olsk-express .",
-
-    "test": "olsk-spec",
-
-    "build": "olsk-rollup",
-    "watch": "olsk-rollup-watch"
-  },
-  "devDependencies": {
-    "// SVELTE": null,
-    "OLSKRollupScaffold": "olsk/OLSKRollupScaffold",
-
-    "// UI NORMALIZE": null,
-    "normalize.css": "latest",
-
-    "// MOCHA PREPROCESS": null,
-    "// SERVE INTERFACE TEST STUBS": null,
-    "OLSKExpress": "olsk/OLSKExpress",
-
-    "// SPEC": null,
-    "OLSKSpec": "olsk/OLSKSpec",
-
-    "// SILENCE ERRORS": null,
-    "OLSKDisk": "olsk/OLSKDisk",
-    
-    "// ASSETS": null,
-    "OLSKUIAssets": "olsk/OLSKUIAssets",
-
-    "// HOTFIX": null,
-    "OLSKHotfix": "olsk/OLSKHotfix",
-    
-    "// BUNDLE": null,
-    "OLSKBundle": "olsk/OLSKBundle",
-
-    "// I sacrifice myself for the commas of others": null    
+  "name": "OLSKCloud",
+  "main": "main.svelte",
+  "dependencies": {
+    "OLSKUIAssets": "olsk/OLSKUIAssets"
   }
 }
