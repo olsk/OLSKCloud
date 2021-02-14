@@ -2,6 +2,9 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 Object.entries({
 	OSWRoot: '.OSWRoot',
+
+	OSWStorageOptions: '.OSWOptionRemoteStorage',
+	OSWStorageOptionsButtonRemoteStorage: '.OSWOptionRemoteStorage',
 	
 	OSWRootRemoteStorageError: '.OSWRootRemoteStorageError',
 	OSWRootRemoteStorageNetworkOfflineAlert: '.OSWRootRemoteStorageNetworkOfflineAlert',

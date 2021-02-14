@@ -14,7 +14,7 @@ describe('OSWRootRemoteStorageError', function test_OSWRootRemoteStorageError ()
 
 });
 
-describe('OSWRootOptions', function test_OSWRootOptions () {
+describe.skip('OSWRootOptions', function test_OSWRootOptions () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute);

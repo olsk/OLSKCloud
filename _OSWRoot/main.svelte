@@ -9,6 +9,7 @@ export let OSWRootSyncing = false;
 
 import { OLSKLocalized } from 'OLSKInternational';
 
+import OSWOptionRemoteStorage from '../OSWOptionRemoteStorage/main.svelte'
 import OSWConnected from '../OSWConnected/main.svelte'
 </script>
 <svelte:options accessors={true} />
@@ -28,6 +29,7 @@ import OSWConnected from '../OSWConnected/main.svelte'
 {/if}
 
 {#if !OSWRootRemoteStorageConnected}
+	<OSWOptionRemoteStorage />
 	
 {/if}
 
