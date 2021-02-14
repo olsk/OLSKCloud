@@ -16,9 +16,7 @@ const mod = {
 	},
 
 };
-import _OLSKSharedSyncStart from '../../node_modules/OLSKUIAssets/_OLSKSharedSyncStart.svg';
-import _OLSKSharedSyncStop from '../../node_modules/OLSKUIAssets/_OLSKSharedSyncStop.svg';
-import _OLSKSharedStorageDisconnect from '../../node_modules/OLSKUIAssets/_OLSKSharedStorageDisconnect.svg';
+import OLSKUIAssets from 'OLSKUIAssets';
 </script>
 
 <div class="OLSKCloudStatus">
@@ -27,18 +25,18 @@ import _OLSKSharedStorageDisconnect from '../../node_modules/OLSKUIAssets/_OLSKS
 
 {#if !OLSKCloudStatusIsSyncing }
 	<button class="OLSKCloudStatusSyncStartButton OLSKDecorButtonNoStyle OLSKDecorTappable OLSKToolbarButton" title={ OLSKLocalized('OLSKCloudStatusSyncStartButtonText') } on:click={ OLSKCloudStatusDispatchSyncStart }>
-		<div class="OLSKCloudStatusSyncStartButtonImage">{@html _OLSKSharedSyncStart }</div>
+		<div class="OLSKCloudStatusSyncStartButtonImage">{@html OLSKUIAssets._OLSKSharedSyncStart }</div>
 	</button>
 {/if}
 
 {#if OLSKCloudStatusIsSyncing }
 	<button class="OLSKCloudStatusSyncStopButton OLSKDecorButtonNoStyle OLSKDecorTappable OLSKToolbarButton" title={ OLSKLocalized('OLSKCloudStatusSyncStopButtonText') } on:click={ OLSKCloudStatusDispatchSyncStop }>
-		<div class="OLSKCloudStatusSyncStopButtonImage">{@html _OLSKSharedSyncStop }</div>
+		<div class="OLSKCloudStatusSyncStopButtonImage">{@html OLSKUIAssets._OLSKSharedSyncStop }</div>
 	</button>
 {/if}
 
 <button class="OLSKCloudStatusDisconnectButton OLSKDecorButtonNoStyle OLSKDecorTappable OLSKToolbarButton" title={ OLSKLocalized('OLSKCloudStatusDisconnectButtonText') } on:click={ () => window.confirm(OLSKLocalized('OLSKCloudStatusDisconnectConfirmText')) && mod.InterfaceDisconnectButtonDidClick() }>
-	<div class="OLSKCloudStatusDisconnectButtonImage">{@html _OLSKSharedStorageDisconnect }</div>
+	<div class="OLSKCloudStatusDisconnectButtonImage">{@html OLSKUIAssets._OLSKSharedStorageDisconnect }</div>
 </button>
 
 </div>
