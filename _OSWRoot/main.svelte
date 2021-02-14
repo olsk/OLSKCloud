@@ -1,6 +1,4 @@
 <script>
-export let OSWRootGoogleDriveIsEnabled = false;
-
 export let ContainerDelegate;
 
 export let OSWRootRemoteStorageError = '';
@@ -33,8 +31,6 @@ import OSWConnected from '../OSWConnected/main.svelte'
 {#if !OSWRootRemoteStorageConnected}
 	<OSWStorageOptions 
 	
-	OSWStorageOptionsGoogleDriveIsDisabled={ !OSWRootGoogleDriveIsEnabled }
-
 	on:OSWStorageOptionsDelegateConnect={ ContainerDelegate.OSWStorageOptionsDelegateConnect }
 	
 	/>

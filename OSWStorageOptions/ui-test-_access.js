@@ -9,7 +9,6 @@ Object.entries({
 	OSWStorageOptionsAnchor: '.OSWStorageOptionsAnchor',
 
 	OSWStorageOptionsButtonRemoteStorage: '.OSWStorageOptionsButtonRemoteStorage',
-	OSWStorageOptionsGoogleDriveButton: '.OSWStorageOptionsGoogleDriveButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -40,10 +39,6 @@ describe('OSWStorageOptions_Access', function () {
 		browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 1);
 	});
 	
-	it('shows OSWStorageOptionsGoogleDriveButton', function() {
-		browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 1);
-	});
-	
 	it('hides OSWOptionRemoteStorage', function() {
 		browser.assert.elements(OSWOptionRemoteStorage, 0);
 	});
@@ -62,10 +57,6 @@ describe('OSWStorageOptions_Access', function () {
 			browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 0);
 		});
 		
-		it('hides OSWStorageOptionsGoogleDriveButton', function() {
-			browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 0);
-		});
-		
 		it('shows OSWOptionRemoteStorage', function() {
 			browser.assert.elements(OSWOptionRemoteStorage, 1);
 		});
@@ -81,31 +72,5 @@ describe('OSWStorageOptions_Access', function () {
 		uHideOptions()
 
 	});
-
-	context('OSWStorageOptionsGoogleDriveIsDisabled', function test_OSWStorageOptionsGoogleDriveIsDisabled () {
-
-		before(function () {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OSWStorageOptionsGoogleDriveIsDisabled: true,
-			});
-		});
-	
-		it('hides OSWStorageOptionsGoogleDriveButton', function() {
-			browser.assert.elements(OSWStorageOptionsGoogleDriveButton, 0);
-		});
-	
-	});
-
-	context('OSWStorageOptionsBothDisabled', function test_OSWStorageOptionsBothDisabled () {
-
-		before(function () {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OSWStorageOptionsGoogleDriveIsDisabled: true,
-			});
-		});
-	
-		uHideOptions()
-	
-	})
 
 });

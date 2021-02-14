@@ -4,10 +4,8 @@ import Main from '../_OSWRoot/__compiled/ui-behaviour.js';
 mod.ValueClass(Main);
 
 import OSWIconRemoteStorage from '../_shared/icons/OSWOptionRemoteStorage.svelte';
-import OSWIconGoogleDrive from '../_shared/icons/OSWOptionGoogleDrive.svelte';
 mod.ValueBackendIconMap({
 	remotestorage: OSWIconRemoteStorage,
-	googledrive: OSWIconGoogleDrive,
 })
 
 const Widget = function (inputData) {

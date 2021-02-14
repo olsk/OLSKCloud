@@ -27,24 +27,6 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 		deepEqual(typeof mod.ValueInstance(), 'object');
 	});
 
-	context('APIGoogleDrive', function () {
-		
-		before(function () {
-			mod.ValueRemoteStorage({
-				apiKeys: {
-					googledrive: 'alfa',
-				},
-			});
-		});
-
-		it('sets OSWRoot state', function() {
-			mod.ControlInstanceCreate()
-
-			deepEqual(mod.ValueInstance().OSWRootGoogleDriveIsEnabled, true);
-		});
-
-	});
-
 });
 
 describe('ControlInstanceDestroy', function test_ControlInstanceDestroy() {
@@ -79,27 +61,6 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 			detail: 'alfa',
 		})
 		deepEqual(item, 'alfa');
-	});
-
-	context('OSWStorageOptionsGoogleDrive', function () {
-
-		before(function () {
-			mod.ValueRemoteStorage({
-				googledrive: {
-					connect () {
-						item = true
-					},
-				},
-			});
-		});
-
-		it('calls remotestorage', function() {
-			mod.OSWStorageOptionsDelegateConnect({
-				detail: 'OSWStorageOptionsGoogleDrive',
-			})
-			deepEqual(item, true);
-		});
-	
 	});
 
 });

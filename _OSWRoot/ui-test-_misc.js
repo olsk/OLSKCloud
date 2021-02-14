@@ -17,9 +17,7 @@ describe('OSWRootRemoteStorageError', function test_OSWRootRemoteStorageError ()
 describe('OSWRootOptions', function test_OSWRootOptions () {
 
 	before(function() {
-		return browser.OLSKVisit(kDefaultRoute, {
-			OSWRootGoogleDriveIsEnabled: true,
-		});
+		return browser.OLSKVisit(kDefaultRoute);
 	});
 
 	context('StorageOptionRemoteStorage', function () {
