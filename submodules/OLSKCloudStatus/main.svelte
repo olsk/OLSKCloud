@@ -31,3 +31,10 @@ import OLSKUIAssets from 'OLSKUIAssets';
 </button>
 
 </div>
+
+<style>
+.OLSKCloudStatus {
+	display: flex;
+	align-items: center;
+}
+</style>
