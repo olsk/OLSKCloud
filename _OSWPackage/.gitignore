@@ -1,8 +1,0 @@
-*
-
-!.gitignore
-!package.json
-!main.svelte
-!__compiled/
-
-__compiled/.DS_Store
