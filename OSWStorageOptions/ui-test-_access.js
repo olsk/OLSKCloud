@@ -5,8 +5,6 @@ Object.entries({
 
 	OSWStorageOptionsHeading: '.OSWStorageOptionsHeading',
 
-	OSWStorageOptionsAnchor: '.OSWStorageOptionsAnchor',
-
 	OSWStorageOptionsButtonRemoteStorage: '.OSWStorageOptionsButtonRemoteStorage',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
@@ -26,10 +24,6 @@ describe('OSWStorageOptions_Access', function () {
 		browser.assert.elements(OSWStorageOptionsHeading, 1);
 	});
 	
-	it('shows OSWStorageOptionsAnchor', function() {
-		browser.assert.elements(OSWStorageOptionsAnchor, 1);
-	});
-	
 	it('shows OSWStorageOptionsButtonRemoteStorage', function() {
 		browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 1);
 	});
@@ -39,10 +33,6 @@ describe('OSWStorageOptions_Access', function () {
 	});
 
 	const uHideOptions = function () {
-		
-		it('hides OSWStorageOptionsAnchor', function() {
-			browser.assert.elements(OSWStorageOptionsAnchor, 0);
-		});
 		
 		it('hides OSWStorageOptionsButtonRemoteStorage', function() {
 			browser.assert.elements(OSWStorageOptionsButtonRemoteStorage, 0);

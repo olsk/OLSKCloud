@@ -18,10 +18,6 @@ describe(`OSWStorageOptions_Localize-${ OLSKRoutingLanguage }`, function () {
 		browser.assert.text(OSWStorageOptionsHeading, uLocalized('OSWStorageOptionsHeadingText'))
 	});
 
-	it('localizes OSWStorageOptionsAnchor', function () {
-		browser.assert.text(OSWStorageOptionsAnchor, uLocalized('OSWStorageOptionsAnchorText'))
-	});
-
 	it('localizes OSWStorageOptionsButtonRemoteStorage', function () {
 		browser.assert.text(OSWStorageOptionsButtonRemoteStorage, uLocalized('OSWStorageOptionsButtonRemoteStorageText'))
 	});
