@@ -26,8 +26,6 @@ const mod = {
 
 <button class="OLSKCloudFormConnectButton" on:click={ mod.InterfaceFormDidSubmit }>{ OLSKLocalized('OLSKCloudFormConnectButtonText') }</button>
 
-<br />
-
 <a class="OLSKCloudFormRegisterLink" href="https://5apps.com/users/sign_up?site=storage" target="_blank">{ OLSKLocalized('OLSKCloudFormRegisterLinkText') }</a>
 
 </form>
