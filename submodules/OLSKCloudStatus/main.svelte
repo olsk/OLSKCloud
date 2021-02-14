@@ -7,15 +7,6 @@ export let OLSKCloudStatusDispatchDisconnect;
 
 import { OLSKLocalized } from 'OLSKInternational';
 
-const mod = {
-
-	// INTERFACE
-
-	InterfaceDisconnectButtonDidClick () {
-		OLSKCloudStatusDispatchDisconnect();
-	},
-
-};
 import OLSKUIAssets from 'OLSKUIAssets';
 </script>
 
@@ -35,7 +26,7 @@ import OLSKUIAssets from 'OLSKUIAssets';
 	</button>
 {/if}
 
-<button class="OLSKCloudStatusDisconnectButton OLSKDecorButtonNoStyle OLSKDecorTappable OLSKToolbarButton" title={ OLSKLocalized('OLSKCloudStatusDisconnectButtonText') } on:click={ () => window.confirm(OLSKLocalized('OLSKCloudStatusDisconnectConfirmText')) && mod.InterfaceDisconnectButtonDidClick() }>
+<button class="OLSKCloudStatusDisconnectButton OLSKDecorButtonNoStyle OLSKDecorTappable OLSKToolbarButton" title={ OLSKLocalized('OLSKCloudStatusDisconnectButtonText') } on:click={ () => window.confirm(OLSKLocalized('OLSKCloudStatusDisconnectConfirmText')) && OLSKCloudStatusDispatchDisconnect() }>
 	<div class="OLSKCloudStatusDisconnectButtonImage">{@html OLSKUIAssets._OLSKSharedStorageDisconnect }</div>
 </button>
 
