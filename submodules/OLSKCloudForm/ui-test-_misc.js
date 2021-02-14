@@ -24,6 +24,26 @@ describe('OLSKCloudForm_Misc', function () {
 			browser.assert.attribute(OLSKCloudFormAddressField, 'required', '')
 		});
 
+	});
+
+	describe('OLSKCloudFormConnectButton', function test_OLSKCloudFormConnectButton () {		
+
+		it('sets disabled', function () {
+			browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', '')
+		});
+
+		context('valid', function () {
+
+			before(function () {
+				browser.fill(OLSKCloudFormAddressField, 'alfa@bravo.charlie');
+			});
+
+			it('sets disabled', function () {
+				browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', null);
+			});
+			
+		});
+
 		context('submit', function () {
 
 			before(function () {
@@ -32,25 +52,8 @@ describe('OLSKCloudForm_Misc', function () {
 			});
 
 			before(function () {
-				browser.fill(OLSKCloudFormAddressField, 'alfa@bravo.charlie');
-			});
-
-			before(function () {
 				return browser.fire(OLSKCloudForm, 'submit');
 			});
-			
-			it('sends OLSKCloudFormDispatchSubmit', function () {
-				browser.assert.text('#TestOLSKCloudFormDispatchSubmit', '1')
-				browser.assert.text('#TestOLSKCloudFormDispatchSubmitData', 'alfa@bravo.charlie')
-			});
-			
-		});
-
-	});
-
-	describe('OLSKCloudFormConnectButton', function test_OLSKCloudFormConnectButton () {		
-
-		context('submit', function () {
 
 			before(function () {
 				browser.pressButton(OLSKCloudFormConnectButton);
@@ -58,6 +61,7 @@ describe('OLSKCloudForm_Misc', function () {
 			
 			it('sends OLSKCloudFormDispatchSubmit', function () {
 				browser.assert.text('#TestOLSKCloudFormDispatchSubmit', '2')
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmitData', 'alfa@bravo.charlie')
 			});
 			
 		});
