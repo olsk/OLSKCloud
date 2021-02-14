@@ -3,7 +3,7 @@ import RollupStart from './main.svelte';
 const OLSKCloud = new RollupStart({
 	target: document.body,
 	props: Object.assign({
-		OLSKCloudFormDispatchStorage: (function () {}),
+		OLSKCloudFormDispatchSubmit: (function () {}),
 		OLSKCloudStatusIsSyncing: false,
 		OLSKCloudStatusDispatchSyncStart: (function () {}),
 		OLSKCloudStatusDispatchSyncStop: (function () {}),

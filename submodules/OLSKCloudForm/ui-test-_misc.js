@@ -27,8 +27,8 @@ describe('OLSKCloudForm_Misc', function () {
 		context('submit', function () {
 
 			before(function () {
-				browser.assert.text('#TestOLSKCloudFormDispatchStorage', '0');
-				browser.assert.text('#TestOLSKCloudFormDispatchStorageData', 'undefined');
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmit', '0');
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmitData', 'undefined');
 			});
 
 			before(function () {
@@ -39,9 +39,9 @@ describe('OLSKCloudForm_Misc', function () {
 				return browser.fire(OLSKCloudForm, 'submit');
 			});
 			
-			it('sends OLSKCloudFormDispatchStorage', function () {
-				browser.assert.text('#TestOLSKCloudFormDispatchStorage', '1')
-				browser.assert.text('#TestOLSKCloudFormDispatchStorageData', 'alfa@bravo.charlie')
+			it('sends OLSKCloudFormDispatchSubmit', function () {
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmit', '1')
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmitData', 'alfa@bravo.charlie')
 			});
 			
 		});
@@ -56,8 +56,8 @@ describe('OLSKCloudForm_Misc', function () {
 				browser.pressButton(OLSKCloudFormConnectButton);
 			});
 			
-			it('sends OLSKCloudFormDispatchStorage', function () {
-				browser.assert.text('#TestOLSKCloudFormDispatchStorage', '2')
+			it('sends OLSKCloudFormDispatchSubmit', function () {
+				browser.assert.text('#TestOLSKCloudFormDispatchSubmit', '2')
 			});
 			
 		});

@@ -8,7 +8,7 @@ import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
 
 {#if !$$props.OLSKCloudStatusIdentityText }
 	<OLSKCloudForm
-		OLSKCloudFormDispatchStorage={ $$props.OLSKCloudFormDispatchStorage }
+		OLSKCloudFormDispatchSubmit={ $$props.OLSKCloudFormDispatchSubmit }
 		/>
 {/if}
 

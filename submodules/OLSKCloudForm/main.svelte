@@ -1,5 +1,5 @@
 <script>
-export let OLSKCloudFormDispatchStorage;
+export let OLSKCloudFormDispatchSubmit;
 
 import { OLSKLocalized } from 'OLSKInternational';
 
@@ -14,7 +14,7 @@ const mod = {
 	InterfaceFormDidSubmit (event) {
 		event.preventDefault();
 
-		OLSKCloudFormDispatchStorage(mod._ValueAddress);
+		OLSKCloudFormDispatchSubmit(mod._ValueAddress);
 	},
 
 };
