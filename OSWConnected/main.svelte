@@ -39,5 +39,3 @@ import _OLSKSharedStorageDisconnect from '../_shared/__external/OLSKUIAssets/_OL
 </button>
 
 </div>
-
-<style src="./ui-style.css"></style>

@@ -3,11 +3,6 @@ import mod from './main.js';
 import Main from '../_OSWRoot/__compiled/ui-behaviour.js';
 mod.ValueClass(Main);
 
-import OSWIconRemoteStorage from '../_shared/icons/OSWOptionRemoteStorage.svelte';
-mod.ValueBackendIconMap({
-	remotestorage: OSWIconRemoteStorage,
-})
-
 const Widget = function (inputData) {
 	mod.ValueRemoteStorage(inputData);
 
