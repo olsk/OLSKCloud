@@ -27,24 +27,6 @@ describe('ControlInstanceCreate', function test_ControlInstanceCreate() {
 		deepEqual(typeof mod.ValueInstance(), 'object');
 	});
 
-	context('APIDropbox', function () {
-		
-		before(function () {
-			mod.ValueRemoteStorage({
-				apiKeys: {
-					dropbox: 'alfa',
-				},
-			});
-		});
-
-		it('sets OSWRoot state', function() {
-			mod.ControlInstanceCreate()
-
-			deepEqual(mod.ValueInstance().OSWRootDropboxIsEnabled, true);
-		});
-
-	});
-
 	context('APIGoogleDrive', function () {
 		
 		before(function () {
@@ -97,27 +79,6 @@ describe('OSWStorageOptionsDelegateConnect', function test_OSWStorageOptionsDele
 			detail: 'alfa',
 		})
 		deepEqual(item, 'alfa');
-	});
-
-	context('OSWStorageOptionsDropbox', function () {
-
-		before(function () {
-			mod.ValueRemoteStorage({
-				dropbox: {
-					connect () {
-						item = true
-					},
-				},
-			});
-		});
-
-		it('calls remotestorage', function() {
-			mod.OSWStorageOptionsDelegateConnect({
-				detail: 'OSWStorageOptionsDropbox',
-			})
-			deepEqual(item, true);
-		});
-	
 	});
 
 	context('OSWStorageOptionsGoogleDrive', function () {

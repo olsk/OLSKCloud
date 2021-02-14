@@ -30,10 +30,6 @@ describe(`OSWStorageOptions_Localize-${ OLSKRoutingLanguage }`, function () {
 		browser.assert.text(OSWStorageOptionsButtonRemoteStorage, uLocalized('OSWStorageOptionsButtonRemoteStorageText'))
 	});
 
-	it('localizes OSWStorageOptionsDropboxButton', function () {
-		browser.assert.text(OSWStorageOptionsDropboxButton, uLocalized('OSWStorageOptionsDropboxButtonText'))
-	});
-
 	it('localizes OSWStorageOptionsGoogleDriveButton', function () {
 		browser.assert.text(OSWStorageOptionsGoogleDriveButton, uLocalized('OSWStorageOptionsGoogleDriveButtonText'))
 	});

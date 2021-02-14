@@ -82,7 +82,6 @@ const mod = {
 			return
 		};
 
-		mod.ValueInstance().OSWRootDropboxIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('dropbox');
 		mod.ValueInstance().OSWRootGoogleDriveIsEnabled = mod.ValueRemoteStorage().apiKeys.hasOwnProperty('googledrive');
 
 		if (!mod.ValueRemoteStorage().on) {
@@ -106,10 +105,6 @@ const mod = {
 	// CONTAINER DELEGATE
 
 	OSWStorageOptionsDelegateConnect(inputData) {
-		if (inputData.detail === 'OSWStorageOptionsDropbox') {
-			return mod.ValueRemoteStorage().dropbox.connect()
-		};
-		
 		if (inputData.detail === 'OSWStorageOptionsGoogleDrive') {
 			return mod.ValueRemoteStorage().googledrive.connect()
 		};

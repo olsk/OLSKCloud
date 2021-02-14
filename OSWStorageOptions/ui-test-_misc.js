@@ -44,30 +44,6 @@ describe('OSWOptionRemoteStorage', function test_OSWOptionRemoteStorage () {
 
 });
 
-describe('OSWStorageOptionsDropbox', function test_OSWStorageOptionsDropbox () {
-
-	before(function() {
-		return browser.OLSKVisit(kDefaultRoute);
-	});
-
-	before(function () {
-		return browser.click(OSWStorageOptionsDropboxButton)
-	});
-	
-	it('has class', function () {
-		browser.assert.hasClass(OSWStorageOptionsDropboxButton, 'OLSKDecorTappable')
-	});
-	
-	it('sends OSWStorageOptionsDelegateConnect', function () {
-		browser.assert.text('#TestOSWStorageOptionsDelegateConnect', '1')
-	});
-	
-	it('sets detail', function () {
-		browser.assert.text('#TestOSWStorageOptionsDelegateConnectDetail', 'OSWStorageOptionsDropbox')
-	});
-
-});
-
 describe('OSWStorageOptionsGoogleDrive', function test_OSWStorageOptionsGoogleDrive () {
 
 	before(function() {

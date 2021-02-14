@@ -18,7 +18,6 @@ describe('OSWRootOptions', function test_OSWRootOptions () {
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
-			OSWRootDropboxIsEnabled: true,
 			OSWRootGoogleDriveIsEnabled: true,
 		});
 	});

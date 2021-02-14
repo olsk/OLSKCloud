@@ -1,12 +1,10 @@
 <script>
-export let OSWStorageOptionsDropboxIsDisabled = false;
 export let OSWStorageOptionsGoogleDriveIsDisabled = false;
 
 import { OLSKLocalized } from 'OLSKInternational';
 
 import OSWOptionRemoteStorage from '../OSWOptionRemoteStorage/main.svelte'
 import OSWOptionRemoteStorageIcon from '../_shared/icons/OSWOptionRemoteStorage.svelte'
-import OSWOptionDropboxIcon from '../_shared/icons/OSWOptionDropbox.svelte'
 import OSWOptionGoogleDriveIcon from '../_shared/icons/OSWOptionGoogleDrive.svelte'
 
 import { createEventDispatcher } from 'svelte';
@@ -17,12 +15,7 @@ const mod = {
 	// INTERFACE
 
 	InterfaceRemoteStorageButtonDidClick () {
-		OSWStorageOptionsDropboxIsDisabled = true;
 		OSWStorageOptionsGoogleDriveIsDisabled = true;
-	},
-
-	InterfaceDropboxButtonDidClick () {
-		dispatch('OSWStorageOptionsDelegateConnect', 'OSWStorageOptionsDropbox')
 	},
 
 	InterfaceGoogleDriveButtonDidClick () {
@@ -42,7 +35,7 @@ const mod = {
 
 <h1 class="OSWStorageOptionsHeading">{ OLSKLocalized('OSWStorageOptionsHeadingText') }</h1>
 
-{#if !(OSWStorageOptionsDropboxIsDisabled && OSWStorageOptionsGoogleDriveIsDisabled)}
+{#if !(OSWStorageOptionsGoogleDriveIsDisabled)}
 	<p>
 		<span class="OSWStorageOptionsDescription">{ OLSKLocalized('OSWStorageOptionsDescriptionText') }</span>
 		<a class="OSWStorageOptionsAnchor" href="https://remotestorage.io/" target="_blank">{ OLSKLocalized('OSWStorageOptionsAnchorText') }</a>
@@ -53,13 +46,6 @@ const mod = {
 		{ OLSKLocalized('OSWStorageOptionsButtonRemoteStorageText') }
 	</button>
 
-	{#if !OSWStorageOptionsDropboxIsDisabled}
-		<button class="OSWStorageOptionsDropboxButton OLSKDecorButtonNoStyle OLSKDecorTappable" on:click={ mod.InterfaceDropboxButtonDidClick }>
-			<OSWOptionDropboxIcon /><br>
-		{ OLSKLocalized('OSWStorageOptionsDropboxButtonText') }
-		</button>
-	{/if}
-
 	{#if !OSWStorageOptionsGoogleDriveIsDisabled}
 		<button class="OSWStorageOptionsGoogleDriveButton OLSKDecorButtonNoStyle OLSKDecorTappable" on:click={ mod.InterfaceGoogleDriveButtonDidClick }>
 			<OSWOptionGoogleDriveIcon /><br>
@@ -68,7 +54,7 @@ const mod = {
 	{/if}
 {/if}
 
-{#if OSWStorageOptionsDropboxIsDisabled && OSWStorageOptionsGoogleDriveIsDisabled}
+{#if OSWStorageOptionsGoogleDriveIsDisabled}
 	<OSWOptionRemoteStorage on:StorageOptionRemoteStorageDispatchSubmit={ mod.StorageOptionRemoteStorageDispatchSubmit } />
 {/if}
 
