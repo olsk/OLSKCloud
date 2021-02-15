@@ -38,7 +38,7 @@ const mod = {
 }
 
 .OLSKCloudForm > * {
-	margin: 0 2px;
+	margin: 0 1px;
 }
 </style>
 
