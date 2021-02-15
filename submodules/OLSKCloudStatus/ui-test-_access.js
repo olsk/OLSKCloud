@@ -3,8 +3,6 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 Object.entries({
 	OLSKCloudStatus: '.OLSKCloudStatus',
 
-	OLSKCloudStatusError: '.OLSKCloudStatusError',
-
 	OLSKCloudStatusIdentity: '.OLSKCloudStatusIdentity',
 	
 	OLSKCloudStatusSyncStartButton: '.OLSKCloudStatusSyncStartButton',
@@ -28,10 +26,6 @@ describe('OLSKCloudStatus_Access', function () {
 		browser.assert.elements(OLSKCloudStatus, 1);
 	});
 
-	it('hides OLSKCloudStatusError', function () {
-		browser.assert.elements(OLSKCloudStatusError, 0);
-	});
-	
 	it('shows OLSKCloudStatusIdentity', function() {
 		browser.assert.elements(OLSKCloudStatusIdentity, 1);
 	});
@@ -54,20 +48,6 @@ describe('OLSKCloudStatus_Access', function () {
 
 	it('shows OLSKCloudStatusDisconnectButtonImage', function () {
 		browser.assert.elements(OLSKCloudStatusDisconnectButtonImage, 1);
-	});
-
-	context('OLSKCloudStatusErrorText', function () {
-		
-		before(function() {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKCloudStatusErrorText: Math.random().toString(),
-			});
-		});
-
-		it('shows OLSKCloudStatusError', function () {
-			browser.assert.elements(OLSKCloudStatusError, 1);
-		});
-
 	});
 
 	context('OLSKCloudStatusIsSyncing', function () {

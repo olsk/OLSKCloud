@@ -1,5 +1,4 @@
 <script>
-export let OLSKCloudStatusErrorText = '';
 export let OLSKCloudStatusIdentityText;
 export let OLSKCloudStatusIsSyncing;
 export let OLSKCloudStatusDispatchSyncStart;
@@ -12,10 +11,6 @@ import OLSKUIAssets from 'OLSKUIAssets';
 </script>
 
 <div class="OLSKCloudStatus">
-
-{#if OLSKCloudStatusErrorText }
-	<p class="OLSKCloudStatusError">{ OLSKCloudStatusErrorText }</p>
-{/if}
 
 <strong class="OLSKCloudStatusIdentity">{ OLSKCloudStatusIdentityText }</strong>
 
@@ -41,9 +36,5 @@ import OLSKUIAssets from 'OLSKUIAssets';
 .OLSKCloudStatus {
 	display: flex;
 	align-items: center;
-}
-
-.OLSKCloudStatusError {
-	font-weight: bold;
 }
 </style>

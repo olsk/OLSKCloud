@@ -2,22 +2,12 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 describe('OLSKCloudStatus_Misc', function () {
 
-	const OLSKCloudStatusErrorText = Math.random().toString();
 	const OLSKCloudStatusIdentityText = Math.random().toString();
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, {
-			OLSKCloudStatusErrorText,
 			OLSKCloudStatusIdentityText,
 		});
-	});
-
-	describe('OLSKCloudStatusError', function test_OLSKCloudStatusError () {
-
-		it('binds OLSKCloudStatusErrorText', function () {
-			browser.assert.text(OLSKCloudStatusError, OLSKCloudStatusErrorText);
-		});
-	
 	});
 
 	describe('OLSKCloudStatusIdentity', function test_OLSKCloudStatusIdentity () {

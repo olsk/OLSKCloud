@@ -1,10 +1,15 @@
 <script>
+export let OLSKCloudErrorText = null;
+
 import OLSKCloudForm from './submodules/OLSKCloudForm/main.svelte'
 import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
 </script>
 
 <div class="OLSKCloud">
 
+{#if $$props.OLSKCloudErrorText }
+	<p class="OLSKCloudError">{ OLSKCloudErrorText }</p>
+{/if}
 
 {#if !$$props.OLSKCloudStatusIdentityText }
 	<OLSKCloudForm
@@ -23,3 +28,9 @@ import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
 {/if}
 	
 </div>
+
+<style>
+.OLSKCloudError {
+	font-weight: bold;
+}
+</style>

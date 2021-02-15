@@ -2,6 +2,8 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 Object.entries({
 	OLSKCloud: '.OLSKCloud',
+
+	OLSKCloudError: '.OLSKCloudError',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -14,6 +16,10 @@ describe('OLSKCloud_Access', function () {
 
 	it('shows OLSKCloud', function () {
 		browser.assert.elements(OLSKCloud, 1);
+	});
+
+	it('hides OLSKCloudError', function () {
+		browser.assert.elements(OLSKCloudError, 0);
 	});
 
 	it('shows OLSKCloudForm', function () {
@@ -40,6 +46,20 @@ describe('OLSKCloud_Access', function () {
 			browser.assert.elements('.OLSKCloudStatus', 1);
 		});
 	
+	});
+
+	context('OLSKCloudErrorText', function () {
+		
+		before(function() {
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKCloudErrorText: Math.random().toString(),
+			});
+		});
+
+		it('shows OLSKCloudError', function () {
+			browser.assert.elements(OLSKCloudError, 1);
+		});
+
 	});
 
 });
