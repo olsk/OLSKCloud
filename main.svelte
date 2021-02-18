@@ -1,5 +1,8 @@
 <script>
 export let OLSKCloudErrorText = null;
+export let OLSKCloudDispatchRenew;
+
+import { OLSKLocalized } from 'OLSKInternational';
 
 import OLSKCloudForm from './submodules/OLSKCloudForm/main.svelte'
 import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
@@ -9,6 +12,10 @@ import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
 
 {#if $$props.OLSKCloudErrorText }
 	<p class="OLSKCloudError">{ OLSKCloudErrorText }</p>
+
+	{#if OLSKCloudErrorText.match('Unauthorized') }
+		<button class="OLSKCloudRenewButton" on:click={ OLSKCloudDispatchRenew }>{ OLSKLocalized('OLSKCloudRenewButtonText') }</button>
+	{/if}
 {/if}
 
 {#if !$$props.OLSKCloudStatusIdentityText }

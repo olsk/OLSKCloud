@@ -4,6 +4,8 @@ Object.entries({
 	OLSKCloud: '.OLSKCloud',
 
 	OLSKCloudError: '.OLSKCloudError',
+
+	OLSKCloudRenewButton: '.OLSKCloudRenewButton',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -20,6 +22,10 @@ describe('OLSKCloud_Access', function () {
 
 	it('hides OLSKCloudError', function () {
 		browser.assert.elements(OLSKCloudError, 0);
+	});
+
+	it('hides OLSKCloudRenewButton', function () {
+		browser.assert.elements(OLSKCloudRenewButton, 0);
 	});
 
 	it('shows OLSKCloudForm', function () {
@@ -58,6 +64,28 @@ describe('OLSKCloud_Access', function () {
 
 		it('shows OLSKCloudError', function () {
 			browser.assert.elements(OLSKCloudError, 1);
+		});
+
+		it('hides OLSKCloudRenewButton', function () {
+			browser.assert.elements(OLSKCloudRenewButton, 0);
+		});
+
+		context('Unauthorized', function () {
+			
+			before(function() {
+				return browser.OLSKVisit(kDefaultRoute, {
+					OLSKCloudErrorText: Math.random().toString() + 'Unauthorized' + Math.random().toString(),
+				});
+			});
+
+			it('shows OLSKCloudError', function () {
+				browser.assert.elements(OLSKCloudError, 1);
+			});
+
+			it('shows OLSKCloudRenewButton', function () {
+				browser.assert.elements(OLSKCloudRenewButton, 1);
+			});
+		
 		});
 
 	});
