@@ -15,6 +15,10 @@ describe('OLSKCloudForm_Misc', function () {
 	});
 
 	describe('OLSKCloudFormAddressField', function test_OLSKCloudFormAddressField () {
+
+		it('classes OLSKDecorInput', function () {
+			browser.assert.hasClass(OLSKCloudFormAddressField, 'OLSKDecorInput');
+		});
 		
 		it('sets type', function () {
 			browser.assert.attribute(OLSKCloudFormAddressField, 'type', 'email')

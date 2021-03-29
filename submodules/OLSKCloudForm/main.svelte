@@ -22,7 +22,7 @@ const mod = {
 
 <form class="OLSKCloudForm OLSKDecor" on:submit={ mod.InterfaceFormDidSubmit }>
 	
-<input class="OLSKCloudFormAddressField" type="email" autofocus required placeholder="example@5apps.com" bind:value={ mod._ValueAddress } />
+<input class="OLSKCloudFormAddressField OLSKDecorInput" type="email" autofocus required placeholder="example@5apps.com" bind:value={ mod._ValueAddress } />
 
 <button class="OLSKCloudFormConnectButton" on:click={ mod.InterfaceFormDidSubmit } disabled={ mod._ValueAddress.length ? null : true }>{ OLSKLocalized('OLSKCloudFormConnectButtonText') }</button>
 
