@@ -37,6 +37,9 @@ import OLSKCloudStatus from './submodules/OLSKCloudStatus/main.svelte'
 </div>
 
 <style>
+.OLSKCloud {
+	color: var(--OLSKCommonForeground);
+}
 .OLSKCloudError {
 	font-weight: bold;
 }
