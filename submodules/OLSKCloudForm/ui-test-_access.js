@@ -8,7 +8,7 @@ Object.entries({
 
 	OLSKCloudFormRegisterLink: '.OLSKCloudFormRegisterLink',
 }).map(function (e) {
-	return global[e.shift()]  = e.pop();
+	return global[e.shift()] = e.pop();
 });
 
 describe('OLSKCloudForm_Access', function () {

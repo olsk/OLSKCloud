@@ -13,7 +13,7 @@ Object.entries({
 	OLSKCloudStatusDisconnectButton: '.OLSKCloudStatusDisconnectButton',
 	OLSKCloudStatusDisconnectButtonImage: '.OLSKCloudStatusDisconnectButtonImage',
 }).map(function (e) {
-	return global[e.shift()]  = e.pop();
+	return global[e.shift()] = e.pop();
 });
 
 describe('OLSKCloudStatus_Access', function () {
