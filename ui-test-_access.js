@@ -17,23 +17,23 @@ describe('OLSKCloud_Access', function () {
 	});
 
 	it('shows OLSKCloud', function () {
-		browser.assert.elements(OLSKCloud, 1);
+		return browser.assert.elements(OLSKCloud, 1);
 	});
 
 	it('hides OLSKCloudError', function () {
-		browser.assert.elements(OLSKCloudError, 0);
+		return browser.assert.elements(OLSKCloudError, 0);
 	});
 
 	it('hides OLSKCloudRenewButton', function () {
-		browser.assert.elements(OLSKCloudRenewButton, 0);
+		return browser.assert.elements(OLSKCloudRenewButton, 0);
 	});
 
 	it('shows OLSKCloudForm', function () {
-		browser.assert.elements('.OLSKCloudForm', 1);
+		return browser.assert.elements('.OLSKCloudForm', 1);
 	});
 
 	it('hides OLSKCloudStatus', function () {
-		browser.assert.elements('.OLSKCloudStatus', 0);
+		return browser.assert.elements('.OLSKCloudStatus', 0);
 	});
 
 	context('OLSKCloudStatusIdentityText', function () {
@@ -45,11 +45,11 @@ describe('OLSKCloud_Access', function () {
 		});
 
 		it('hides OLSKCloudForm', function () {
-			browser.assert.elements('.OLSKCloudForm', 0);
+			return browser.assert.elements('.OLSKCloudForm', 0);
 		});
 
 		it('shows OLSKCloudStatus', function () {
-			browser.assert.elements('.OLSKCloudStatus', 1);
+			return browser.assert.elements('.OLSKCloudStatus', 1);
 		});
 	
 	});
@@ -63,11 +63,11 @@ describe('OLSKCloud_Access', function () {
 		});
 
 		it('shows OLSKCloudError', function () {
-			browser.assert.elements(OLSKCloudError, 1);
+			return browser.assert.elements(OLSKCloudError, 1);
 		});
 
 		it('hides OLSKCloudRenewButton', function () {
-			browser.assert.elements(OLSKCloudRenewButton, 0);
+			return browser.assert.elements(OLSKCloudRenewButton, 0);
 		});
 
 		context('Unauthorized', function () {
@@ -79,11 +79,11 @@ describe('OLSKCloud_Access', function () {
 			});
 
 			it('shows OLSKCloudError', function () {
-				browser.assert.elements(OLSKCloudError, 1);
+				return browser.assert.elements(OLSKCloudError, 1);
 			});
 
 			it('shows OLSKCloudRenewButton', function () {
-				browser.assert.elements(OLSKCloudRenewButton, 1);
+				return browser.assert.elements(OLSKCloudRenewButton, 1);
 			});
 		
 		});

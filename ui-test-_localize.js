@@ -16,7 +16,7 @@ kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 		});
 
 		it('localizes OLSKCloudRenewButton', function () {
-			browser.assert.text(OLSKCloudRenewButton, uLocalized('OLSKCloudRenewButtonText'));
+			return browser.assert.text(OLSKCloudRenewButton, uLocalized('OLSKCloudRenewButtonText'));
 		});
 
 	});

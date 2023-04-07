@@ -15,11 +15,11 @@ kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 		});
 
 		it('localizes OLSKCloudFormConnectButton', function () {
-			browser.assert.text(OLSKCloudFormConnectButton, uLocalized('OLSKCloudFormConnectButtonText'))
+			return browser.assert.text(OLSKCloudFormConnectButton, uLocalized('OLSKCloudFormConnectButtonText'))
 		});
 
 		it('localizes OLSKCloudFormRegisterLink', function () {
-			browser.assert.text(OLSKCloudFormRegisterLink, uLocalized('OLSKCloudFormRegisterLinkText'))
+			return browser.assert.text(OLSKCloudFormRegisterLink, uLocalized('OLSKCloudFormRegisterLinkText'))
 		});
 
 	});

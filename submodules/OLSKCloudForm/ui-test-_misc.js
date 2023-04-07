@@ -9,7 +9,7 @@ describe('OLSKCloudForm_Misc', function () {
 	describe('OLSKCloudForm', function test_OLSKCloudForm () {
 		
 		it('classes OLSKDecor', function () {
-			browser.assert.hasClass(OLSKCloudForm, 'OLSKDecor');
+			return browser.assert.hasClass(OLSKCloudForm, 'OLSKDecor');
 		});
 
 	});
@@ -17,23 +17,23 @@ describe('OLSKCloudForm_Misc', function () {
 	describe('OLSKCloudFormAddressField', function test_OLSKCloudFormAddressField () {
 
 		it('classes OLSKDecorInput', function () {
-			browser.assert.hasClass(OLSKCloudFormAddressField, 'OLSKDecorInput');
+			return browser.assert.hasClass(OLSKCloudFormAddressField, 'OLSKDecorInput');
 		});
 		
 		it('sets type', function () {
-			browser.assert.attribute(OLSKCloudFormAddressField, 'type', 'email')
+			return browser.assert.attribute(OLSKCloudFormAddressField, 'type', 'email')
 		});
 
 		it('sets placeholder', function () {
-			browser.assert.attribute(OLSKCloudFormAddressField, 'placeholder', 'example@5apps.com')
+			return browser.assert.attribute(OLSKCloudFormAddressField, 'placeholder', 'example@5apps.com')
 		});
 
 		it('sets autofocus', function () {
-			browser.assert.attribute(OLSKCloudFormAddressField, 'autofocus', '')
+			return browser.assert.attribute(OLSKCloudFormAddressField, 'autofocus', '')
 		});
 
 		it('sets required', function () {
-			browser.assert.attribute(OLSKCloudFormAddressField, 'required', '')
+			return browser.assert.attribute(OLSKCloudFormAddressField, 'required', '')
 		});
 
 	});
@@ -41,7 +41,7 @@ describe('OLSKCloudForm_Misc', function () {
 	describe('OLSKCloudFormConnectButton', function test_OLSKCloudFormConnectButton () {		
 
 		it('sets disabled', function () {
-			browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', '')
+			return browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', '')
 		});
 
 		context('valid', function () {
@@ -51,7 +51,7 @@ describe('OLSKCloudForm_Misc', function () {
 			});
 
 			it('sets disabled', function () {
-				browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', null);
+				return browser.assert.attribute(OLSKCloudFormConnectButton, 'disabled', null);
 			});
 			
 		});
@@ -83,11 +83,11 @@ describe('OLSKCloudForm_Misc', function () {
 	describe('OLSKCloudFormRegisterLink', function test_OLSKCloudFormRegisterLink () {
 
 		it('sets href', function () {
-			browser.assert.attribute(OLSKCloudFormRegisterLink, 'href', 'https://5apps.com/users/sign_up?site=storage')
+			return browser.assert.attribute(OLSKCloudFormRegisterLink, 'href', 'https://5apps.com/users/sign_up?site=storage')
 		});
 
 		it('sets target', function () {
-			browser.assert.attribute(OLSKCloudFormRegisterLink, 'target', '_blank')
+			return browser.assert.attribute(OLSKCloudFormRegisterLink, 'target', '_blank')
 		});
 		
 	});

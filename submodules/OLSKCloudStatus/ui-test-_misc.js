@@ -13,7 +13,7 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusIdentity', function test_OLSKCloudStatusIdentity () {
 
 		it('binds OLSKCloudStatusIdentityText', function () {
-			browser.assert.text(OLSKCloudStatusIdentity, OLSKCloudStatusIdentityText);
+			return browser.assert.text(OLSKCloudStatusIdentity, OLSKCloudStatusIdentityText);
 		});
 	
 	});
@@ -21,21 +21,21 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusSyncStartButton', function test_OLSKCloudStatusSyncStartButton () {
 		
 		it('classes OLSKDecorButtonNoStyle', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKDecorButtonNoStyle');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKDecorButtonNoStyle');
 		});
 
 		it('classes OLSKDecorTappable', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKDecorTappable');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKDecorTappable');
 		});
 
 		it('classes OLSKToolbarButton', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKToolbarButton');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStartButton, 'OLSKToolbarButton');
 		});
 		
 		context('click', function () {
 			
 			before(function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchSyncStart', '0');
+				return browser.assert.text('#TestOLSKCloudStatusDispatchSyncStart', '0');
 			});
 
 			before(function () {
@@ -43,7 +43,7 @@ describe('OLSKCloudStatus_Misc', function () {
 			});
 
 			it('sends OLSKCloudStatusDispatchSyncStart', function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchSyncStart', '1')
+				return browser.assert.text('#TestOLSKCloudStatusDispatchSyncStart', '1')
 			});
 		
 		});
@@ -53,7 +53,7 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusSyncStartButtonImage', function test_OLSKCloudStatusSyncStartButtonImage () {
 
 		it('sets src', function () {
-			browser.assert.elements(`${ OLSKCloudStatusSyncStartButtonImage } #_OLSKSharedSyncStart`, 1);
+			return browser.assert.elements(`${ OLSKCloudStatusSyncStartButtonImage } #_OLSKSharedSyncStart`, 1);
 		});
 	
 	});
@@ -67,21 +67,21 @@ describe('OLSKCloudStatus_Misc', function () {
 		});
 		
 		it('classes OLSKDecorButtonNoStyle', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKDecorButtonNoStyle');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKDecorButtonNoStyle');
 		});
 
 		it('classes OLSKDecorTappable', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKDecorTappable');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKDecorTappable');
 		});
 
 		it('classes OLSKToolbarButton', function () {
-			browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKToolbarButton');
+			return browser.assert.hasClass(OLSKCloudStatusSyncStopButton, 'OLSKToolbarButton');
 		});
 		
 		context('click', function () {
 			
 			before(function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchSyncStop', '0');
+				return browser.assert.text('#TestOLSKCloudStatusDispatchSyncStop', '0');
 			});
 
 			before(function () {
@@ -89,7 +89,7 @@ describe('OLSKCloudStatus_Misc', function () {
 			});
 
 			it('sends OLSKCloudStatusDispatchSyncStop', function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchSyncStop', '1')
+				return browser.assert.text('#TestOLSKCloudStatusDispatchSyncStop', '1')
 			});
 		
 		});
@@ -99,7 +99,7 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusSyncStopButtonImage', function test_OLSKCloudStatusSyncStopButtonImage () {
 
 		it('sets src', function () {
-			browser.assert.elements(`${ OLSKCloudStatusSyncStopButtonImage } #_OLSKSharedSyncStop`, 1);
+			return browser.assert.elements(`${ OLSKCloudStatusSyncStopButtonImage } #_OLSKSharedSyncStop`, 1);
 		});
 	
 	});
@@ -107,29 +107,32 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusDisconnectButton', function test_OLSKCloudStatusDisconnectButton () {
 
 		it('classes OLSKDecorButtonNoStyle', function () {
-			browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKDecorButtonNoStyle');
+			return browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKDecorButtonNoStyle');
 		});
 
 		it('classes OLSKDecorTappable', function () {
-			browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKDecorTappable');
+			return browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKDecorTappable');
 		});
 
 		it('classes OLSKToolbarButton', function () {
-			browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKToolbarButton');
+			return browser.assert.hasClass(OLSKCloudStatusDisconnectButton, 'OLSKToolbarButton');
 		});
 		
 		context('click', function () {
 			
 			before(function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchDisconnect', '0');
+				return browser.assert.text('#TestOLSKCloudStatusDispatchDisconnect', '0');
 			});
 
 			before(function () {
-				browser.pressButton(OLSKCloudStatusDisconnectButton);
+				if (process.env.OLSK_SPEC_PLAYWRIGHT === 'true') {
+					page.once('dialog', dialog => dialog.accept());
+				}
+				return browser.pressButton(OLSKCloudStatusDisconnectButton);
 			});
 
 			it('sends OLSKCloudStatusDispatchDisconnect', function () {
-				browser.assert.text('#TestOLSKCloudStatusDispatchDisconnect', '1')
+				return browser.assert.text('#TestOLSKCloudStatusDispatchDisconnect', '1')
 			});
 		
 		});
@@ -139,7 +142,7 @@ describe('OLSKCloudStatus_Misc', function () {
 	describe('OLSKCloudStatusDisconnectButtonImage', function test_OLSKCloudStatusDisconnectButtonImage () {
 
 		it('sets src', function () {
-			browser.assert.elements(`${ OLSKCloudStatusDisconnectButtonImage } #_OLSKSharedStorageDisconnect`, 1);
+			return browser.assert.elements(`${ OLSKCloudStatusDisconnectButtonImage } #_OLSKSharedStorageDisconnect`, 1);
 		});
 	
 	});

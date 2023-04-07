@@ -15,11 +15,11 @@ kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 		});
 
 		it('localizes OLSKCloudStatusSyncStartButton', function () {
-			browser.assert.attribute(OLSKCloudStatusSyncStartButton, 'title', uLocalized('OLSKCloudStatusSyncStartButtonText'))
+			return browser.assert.attribute(OLSKCloudStatusSyncStartButton, 'title', uLocalized('OLSKCloudStatusSyncStartButtonText'))
 		});
 
 		it('localizes OLSKCloudStatusDisconnectButton', function () {
-			browser.assert.attribute(OLSKCloudStatusDisconnectButton, 'title', uLocalized('OLSKCloudStatusDisconnectButtonText'))
+			return browser.assert.attribute(OLSKCloudStatusDisconnectButton, 'title', uLocalized('OLSKCloudStatusDisconnectButtonText'))
 		});
 
 		context('OLSKCloudStatusIsSyncing', function () {
@@ -32,7 +32,7 @@ kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 			});
 
 			it('localizes OLSKCloudStatusSyncStopButton', function () {
-				browser.assert.attribute(OLSKCloudStatusSyncStopButton, 'title', uLocalized('OLSKCloudStatusSyncStopButtonText'))
+				return browser.assert.attribute(OLSKCloudStatusSyncStopButton, 'title', uLocalized('OLSKCloudStatusSyncStopButtonText'))
 			});
 		
 		});

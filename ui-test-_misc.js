@@ -13,7 +13,7 @@ describe('OLSKCloud_Misc', function () {
 	describe('OLSKCloudError', function test_OLSKCloudError () {
 
 		it('binds OLSKCloudErrorText', function () {
-			browser.assert.text(OLSKCloudError, OLSKCloudErrorText);
+			return browser.assert.text(OLSKCloudError, OLSKCloudErrorText);
 		});
 	
 	});
@@ -23,7 +23,7 @@ describe('OLSKCloud_Misc', function () {
 		context('click', function () {
 			
 			before(function () {
-				browser.assert.text('#TestOLSKCloudDispatchRenew', '0');
+				return browser.assert.text('#TestOLSKCloudDispatchRenew', '0');
 			});
 
 			before(function () {
@@ -31,7 +31,7 @@ describe('OLSKCloud_Misc', function () {
 			});
 
 			it('sends OLSKCloudDispatchRenew', function () {
-				browser.assert.text('#TestOLSKCloudDispatchRenew', '1')
+				return browser.assert.text('#TestOLSKCloudDispatchRenew', '1')
 			});
 		
 		});

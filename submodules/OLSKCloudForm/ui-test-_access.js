@@ -18,19 +18,19 @@ describe('OLSKCloudForm_Access', function () {
 	});
 	
 	it('shows OLSKCloudForm', function() {
-		browser.assert.elements(OLSKCloudForm, 1);
+		return browser.assert.elements(OLSKCloudForm, 1);
 	});
 	
 	it('shows OLSKCloudFormAddressField', function() {
-		browser.assert.elements(OLSKCloudFormAddressField, 1);
+		return browser.assert.elements(OLSKCloudFormAddressField, 1);
 	});
 	
 	it('shows OLSKCloudFormConnectButton', function() {
-		browser.assert.elements(OLSKCloudFormConnectButton, 1);
+		return browser.assert.elements(OLSKCloudFormConnectButton, 1);
 	});
 	
 	it('shows OLSKCloudFormRegisterLink', function() {
-		browser.assert.elements(OLSKCloudFormRegisterLink, 1);
+		return browser.assert.elements(OLSKCloudFormRegisterLink, 1);
 	});
 
 });
